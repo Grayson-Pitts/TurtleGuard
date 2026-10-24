@@ -60,12 +60,72 @@
     "source": "NPS Canaveral Sea Turtle Monitoring"
   },
   {
+    "location": "Casey Key",
+    "species": "all",
+    "training_years": "2017\u20132025",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 2250.41,
+    "model": "google/timesfm-3.0-pytorch",
+    "source": "Mote Marine Laboratory annual beach totals (historical)"
+  },
+  {
+    "location": "Lido Key",
+    "species": "all",
+    "training_years": "2017\u20132025",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 179.29,
+    "model": "google/timesfm-3.0-pytorch",
+    "source": "Mote Marine Laboratory annual beach totals (historical)"
+  },
+  {
+    "location": "Longboat Key",
+    "species": "all",
+    "training_years": "2017\u20132025",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 1291.56,
+    "model": "google/timesfm-3.0-pytorch",
+    "source": "Mote Marine Laboratory annual beach totals (historical)"
+  },
+  {
+    "location": "Siesta Key",
+    "species": "all",
+    "training_years": "2017\u20132025",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 572.04,
+    "model": "google/timesfm-3.0-pytorch",
+    "source": "Mote Marine Laboratory annual beach totals (historical)"
+  },
+  {
+    "location": "Venice",
+    "species": "all",
+    "training_years": "2017\u20132025",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 609.72,
+    "model": "google/timesfm-3.0-pytorch",
+    "source": "Mote Marine Laboratory annual beach totals (historical)"
+  },
+  {
     "location": "Volusia County",
     "species": "green",
     "training_years": "1988\u20132024",
     "last_observed_year": 2024,
     "forecast_year": 2025,
     "forecast_nests": 41.49,
+    "model": "google/timesfm-3.0-pytorch",
+    "source": "Volusia County nesting summary"
+  },
+  {
+    "location": "Volusia County",
+    "species": "leatherback",
+    "training_years": "1988\u20132024",
+    "last_observed_year": 2024,
+    "forecast_year": 2025,
+    "forecast_nests": 5.36,
     "model": "google/timesfm-3.0-pytorch",
     "source": "Volusia County nesting summary"
   },

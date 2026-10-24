@@ -1,16 +1,16 @@
 {
-  "created_utc": "2026-10-24T03:27:03.129383+00:00",
+  "created_utc": "2026-10-24T16:12:13.826371+00:00",
   "regions": [
     {
       "id": "Boca Raton",
       "name": "Boca Raton",
       "year": 2026,
-      "projected_total_nests": 938.8,
+      "projected_total_nests": 960.4,
       "historical_active_year_fraction": 1.0,
       "historical_mean_5yr_nests": 1081.6,
       "source_count": 3,
       "series_count": 3,
-      "timesfm_selected_series": 0,
+      "timesfm_selected_series": 3,
       "available_species": [
         "green",
         "leatherback",
@@ -30,12 +30,12 @@
       "id": "Canaveral National Seashore",
       "name": "Canaveral National Seashore",
       "year": 2025,
-      "projected_total_nests": 16322.1,
+      "projected_total_nests": 9680.6,
       "historical_active_year_fraction": 1.0,
       "historical_mean_5yr_nests": 9876.2,
       "source_count": 3,
       "series_count": 3,
-      "timesfm_selected_series": 2,
+      "timesfm_selected_series": 3,
       "available_species": [
         "green",
         "leatherback",
@@ -52,17 +52,133 @@
       "source_url": "https://www.nps.gov/cana/learn/nature/sea-turtle-monitoring.htm"
     },
     {
+      "id": "Casey Key",
+      "name": "Casey Key",
+      "year": 2026,
+      "projected_total_nests": 2250.4,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 2009.0,
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "available_species": [
+        "all"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Casey Key named FWC segments only; verify actual geometry",
+        "county": "SARASOTA",
+        "match_terms": [
+          "casey"
+        ]
+      },
+      "scope": null,
+      "source_url": null
+    },
+    {
+      "id": "Lido Key",
+      "name": "Lido Key",
+      "year": 2026,
+      "projected_total_nests": 179.3,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 167.0,
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "available_species": [
+        "all"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Lido named FWC segments only; verify actual geometry",
+        "county": "SARASOTA",
+        "match_terms": [
+          "lido"
+        ]
+      },
+      "scope": null,
+      "source_url": null
+    },
+    {
+      "id": "Longboat Key",
+      "name": "Longboat Key",
+      "year": 2026,
+      "projected_total_nests": 1291.6,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 1210.8,
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "available_species": [
+        "all"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Longboat named FWC segments in Sarasota only; Manatee not yet matched",
+        "county": "SARASOTA",
+        "match_terms": [
+          "longboat"
+        ]
+      },
+      "scope": null,
+      "source_url": null
+    },
+    {
+      "id": "Siesta Key",
+      "name": "Siesta Key",
+      "year": 2026,
+      "projected_total_nests": 572.0,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 517.4,
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "available_species": [
+        "all"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Siesta named FWC segments only; verify actual geometry",
+        "county": "SARASOTA",
+        "match_terms": [
+          "siesta"
+        ]
+      },
+      "scope": null,
+      "source_url": null
+    },
+    {
+      "id": "Venice",
+      "name": "Venice",
+      "year": 2026,
+      "projected_total_nests": 609.7,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 634.4,
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "available_species": [
+        "all"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Venice named FWC segments only; verify actual geometry",
+        "county": "SARASOTA",
+        "match_terms": [
+          "venice"
+        ]
+      },
+      "scope": null,
+      "source_url": null
+    },
+    {
       "id": "Volusia County",
       "name": "Volusia County",
       "year": 2025,
-      "projected_total_nests": 1258.0,
+      "projected_total_nests": 905.5,
       "historical_active_year_fraction": 1.0,
-      "historical_mean_5yr_nests": 1096.6,
-      "source_count": 2,
-      "series_count": 2,
-      "timesfm_selected_series": 0,
+      "historical_mean_5yr_nests": 1102.8,
+      "source_count": 3,
+      "series_count": 3,
+      "timesfm_selected_series": 3,
       "available_species": [
         "green",
+        "leatherback",
         "loggerhead"
       ],
       "proxy_mapping": {

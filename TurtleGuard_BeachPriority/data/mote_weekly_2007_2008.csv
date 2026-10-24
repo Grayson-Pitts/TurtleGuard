@@ -1,0 +1,289 @@
+location,year,period_start,period_end,frequency,species,nests,false_crawls,source_file,status
+Casey Key,2007,2007-06-01,2007-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Casey Key,2007,2007-06-01,2007-06-07,weekly,loggerhead,18,37,Nesting_6-1through6-72008.pdf,observed_weekly
+Lido Key,2007,2007-06-01,2007-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Lido Key,2007,2007-06-01,2007-06-07,weekly,loggerhead,5,3,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-01,2007-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-01,2007-06-07,weekly,loggerhead,5,3,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-01,2007-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-01,2007-06-07,weekly,loggerhead,7,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Siesta Key,2007,2007-06-01,2007-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Siesta Key,2007,2007-06-01,2007-06-07,weekly,loggerhead,7,2,Nesting_6-1through6-72008.pdf,observed_weekly
+Venice,2007,2007-06-01,2007-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Venice,2007,2007-06-01,2007-06-07,weekly,loggerhead,16,15,Nesting_6-1through6-72008.pdf,observed_weekly
+Casey Key,2007,2007-06-08,2007-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Casey Key,2007,2007-06-08,2007-06-14,weekly,loggerhead,18,51,Nesting_6-8through6-142008.pdf,observed_weekly
+Lido Key,2007,2007-06-08,2007-06-14,weekly,green,0,2,Nesting_6-8through6-142008.pdf,observed_weekly
+Lido Key,2007,2007-06-08,2007-06-14,weekly,loggerhead,2,1,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-08,2007-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-08,2007-06-14,weekly,loggerhead,8,6,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-08,2007-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-08,2007-06-14,weekly,loggerhead,6,5,Nesting_6-8through6-142008.pdf,observed_weekly
+Siesta Key,2007,2007-06-08,2007-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Siesta Key,2007,2007-06-08,2007-06-14,weekly,loggerhead,8,4,Nesting_6-8through6-142008.pdf,observed_weekly
+Venice,2007,2007-06-08,2007-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Venice,2007,2007-06-08,2007-06-14,weekly,loggerhead,22,14,Nesting_6-8through6-142008.pdf,observed_weekly
+Casey Key,2007,2007-06-15,2007-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Casey Key,2007,2007-06-15,2007-06-21,weekly,loggerhead,30,55,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Lido Key,2007,2007-06-15,2007-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Lido Key,2007,2007-06-15,2007-06-21,weekly,loggerhead,7,4,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-15,2007-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-15,2007-06-21,weekly,loggerhead,10,6,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-15,2007-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-15,2007-06-21,weekly,loggerhead,8,16,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Siesta Key,2007,2007-06-15,2007-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Siesta Key,2007,2007-06-15,2007-06-21,weekly,loggerhead,12,21,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Venice,2007,2007-06-15,2007-06-21,weekly,green,1,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Venice,2007,2007-06-15,2007-06-21,weekly,loggerhead,20,15,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Casey Key,2007,2007-06-22,2007-06-28,weekly,green,1,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Casey Key,2007,2007-06-22,2007-06-28,weekly,loggerhead,38,37,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Lido Key,2007,2007-06-22,2007-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Lido Key,2007,2007-06-22,2007-06-28,weekly,loggerhead,3,3,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-22,2007-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-22,2007-06-28,weekly,loggerhead,12,7,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-22,2007-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-22,2007-06-28,weekly,loggerhead,7,8,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Siesta Key,2007,2007-06-22,2007-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Siesta Key,2007,2007-06-22,2007-06-28,weekly,loggerhead,9,23,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Venice,2007,2007-06-22,2007-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Venice,2007,2007-06-22,2007-06-28,weekly,loggerhead,18,18,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Casey Key,2007,2007-06-29,2007-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Casey Key,2007,2007-06-29,2007-07-05,weekly,loggerhead,56,31,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Lido Key,2007,2007-06-29,2007-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Lido Key,2007,2007-06-29,2007-07-05,weekly,loggerhead,4,7,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-29,2007-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-06-29,2007-07-05,weekly,loggerhead,11,18,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-29,2007-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-06-29,2007-07-05,weekly,loggerhead,12,8,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Siesta Key,2007,2007-06-29,2007-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Siesta Key,2007,2007-06-29,2007-07-05,weekly,loggerhead,7,13,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Venice,2007,2007-06-29,2007-07-05,weekly,green,1,1,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Venice,2007,2007-06-29,2007-07-05,weekly,loggerhead,23,17,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Casey Key,2007,2007-07-06,2007-07-12,weekly,green,2,1,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-06,2007-07-12,weekly,loggerhead,39,57,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-06,2007-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-06,2007-07-12,weekly,loggerhead,4,8,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-06,2007-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-06,2007-07-12,weekly,loggerhead,4,8,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-06,2007-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-06,2007-07-12,weekly,loggerhead,10,16,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-06,2007-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-06,2007-07-12,weekly,loggerhead,5,39,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Venice,2007,2007-07-06,2007-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Venice,2007,2007-07-06,2007-07-12,weekly,loggerhead,18,53,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-13,2007-07-19,weekly,green,2,4,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-13,2007-07-19,weekly,loggerhead,51,142,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-13,2007-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-13,2007-07-19,weekly,loggerhead,2,6,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-13,2007-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-13,2007-07-19,weekly,loggerhead,8,37,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-13,2007-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-13,2007-07-19,weekly,loggerhead,4,28,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-13,2007-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-13,2007-07-19,weekly,loggerhead,9,43,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Venice,2007,2007-07-13,2007-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Venice,2007,2007-07-13,2007-07-19,weekly,loggerhead,18,62,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-20,2007-07-26,weekly,green,1,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-20,2007-07-26,weekly,loggerhead,22,24,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-20,2007-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-20,2007-07-26,weekly,loggerhead,1,4,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-20,2007-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-20,2007-07-26,weekly,loggerhead,7,8,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-20,2007-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-20,2007-07-26,weekly,loggerhead,5,3,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-20,2007-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-20,2007-07-26,weekly,loggerhead,3,24,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Venice,2007,2007-07-20,2007-07-26,weekly,green,0,1,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Venice,2007,2007-07-20,2007-07-26,weekly,loggerhead,7,3,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-27,2007-08-02,weekly,green,0,3,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Casey Key,2007,2007-07-27,2007-08-02,weekly,loggerhead,20,18,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-27,2007-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Lido Key,2007,2007-07-27,2007-08-02,weekly,loggerhead,1,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-27,2007-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-07-27,2007-08-02,weekly,loggerhead,3,2,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-27,2007-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-07-27,2007-08-02,weekly,loggerhead,2,1,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-27,2007-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Siesta Key,2007,2007-07-27,2007-08-02,weekly,loggerhead,2,9,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Venice,2007,2007-07-27,2007-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Venice,2007,2007-07-27,2007-08-02,weekly,loggerhead,8,3,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Casey Key,2007,2007-08-03,2007-08-09,weekly,green,1,1,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Casey Key,2007,2007-08-03,2007-08-09,weekly,loggerhead,12,8,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Lido Key,2007,2007-08-03,2007-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Lido Key,2007,2007-08-03,2007-08-09,weekly,loggerhead,1,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-08-03,2007-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-08-03,2007-08-09,weekly,loggerhead,3,3,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-08-03,2007-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-08-03,2007-08-09,weekly,loggerhead,4,3,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Siesta Key,2007,2007-08-03,2007-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Siesta Key,2007,2007-08-03,2007-08-09,weekly,loggerhead,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Venice,2007,2007-08-03,2007-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Venice,2007,2007-08-03,2007-08-09,weekly,loggerhead,2,2,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Casey Key,2007,2007-08-10,2007-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Casey Key,2007,2007-08-10,2007-08-16,weekly,loggerhead,7,5,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Lido Key,2007,2007-08-10,2007-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Lido Key,2007,2007-08-10,2007-08-16,weekly,loggerhead,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-08-10,2007-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-08-10,2007-08-16,weekly,loggerhead,1,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-08-10,2007-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-08-10,2007-08-16,weekly,loggerhead,0,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Siesta Key,2007,2007-08-10,2007-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Siesta Key,2007,2007-08-10,2007-08-16,weekly,loggerhead,0,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Venice,2007,2007-08-10,2007-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Venice,2007,2007-08-10,2007-08-16,weekly,loggerhead,1,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Casey Key,2007,2007-08-24,2007-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Casey Key,2007,2007-08-24,2007-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Lido Key,2007,2007-08-24,2007-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Lido Key,2007,2007-08-24,2007-08-30,weekly,loggerhead,1,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-08-24,2007-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Manatee),2007,2007-08-24,2007-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-08-24,2007-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Sarasota),2007,2007-08-24,2007-08-30,weekly,loggerhead,1,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Siesta Key,2007,2007-08-24,2007-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Siesta Key,2007,2007-08-24,2007-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Venice,2007,2007-08-24,2007-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Venice,2007,2007-08-24,2007-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Casey Key,2008,2008-06-01,2008-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Casey Key,2008,2008-06-01,2008-06-07,weekly,loggerhead,49,39,Nesting_6-1through6-72008.pdf,observed_weekly
+Lido Key,2008,2008-06-01,2008-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Lido Key,2008,2008-06-01,2008-06-07,weekly,loggerhead,2,2,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-01,2008-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-01,2008-06-07,weekly,loggerhead,7,9,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-01,2008-06-07,weekly,green,1,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-01,2008-06-07,weekly,loggerhead,12,10,Nesting_6-1through6-72008.pdf,observed_weekly
+Siesta Key,2008,2008-06-01,2008-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Siesta Key,2008,2008-06-01,2008-06-07,weekly,loggerhead,14,17,Nesting_6-1through6-72008.pdf,observed_weekly
+Venice,2008,2008-06-01,2008-06-07,weekly,green,0,0,Nesting_6-1through6-72008.pdf,observed_weekly
+Venice,2008,2008-06-01,2008-06-07,weekly,loggerhead,18,23,Nesting_6-1through6-72008.pdf,observed_weekly
+Casey Key,2008,2008-06-08,2008-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Casey Key,2008,2008-06-08,2008-06-14,weekly,loggerhead,46,36,Nesting_6-8through6-142008.pdf,observed_weekly
+Lido Key,2008,2008-06-08,2008-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Lido Key,2008,2008-06-08,2008-06-14,weekly,loggerhead,1,1,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-08,2008-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-08,2008-06-14,weekly,loggerhead,18,11,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-08,2008-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-08,2008-06-14,weekly,loggerhead,13,5,Nesting_6-8through6-142008.pdf,observed_weekly
+Siesta Key,2008,2008-06-08,2008-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Siesta Key,2008,2008-06-08,2008-06-14,weekly,loggerhead,14,13,Nesting_6-8through6-142008.pdf,observed_weekly
+Venice,2008,2008-06-08,2008-06-14,weekly,green,0,0,Nesting_6-8through6-142008.pdf,observed_weekly
+Venice,2008,2008-06-08,2008-06-14,weekly,loggerhead,20,10,Nesting_6-8through6-142008.pdf,observed_weekly
+Casey Key,2008,2008-06-15,2008-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Casey Key,2008,2008-06-15,2008-06-21,weekly,loggerhead,45,46,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Lido Key,2008,2008-06-15,2008-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Lido Key,2008,2008-06-15,2008-06-21,weekly,loggerhead,3,5,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-15,2008-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-15,2008-06-21,weekly,loggerhead,15,8,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-15,2008-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-15,2008-06-21,weekly,loggerhead,11,10,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Siesta Key,2008,2008-06-15,2008-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Siesta Key,2008,2008-06-15,2008-06-21,weekly,loggerhead,9,24,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Venice,2008,2008-06-15,2008-06-21,weekly,green,0,0,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Venice,2008,2008-06-15,2008-06-21,weekly,loggerhead,29,26,ActivitySummary_6-15through6-21_2008.pdf,observed_weekly
+Casey Key,2008,2008-06-22,2008-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Casey Key,2008,2008-06-22,2008-06-28,weekly,loggerhead,49,52,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Lido Key,2008,2008-06-22,2008-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Lido Key,2008,2008-06-22,2008-06-28,weekly,loggerhead,2,5,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-22,2008-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-22,2008-06-28,weekly,loggerhead,13,15,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-22,2008-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-22,2008-06-28,weekly,loggerhead,14,12,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Siesta Key,2008,2008-06-22,2008-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Siesta Key,2008,2008-06-22,2008-06-28,weekly,loggerhead,24,18,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Venice,2008,2008-06-22,2008-06-28,weekly,green,0,0,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Venice,2008,2008-06-22,2008-06-28,weekly,loggerhead,28,26,ActivitySummary2008_6-22through6-28_2008.pdf,observed_weekly
+Casey Key,2008,2008-06-29,2008-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Casey Key,2008,2008-06-29,2008-07-05,weekly,loggerhead,39,38,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Lido Key,2008,2008-06-29,2008-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Lido Key,2008,2008-06-29,2008-07-05,weekly,loggerhead,3,3,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-29,2008-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-06-29,2008-07-05,weekly,loggerhead,16,27,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-29,2008-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-06-29,2008-07-05,weekly,loggerhead,10,11,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Siesta Key,2008,2008-06-29,2008-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Siesta Key,2008,2008-06-29,2008-07-05,weekly,loggerhead,14,18,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Venice,2008,2008-06-29,2008-07-05,weekly,green,0,0,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Venice,2008,2008-06-29,2008-07-05,weekly,loggerhead,27,28,Nesting_6-29through7-5-2008-1.pdf,observed_weekly
+Casey Key,2008,2008-07-06,2008-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-06,2008-07-12,weekly,loggerhead,41,37,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-06,2008-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-06,2008-07-12,weekly,loggerhead,4,6,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-06,2008-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-06,2008-07-12,weekly,loggerhead,13,6,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-06,2008-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-06,2008-07-12,weekly,loggerhead,5,12,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-06,2008-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-06,2008-07-12,weekly,loggerhead,19,40,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Venice,2008,2008-07-06,2008-07-12,weekly,green,0,0,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Venice,2008,2008-07-06,2008-07-12,weekly,loggerhead,30,28,ActivitySummary2008_7-6through7-12_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-13,2008-07-19,weekly,green,1,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-13,2008-07-19,weekly,loggerhead,39,25,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-13,2008-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-13,2008-07-19,weekly,loggerhead,3,3,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-13,2008-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-13,2008-07-19,weekly,loggerhead,14,4,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-13,2008-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-13,2008-07-19,weekly,loggerhead,11,4,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-13,2008-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-13,2008-07-19,weekly,loggerhead,17,6,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Venice,2008,2008-07-13,2008-07-19,weekly,green,0,0,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Venice,2008,2008-07-13,2008-07-19,weekly,loggerhead,16,14,ActivitySummary2008_7-13through7-19_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-20,2008-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-20,2008-07-26,weekly,loggerhead,32,22,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-20,2008-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-20,2008-07-26,weekly,loggerhead,6,4,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-20,2008-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-20,2008-07-26,weekly,loggerhead,13,7,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-20,2008-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-20,2008-07-26,weekly,loggerhead,12,10,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-20,2008-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-20,2008-07-26,weekly,loggerhead,12,17,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Venice,2008,2008-07-20,2008-07-26,weekly,green,0,0,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Venice,2008,2008-07-20,2008-07-26,weekly,loggerhead,15,13,ActivitySummary_7-19through7-26_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-27,2008-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Casey Key,2008,2008-07-27,2008-08-02,weekly,loggerhead,21,15,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-27,2008-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Lido Key,2008,2008-07-27,2008-08-02,weekly,loggerhead,1,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-27,2008-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-07-27,2008-08-02,weekly,loggerhead,10,5,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-27,2008-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-07-27,2008-08-02,weekly,loggerhead,4,6,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-27,2008-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Siesta Key,2008,2008-07-27,2008-08-02,weekly,loggerhead,10,10,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Venice,2008,2008-07-27,2008-08-02,weekly,green,0,0,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Venice,2008,2008-07-27,2008-08-02,weekly,loggerhead,14,6,ActivitySummary_7-26through8-2_2008.pdf,observed_weekly
+Casey Key,2008,2008-08-03,2008-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Casey Key,2008,2008-08-03,2008-08-09,weekly,loggerhead,13,9,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Lido Key,2008,2008-08-03,2008-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Lido Key,2008,2008-08-03,2008-08-09,weekly,loggerhead,1,1,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-08-03,2008-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-08-03,2008-08-09,weekly,loggerhead,4,2,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-08-03,2008-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-08-03,2008-08-09,weekly,loggerhead,1,1,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Siesta Key,2008,2008-08-03,2008-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Siesta Key,2008,2008-08-03,2008-08-09,weekly,loggerhead,4,6,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Venice,2008,2008-08-03,2008-08-09,weekly,green,0,0,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Venice,2008,2008-08-03,2008-08-09,weekly,loggerhead,2,4,ActivitySummary2008_8-2through8-9_2008.pdf,observed_weekly
+Casey Key,2008,2008-08-10,2008-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Casey Key,2008,2008-08-10,2008-08-16,weekly,loggerhead,7,3,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Lido Key,2008,2008-08-10,2008-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Lido Key,2008,2008-08-10,2008-08-16,weekly,loggerhead,0,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-08-10,2008-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-08-10,2008-08-16,weekly,loggerhead,2,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-08-10,2008-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-08-10,2008-08-16,weekly,loggerhead,1,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Siesta Key,2008,2008-08-10,2008-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Siesta Key,2008,2008-08-10,2008-08-16,weekly,loggerhead,0,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Venice,2008,2008-08-10,2008-08-16,weekly,green,0,0,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Venice,2008,2008-08-10,2008-08-16,weekly,loggerhead,3,1,ActivitySummary_8-10through8-16_2008.pdf,observed_weekly
+Casey Key,2008,2008-08-24,2008-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Casey Key,2008,2008-08-24,2008-08-30,weekly,loggerhead,0,1,ActivitySummary2008-8-24.pdf,observed_weekly
+Lido Key,2008,2008-08-24,2008-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Lido Key,2008,2008-08-24,2008-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-08-24,2008-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Manatee),2008,2008-08-24,2008-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-08-24,2008-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Longboat Key (Sarasota),2008,2008-08-24,2008-08-30,weekly,loggerhead,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Siesta Key,2008,2008-08-24,2008-08-30,weekly,green,1,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Siesta Key,2008,2008-08-24,2008-08-30,weekly,loggerhead,0,1,ActivitySummary2008-8-24.pdf,observed_weekly
+Venice,2008,2008-08-24,2008-08-30,weekly,green,0,0,ActivitySummary2008-8-24.pdf,observed_weekly
+Venice,2008,2008-08-24,2008-08-30,weekly,loggerhead,1,0,ActivitySummary2008-8-24.pdf,observed_weekly

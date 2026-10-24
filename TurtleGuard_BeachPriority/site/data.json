@@ -1,12 +1,9 @@
 {
-  "generated_utc": "2026-10-24T18:09:05.277879+00:00",
+  "generated_utc": "2026-10-24T19:17:32.129396+00:00",
+  "forecast_year": 2027,
   "locations": [
     {
       "name": "Boca Raton",
-      "lat": 26.35,
-      "lng": -80.071,
-      "scope": "City monitoring area; representative map point",
-      "url": "https://www.myboca.us/2140/Sea-Turtle-Nesting-Totals",
       "species": [
         {
           "species": "green",
@@ -165,26 +162,43 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 214.8,
-            "two_year": 72.0,
-            "timesfm": 130.9
+            "five_year_mean": 214.8,
+            "recent_median": 241.0,
+            "parity_mean": 253.67,
+            "timesfm": 199.76,
+            "timesfm_parity_blend": 234.8
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 130.9,
+          "selected_forecast": 253.67,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 199.76,
+          "selection_mae": {
+            "timesfm": 127.8,
+            "five_year_mean": 94.54,
+            "recent_median": 107.14,
+            "parity_mean": 88.52,
+            "timesfm_parity_blend": 102.27
+          },
           "evaluation_mae": {
-            "timesfm": 81.1,
-            "five_year": 122.7,
-            "two_year": 130.7
+            "timesfm": 70.8,
+            "five_year_mean": 68.4,
+            "recent_median": 60.0,
+            "parity_mean": 59.67,
+            "timesfm_parity_blend": 51.94
           },
           "backtest_years": [
+            2019,
+            2020,
+            2021,
+            2022,
             2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         },
         {
           "species": "leatherback",
@@ -343,26 +357,43 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 21.6,
-            "two_year": 19.0,
-            "timesfm": 19.1
+            "five_year_mean": 21.6,
+            "recent_median": 21.0,
+            "parity_mean": 23.33,
+            "timesfm": 18.9,
+            "timesfm_parity_blend": 21.78
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 19.1,
+          "selected_forecast": 21.0,
+          "selected_method": "recent_median",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 18.9,
+          "selection_mae": {
+            "timesfm": 6.66,
+            "five_year_mean": 6.63,
+            "recent_median": 4.57,
+            "parity_mean": 6.67,
+            "timesfm_parity_blend": 6.66
+          },
           "evaluation_mae": {
-            "timesfm": 5.2,
-            "five_year": 4.0,
-            "two_year": 4.7
+            "timesfm": 3.6,
+            "five_year_mean": 1.2,
+            "recent_median": 1.5,
+            "parity_mean": 1.83,
+            "timesfm_parity_blend": 1.59
           },
           "backtest_years": [
+            2019,
+            2020,
+            2021,
+            2022,
             2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         },
         {
           "species": "loggerhead",
@@ -521,36 +552,48 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 845.2,
-            "two_year": 824.0,
-            "timesfm": 810.4
+            "five_year_mean": 845.2,
+            "recent_median": 824.0,
+            "parity_mean": 834.67,
+            "timesfm": 781.85,
+            "timesfm_parity_blend": 816.18
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 810.4,
+          "selected_forecast": 845.2,
+          "selected_method": "five_year_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 781.85,
+          "selection_mae": {
+            "timesfm": 121.76,
+            "five_year_mean": 121.57,
+            "recent_median": 128.0,
+            "parity_mean": 133.1,
+            "timesfm_parity_blend": 128.94
+          },
           "evaluation_mae": {
-            "timesfm": 115.1,
-            "five_year": 99.3,
-            "two_year": 228.0
+            "timesfm": 42.56,
+            "five_year_mean": 37.7,
+            "recent_median": 73.5,
+            "parity_mean": 45.5,
+            "timesfm_parity_blend": 44.47
           },
           "backtest_years": [
+            2019,
+            2020,
+            2021,
+            2022,
             2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         }
-      ],
-      "illustrative_inspection_hours": 3
+      ]
     },
     {
       "name": "Canaveral National Seashore",
-      "lat": 28.78,
-      "lng": -80.77,
-      "scope": "National seashore monitoring area; representative map point",
-      "url": "https://www.nps.gov/cana/learn/nature/sea-turtle-monitoring.htm",
       "species": [
         {
           "species": "green",
@@ -717,26 +760,43 @@
             }
           ],
           "last_year": 2024,
-          "forecast_year": 2025,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 3,
           "forecasts": {
-            "five_year": 4781.6,
-            "two_year": 11106.0,
-            "timesfm": 4464.5
+            "five_year_mean": 4781.6,
+            "recent_median": 4303.0,
+            "parity_mean": 7679.33,
+            "timesfm": 4335.28,
+            "timesfm_parity_blend": 6508.91
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 4464.5,
+          "selected_forecast": 7679.33,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 4335.28,
+          "selection_mae": {
+            "timesfm": 3438.54,
+            "five_year_mean": 3138.77,
+            "recent_median": 3584.0,
+            "parity_mean": 2653.29,
+            "timesfm_parity_blend": 2770.27
+          },
           "evaluation_mae": {
-            "timesfm": 5314.2,
-            "five_year": 4576.6,
-            "two_year": 5765.7
+            "timesfm": 4385.27,
+            "five_year_mean": 5044.7,
+            "recent_median": 6613.5,
+            "parity_mean": 3122.67,
+            "timesfm_parity_blend": 3564.58
           },
           "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
             2022,
             2023,
             2024
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         },
         {
           "species": "leatherback",
@@ -903,26 +963,43 @@
             }
           ],
           "last_year": 2024,
-          "forecast_year": 2025,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 3,
           "forecasts": {
-            "five_year": 28.4,
-            "two_year": 28.0,
-            "timesfm": 31.2
+            "five_year_mean": 28.4,
+            "recent_median": 28.0,
+            "parity_mean": 30.67,
+            "timesfm": 33.18,
+            "timesfm_parity_blend": 31.55
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 31.2,
+          "selected_forecast": 30.67,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 33.18,
+          "selection_mae": {
+            "timesfm": 8.81,
+            "five_year_mean": 8.2,
+            "recent_median": 7.86,
+            "parity_mean": 7.29,
+            "timesfm_parity_blend": 7.57
+          },
           "evaluation_mae": {
-            "timesfm": 1.7,
-            "five_year": 1.3,
-            "two_year": 2.3
+            "timesfm": 5.53,
+            "five_year_mean": 5.6,
+            "recent_median": 4.5,
+            "parity_mean": 7.67,
+            "timesfm_parity_blend": 5.62
           },
           "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
             2022,
             2023,
             2024
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         },
         {
           "species": "loggerhead",
@@ -1089,29 +1166,45 @@
             }
           ],
           "last_year": 2024,
-          "forecast_year": 2025,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 3,
           "forecasts": {
-            "five_year": 5066.2,
-            "two_year": 5677.0,
-            "timesfm": 5184.9
+            "five_year_mean": 5066.2,
+            "recent_median": 5571.0,
+            "parity_mean": 5010.33,
+            "timesfm": 4952.19,
+            "timesfm_parity_blend": 4989.98
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 5184.9,
+          "selected_forecast": 5066.2,
+          "selected_method": "five_year_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 4952.19,
+          "selection_mae": {
+            "timesfm": 988.59,
+            "five_year_mean": 768.2,
+            "recent_median": 961.71,
+            "parity_mean": 913.71,
+            "timesfm_parity_blend": 921.3
+          },
           "evaluation_mae": {
-            "timesfm": 1230.3,
-            "five_year": 1033.5,
-            "two_year": 1529.0
+            "timesfm": 1631.86,
+            "five_year_mean": 1025.1,
+            "recent_median": 1234.5,
+            "parity_mean": 1028.33,
+            "timesfm_parity_blend": 1239.57
           },
           "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
             2022,
             2023,
             2024
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         }
-      ],
-      "illustrative_inspection_hours": 4
+      ]
     },
     {
       "name": "Casey Key",
@@ -1157,29 +1250,34 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 2009.0,
-            "two_year": 1830.0,
-            "timesfm": 2250.4
+            "five_year_mean": 2009.0,
+            "recent_median": 1964.0,
+            "parity_mean": 2054.0,
+            "timesfm": 2183.06,
+            "timesfm_parity_blend": 2099.17
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 2250.4,
+          "selected_forecast": 2054.0,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
-          "evaluation_mae": {
-            "timesfm": 356.2,
-            "five_year": 416.7,
-            "two_year": 493.0
+          "timesfm_forecast": 2183.06,
+          "selection_mae": {
+            "timesfm": 463.38,
+            "five_year_mean": 493.3,
+            "recent_median": 539.0,
+            "parity_mean": 528.33,
+            "timesfm_parity_blend": 505.6
           },
+          "evaluation_mae": null,
           "backtest_years": [
-            2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Short historical series; limited backtest evidence"
         }
-      ],
-      "illustrative_inspection_hours": 3
+      ]
     },
     {
       "name": "Lido Key",
@@ -1225,29 +1323,34 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 167.0,
-            "two_year": 198.0,
-            "timesfm": 179.3
+            "five_year_mean": 167.0,
+            "recent_median": 184.0,
+            "parity_mean": 159.0,
+            "timesfm": 177.99,
+            "timesfm_parity_blend": 165.65
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 179.3,
+          "selected_forecast": 159.0,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
-          "evaluation_mae": {
-            "timesfm": 26.7,
-            "five_year": 46.3,
-            "two_year": 39.0
+          "timesfm_forecast": 177.99,
+          "selection_mae": {
+            "timesfm": 39.85,
+            "five_year_mean": 57.7,
+            "recent_median": 54.0,
+            "parity_mean": 54.5,
+            "timesfm_parity_blend": 49.37
           },
+          "evaluation_mae": null,
           "backtest_years": [
-            2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Short historical series; limited backtest evidence"
         }
-      ],
-      "illustrative_inspection_hours": 3
+      ]
     },
     {
       "name": "Longboat Key",
@@ -1293,29 +1396,34 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 1210.8,
-            "two_year": 1259.0,
-            "timesfm": 1291.6
+            "five_year_mean": 1210.8,
+            "recent_median": 1259.0,
+            "parity_mean": 1165.0,
+            "timesfm": 1268.93,
+            "timesfm_parity_blend": 1201.38
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 1291.6,
+          "selected_forecast": 1165.0,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
-          "evaluation_mae": {
-            "timesfm": 222.4,
-            "five_year": 199.7,
-            "two_year": 188.7
+          "timesfm_forecast": 1268.93,
+          "selection_mae": {
+            "timesfm": 198.97,
+            "five_year_mean": 205.7,
+            "recent_median": 230.0,
+            "parity_mean": 233.83,
+            "timesfm_parity_blend": 221.63
           },
+          "evaluation_mae": null,
           "backtest_years": [
-            2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Short historical series; limited backtest evidence"
         }
-      ],
-      "illustrative_inspection_hours": 3
+      ]
     },
     {
       "name": "Siesta Key",
@@ -1361,29 +1469,34 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 517.4,
-            "two_year": 502.0,
-            "timesfm": 572.0
+            "five_year_mean": 517.4,
+            "recent_median": 521.0,
+            "parity_mean": 518.0,
+            "timesfm": 566.71,
+            "timesfm_parity_blend": 535.05
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 572.0,
+          "selected_forecast": 518.0,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
-          "evaluation_mae": {
-            "timesfm": 138.8,
-            "five_year": 118.4,
-            "two_year": 156.7
+          "timesfm_forecast": 566.71,
+          "selection_mae": {
+            "timesfm": 129.34,
+            "five_year_mean": 82.3,
+            "recent_median": 80.0,
+            "parity_mean": 83.17,
+            "timesfm_parity_blend": 88.21
           },
+          "evaluation_mae": null,
           "backtest_years": [
-            2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Short historical series; limited backtest evidence"
         }
-      ],
-      "illustrative_inspection_hours": 3
+      ]
     },
     {
       "name": "Venice",
@@ -1429,36 +1542,37 @@
             }
           ],
           "last_year": 2025,
-          "forecast_year": 2026,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 2,
           "forecasts": {
-            "five_year": 634.4,
-            "two_year": 587.0,
-            "timesfm": 609.7
+            "five_year_mean": 634.4,
+            "recent_median": 632.0,
+            "parity_mean": 697.0,
+            "timesfm": 690.03,
+            "timesfm_parity_blend": 694.56
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 609.7,
+          "selected_forecast": 697.0,
+          "selected_method": "parity_mean",
           "model_available": true,
-          "selection_mae": null,
-          "evaluation_mae": {
-            "timesfm": 103.3,
-            "five_year": 112.2,
-            "two_year": 109.0
+          "timesfm_forecast": 690.03,
+          "selection_mae": {
+            "timesfm": 41.15,
+            "five_year_mean": 59.6,
+            "recent_median": 72.5,
+            "parity_mean": 50.5,
+            "timesfm_parity_blend": 47.23
           },
+          "evaluation_mae": null,
           "backtest_years": [
-            2023,
             2024,
             2025
-          ]
+          ],
+          "confidence_note": "Short historical series; limited backtest evidence"
         }
-      ],
-      "illustrative_inspection_hours": 3
+      ]
     },
     {
       "name": "Volusia County",
-      "lat": 29.21,
-      "lng": -81.01,
-      "scope": "County monitoring area; representative map point",
-      "url": "https://www.volusia.org/services/growth-and-resource-management/environmental-management/sustainability-and-resilience/sea-turtles/Volusia-nesting-summary.stml",
       "species": [
         {
           "species": "green",
@@ -1613,26 +1727,43 @@
             }
           ],
           "last_year": 2024,
-          "forecast_year": 2025,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 3,
           "forecasts": {
-            "five_year": 97.6,
-            "two_year": 259.0,
-            "timesfm": 41.5
+            "five_year_mean": 97.6,
+            "recent_median": 77.0,
+            "parity_mean": 144.67,
+            "timesfm": 39.24,
+            "timesfm_parity_blend": 107.77
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 41.5,
+          "selected_forecast": 97.6,
+          "selected_method": "five_year_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 39.24,
+          "selection_mae": {
+            "timesfm": 46.58,
+            "five_year_mean": 39.03,
+            "recent_median": 42.57,
+            "parity_mean": 40.0,
+            "timesfm_parity_blend": 42.3
+          },
           "evaluation_mae": {
-            "timesfm": 105.4,
-            "five_year": 102.3,
-            "two_year": 90.0
+            "timesfm": 123.1,
+            "five_year_mean": 127.3,
+            "recent_median": 132.0,
+            "parity_mean": 94.5,
+            "timesfm_parity_blend": 104.51
           },
           "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
             2022,
             2023,
             2024
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         },
         {
           "species": "leatherback",
@@ -1787,26 +1918,43 @@
             }
           ],
           "last_year": 2024,
-          "forecast_year": 2025,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 3,
           "forecasts": {
-            "five_year": 6.2,
-            "two_year": 4.0,
-            "timesfm": 5.4
+            "five_year_mean": 6.2,
+            "recent_median": 6.0,
+            "parity_mean": 4.0,
+            "timesfm": 4.8,
+            "timesfm_parity_blend": 4.28
           },
+          "selected_forecast": 4.8,
           "selected_method": "timesfm",
-          "selected_forecast": 5.4,
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 4.8,
+          "selection_mae": {
+            "timesfm": 3.12,
+            "five_year_mean": 4.0,
+            "recent_median": 4.0,
+            "parity_mean": 4.19,
+            "timesfm_parity_blend": 3.81
+          },
           "evaluation_mae": {
-            "timesfm": 3.4,
-            "five_year": 3.1,
-            "two_year": 2.3
+            "timesfm": 1.68,
+            "five_year_mean": 2.0,
+            "recent_median": 1.5,
+            "parity_mean": 2.17,
+            "timesfm_parity_blend": 2.0
           },
           "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
             2022,
             2023,
             2024
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         },
         {
           "species": "loggerhead",
@@ -1961,30 +2109,46 @@
             }
           ],
           "last_year": 2024,
-          "forecast_year": 2025,
+          "forecast_year": 2027,
+          "forecast_horizon_years": 3,
           "forecasts": {
-            "five_year": 999.0,
-            "two_year": 1249.0,
-            "timesfm": 858.6
+            "five_year_mean": 999.0,
+            "recent_median": 870.0,
+            "parity_mean": 942.33,
+            "timesfm": 810.63,
+            "timesfm_parity_blend": 896.24
           },
-          "selected_method": "timesfm",
-          "selected_forecast": 858.6,
+          "selected_forecast": 999.0,
+          "selected_method": "five_year_mean",
           "model_available": true,
-          "selection_mae": null,
+          "timesfm_forecast": 810.63,
+          "selection_mae": {
+            "timesfm": 244.39,
+            "five_year_mean": 204.49,
+            "recent_median": 204.71,
+            "parity_mean": 230.14,
+            "timesfm_parity_blend": 225.16
+          },
           "evaluation_mae": {
-            "timesfm": 393.9,
-            "five_year": 375.7,
-            "two_year": 503.7
+            "timesfm": 359.96,
+            "five_year_mean": 338.5,
+            "recent_median": 377.5,
+            "parity_mean": 358.83,
+            "timesfm_parity_blend": 359.23
           },
           "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
             2022,
             2023,
             2024
-          ]
+          ],
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
         }
-      ],
-      "illustrative_inspection_hours": 5
+      ]
     }
   ],
-  "notes": "Experimental regional nest forecasts; no beach-level probabilities. Beach segment mapping is a planning proxy, not a direct observation."
+  "notes": "2027 horizon-matched TimesFM experiments and baselines; annual counts are not distinct turtles or site-specific nest probabilities."
 }

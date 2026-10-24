@@ -1,0 +1,9 @@
+location,length_miles,length_quality,source,source_url,limitations
+Boca Raton,5.0,city_surveys,Boca Raton Sea Turtle Conservation city nesting program,https://www.myboca.us/2139/Nesting,City states it surveys five miles each morning
+Canaveral National Seashore,24.0,park_beach_length_proxy,NPS Canaveral National Seashore,https://www.nps.gov/cana/planyourvisit/basicinfo.htm,"Park beach length, not independently verified annual survey boundary"
+Longboat Key,10.6,research_monitored_length,"Marine turtle monitoring study, Table 1",https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/,17.1 km / 10.6 mi monitored beach
+Lido Key,3.3,research_monitored_length,"Marine turtle monitoring study, Table 1",https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/,5.3 km / 3.3 mi monitored beach
+Siesta Key,5.8,research_monitored_length,"Marine turtle monitoring study, Table 1",https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/,"North 5.2 km plus South 4.1 km = 9.3 km, about 5.8 mi; paper rounds 3.2+2.5=5.7 mi"
+Casey Key,7.3,research_monitored_length,"Marine turtle monitoring study, Table 1",https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/,11.8 km / 7.3 mi monitored beach
+Venice,4.6,research_monitored_length,"Marine turtle monitoring study, Table 1",https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/,7.4 km / 4.6 mi monitored beach
+Volusia County,49.585421140539246,county_extent_proxy_UNVERIFIED,FWC 2025 statewide nesting survey county extent,https://myfwc.com/research/wildlife/sea-turtles/nesting/statewide/,"79.8 km 2025 county survey, may not match county-managed beaches historical series; low-confidence denominator"

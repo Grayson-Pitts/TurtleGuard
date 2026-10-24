@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>TurtleGuard</title>
+
+  <!-- Leaflet runs the interactive map; MapTiler supplies the map tiles. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f8f6; color: #223c32; }
+    .banner { padding: 26px 20px; background: #0b5345; color: white; text-align: center; }
+    .banner h1 { margin: 0; font-size: 34px; }
+    .page-layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      gap: 40px; max-width: 1450px; margin: 35px auto; padding: 0 30px;
+      align-items: start;
+    }
+    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    .tab-button {
+      border: 2px solid #0b5345; border-radius: 8px; background: white;
+      color: #0b5345; padding: 12px 16px; cursor: pointer; font-size: 15px;
+    }
+    .tab-button:hover { background: #cce7d9; }
+    .tab-button.active { color: white; background: #0b5345; }
+    .tab-content, .beach-details {
+      padding: 25px; border-radius: 12px; background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+    }
+    .tab-content[hidden] { display: none; }
+    h2, h3 { color: #0b5345; }
+    .tab-content h2, .beach-details h3, .map-heading { margin-top: 0; }
+    #map { height: 480px; width: 100%; border: 2px solid #d5e5dc; border-radius: 12px; }
+    .map-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; font-size: 14px; }
+    .legend-item { display: flex; gap: 7px; align-items: center; }
+    .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
+    .high { background: #e74c3c; }
+    .medium { background: #f39c12; }
+    .low { background: #27ae60; }
+    .beach-details { margin-top: 23px; }
+    .note { font-size: 13px; color: #5b7066; }
+    .map-status { color: #8a3d00; background: #fff3df; border-radius: 8px; padding: 12px; }
+    .map-status[hidden] { display: none; }
+    @media (max-width: 850px) {
+      .page-layout { grid-template-columns: 1fr; gap: 30px; padding: 0 16px; }
+      #map { height: 390px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="banner"><h1>Name TBD</h1></header>
+
+  <main class="page-layout">
+    <!-- Left: tabs and their changing content -->
+    <div class="left-panel">
+      <nav class="tabs" aria-label="TurtleGuard sections">
+        <button type="button" class="tab-button active" data-tab="concern" aria-pressed="true">Beaches of Greatest Concern</button>
+        <button type="button" class="tab-button" data-tab="species" aria-pressed="false">Turtle Species Info</button>
+        <button type="button" class="tab-button" data-tab="action" aria-pressed="false">Take Action</button>
+      </nav>
+
+      <section class="tab-content" id="concern">
+        <h2>Beaches of Greatest Concern</h2>
+        <p>Explore Florida beaches and the potential threats to sea turtle habitats.</p>
+        <p>Select any colored marker on the map to see information about that beach.</p>
+        <p class="note">The risk levels currently shown are examples, not real AI forecasts.</p>
+      </section>
+
+      <section class="tab-content" id="species" hidden>
+        <h2>Turtle Species Info</h2>
+        <p>Five species of sea turtles occur in Florida waters:</p>
+        <ul>
+          <li>Loggerhead</li><li>Green</li><li>Leatherback</li>
+          <li>Hawksbill</li><li>Kemp's ridley</li>
+        </ul>
+      </section>
+
+      <section class="tab-content" id="action" hidden>
+        <h2>Take Action</h2>
+        <p>You can help protect nesting sea turtles and their habitats.</p>
+        <ul>
+          <li>Participate in beach cleanups.</li>
+          <li>Reduce plastic waste.</li>
+          <li>Keep nesting beaches dark at night.</li>
+          <li>Respect marked turtle nests.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Right: permanent map and beach information -->
+    <div class="right-panel">
+      <h2 class="map-heading">Florida Sea Turtle Conservation Map</h2>
+      <p>Click a colored dot to learn about a beach.</p>
+      <div id="map" aria-label="Interactive map of Florida beaches"></div>
+      <p class="map-status" id="map-status" role="status" hidden></p>
+      <div class="map-legend" aria-label="Example risk categories">
+        <span class="legend-item"><span class="dot high"></span>High concern</span>
+        <span class="legend-item"><span class="dot medium"></span>Moderate concern</span>
+        <span class="legend-item"><span class="dot low"></span>Low concern</span>
+      </div>
+      <p class="note">Colors represent demonstration data only.</p>
+      <section class="beach-details" aria-live="polite">
+        <h3 id="beach-name">Select a Beach</h3>
+        <p id="beach-description">Click a colored dot on the map to see its details here.</p>
+        <p id="beach-risk"></p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Switch left-side content without affecting the map.
+    const buttons = document.querySelectorAll('.tab-button');
+    const panels = document.querySelectorAll('.tab-content');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(other => {
+          const active = other === button;
+          other.classList.toggle('active', active);
+          other.setAttribute('aria-pressed', String(active));
+        });
+        panels.forEach(panel => {
+          panel.hidden = panel.id !== button.dataset.tab;
+        });
+      });
+    });
+
+    // MapTiler browser API key provided for this project.
+    const MAPTILER_API_KEY = 'jNBO5WG6MnhsvAdzBgYc';
+
+    const map = L.map('map').setView([28.2, -82.0], 7);
+    const mapLayer = L.tileLayer(
+      `https://api.maptiler.com/maps/streets-v4/256/{z}/{x}/{y}.png?key=${encodeURIComponent(MAPTILER_API_KEY)}`,
+      {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+        crossOrigin: true
+      }
+    ).addTo(map);
+
+    // If tiles don't load, show a helpful message rather than a blank error.
+    mapLayer.on('tileerror', () => {
+      const status = document.getElementById('map-status');
+      status.textContent = 'Map tiles could not load. Check your MapTiler API key, allowed website origins, and internet connection.';
+      status.hidden = false;
+    });
+
+    // Example beach coordinates and demo risk levels. Replace with real data later.
+    const beaches = [
+      { name: 'Cocoa Beach', lat: 28.3200, lon: -80.6076, risk: 'high', description: 'An Atlantic coast beach in Brevard County.' },
+      { name: 'Clearwater Beach', lat: 27.9765, lon: -82.8275, risk: 'medium', description: 'A Gulf Coast beach on Florida\'s west coast.' },
+      { name: 'Daytona Beach', lat: 29.2270, lon: -81.0090, risk: 'low', description: 'A beach on Florida\'s northeastern Atlantic coast.' },
+      { name: 'Miami Beach', lat: 25.7907, lon: -80.1300, risk: 'high', description: 'An urban beach destination in southeastern Florida.' },
+      { name: 'Panama City Beach', lat: 30.1766, lon: -85.8055, risk: 'medium', description: 'A beach destination along the Florida Panhandle.' }
+    ];
+
+    const colors = { high: '#e74c3c', medium: '#f39c12', low: '#27ae60' };
+    const labels = { high: 'HIGH', medium: 'MODERATE', low: 'LOW' };
+    const markers = [];
+    let selectedMarker = null;
+
+    beaches.forEach(beach => {
+      const marker = L.circleMarker([beach.lat, beach.lon], {
+        radius: 9,
+        color: '#ffffff',
+        weight: 2,
+        fillColor: colors[beach.risk],
+        fillOpacity: 0.95
+      }).addTo(map);
+
+      marker.bindTooltip(beach.name);
+      marker.on('click', () => {
+        if (selectedMarker) selectedMarker.setRadius(9);
+        marker.setRadius(13);
+        selectedMarker = marker;
+
+        document.getElementById('beach-name').textContent = beach.name;
+        document.getElementById('beach-description').textContent = beach.description;
+        const riskText = document.getElementById('beach-risk');
+        riskText.textContent = `Example concern level: ${labels[beach.risk]}`;
+        riskText.style.color = colors[beach.risk];
+        map.flyTo([beach.lat, beach.lon], Math.max(map.getZoom(), 9), { duration: 0.8 });
+      });
+      markers.push(marker);
+    });
+
+    if (markers.length) {
+      map.fitBounds(L.featureGroup(markers).getBounds(), {
+        padding: [30, 30],
+        maxZoom: 7
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "species": "green",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 130.92,
+    "last_year_holdout_actual": 243.0,
+    "last_year_holdout_prediction": 216.99,
+    "five_year_mean_baseline": 214.8,
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "species": "loggerhead",
+    "last_observed_year": 2025,
+    "forecast_year": 2026,
+    "forecast_nests": 810.41,
+    "last_year_holdout_actual": 819.0,
+    "last_year_holdout_prediction": 790.98,
+    "five_year_mean_baseline": 845.2,
+    "model": "google/timesfm-3.0-pytorch"
+  }
+]

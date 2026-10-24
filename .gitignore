@@ -1,0 +1,14 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Hugging Face model cache (if stored in project)
+.cache/
+models--*/
+
+# Temporary files
+*.log

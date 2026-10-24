@@ -94,7 +94,7 @@
     <!-- Right: permanent map and beach information -->
     <div class="right-panel">
       <h2 class="map-heading">Florida Sea Turtle Conservation Map</h2>
-      <p>Click a colored beach segment to learn about its nesting priority.</p>
+      <p>Click a highlighted beach shoreline to learn about its nesting priority.</p>
       <div id="map" aria-label="Interactive map of Florida beaches"></div>
       <p class="map-status" id="map-status" role="status" hidden></p>
       <div class="map-legend" aria-label="Forecast-informed priority categories">
@@ -164,11 +164,12 @@
     const numeric = n => Number.isFinite(Number(n)) ? Number(n) : null;
     const formatNests = n => Math.round(Number(n)).toLocaleString();
     function addPriorityScores(regions) {
-      // Rank-based index, to avoid incorrectly assuming raw counts from unlike
-      // monitoring-area sizes are directly comparable nesting densities.
-      const usable = regions.filter(r => numeric(r.projected_total_nests) !== null && Number(r.projected_total_nests) >= 0);
-      const sorted = [...usable].sort((a,b) => Number(a.projected_total_nests) - Number(b.projected_total_nests));
-      sorted.forEach((r, i) => { r._score = Math.round(20 + 65 * (sorted.length <= 1 ? .5 : i / (sorted.length - 1))); });
+      // Use the Python-calculated nests-per-mile priority. Never recompute
+      // the map score from raw total nest counts or rank order.
+      regions.forEach(r => {
+        const score = numeric(r.priority_score);
+        r._score = score !== null && score >= 0 && score <= 100 ? score : null;
+      });
       return regions;
     }
     function showBeach(feature, region) {
@@ -180,8 +181,8 @@
         riskEl.style.color='#919b99';
         return;
       }
-      descriptionEl.textContent=`${formatNests(region.projected_total_nests)} projected nests for ${region.year} across the ${name} monitoring area. Geographic line is an approximate visual estimate of the named beach or coastline, not a verified survey boundary. This is not a debris measurement or a forecast for every point along the line.`;
-      riskEl.textContent=`Illustrative relative inspection priority: ${region._score}/100 — ${region._score>=70?'HIGH':region._score>=40?'MODERATE':'LOW'}`;
+      descriptionEl.textContent=`${formatNests(region.projected_total_nests)} TimesFM-predicted nests for ${region.year} across the ${name} monitoring area (${Number(region.projected_nests_per_mile).toFixed(1)} nests/mile). ${region.uses_provisional_2026 ? '2026 training data are provisional. ' : ''}Geographic line is an approximate visual estimate, not a verified survey boundary. This is not a debris measurement.`;
+      riskEl.textContent=`Illustrative density-adjusted inspection priority: ${region._score}/100 — ${region._score>=70?'HIGH':region._score>=40?'MODERATE':'LOW'}`;
       riskEl.style.color=priorityColor(region._score);
     }
     async function getJson(url) {
@@ -198,9 +199,15 @@
         const region=byName.get(f.properties.region_id);
         const valid=region && region._score != null;
         const color=valid?priorityColor(region._score):'#919b99';
-        const layer=L.geoJSON(f,{style:{color,weight:7,opacity:.94,lineCap:'round'}}).addTo(map);
-        layer.bindTooltip(`${f.properties.name}: ${valid?`${region._score}/100 priority`:'No forecast'} · approximate shoreline`);
-        layer.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
+
+        const outline = L.geoJSON(f,{style:{color:'#102a43',weight:12,opacity:.95,lineCap:'round',lineJoin:'round'}}).addTo(map);
+        const line = L.geoJSON(f,{style:{color,weight:7,opacity:1,lineCap:'round',lineJoin:'round'}}).addTo(map);
+        const layer = L.featureGroup([outline, line]);
+
+        line.bindTooltip(`${f.properties.name}: ${valid?`${region._score}/100 priority`:'No forecast'} · approximate shoreline`, {sticky:true});
+        line.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
+        outline.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
+
         drawn.push(layer); if(valid)colored++;else unmatched++;
       }
       const notMapped=regions.filter(r=>!geo.features.some(f=>f.properties.region_id===r.name));

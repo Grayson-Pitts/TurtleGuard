@@ -26,6 +26,9 @@ forecasts=json.loads((ROOT/'forecast_results.json').read_text(encoding='utf8'))
 if not forecasts or any(int(f.get('target_year',f.get('forecast_year',0)))!=YEAR for f in forecasts):
     raise RuntimeError('Forecasts are missing or not 2027. Run scripts/forecast_2027.py first.')
 
+if any(f.get('selected_method')!='timesfm' for f in forecasts):
+    raise RuntimeError('Found baseline-selected predictions. Rerun the TimesFM-only forecast_2027.py before rebuilding priorities.')
+
 parts=defaultdict(list)
 for f in forecasts:
     key=(f['location'],f['species'])
@@ -50,6 +53,7 @@ for loc,records in sorted(parts.items()):
         'length_limitations':lengths[loc]['limitations'],
         'projected_nests_per_mile':round(forecast/miles,2),
         'species_covered':[r['species'] for r in records],
+        'uses_provisional_2026':any(2026 in r.get('provisional_input_years',[]) for r in records),
         'methods_used':{r['species']:r['selected_method'] for r in records},
         'source_years':last_obs,
         'source_count':len(records),'series_count':len(records),
@@ -73,7 +77,8 @@ payload={'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
                     'Volusia length is a county-level proxy and does not exactly match the historical nesting survey boundary',
                     'Forecasts have differing historical end years and therefore differing direct model horizons',
                     'Some records omit rare species, and nest counts do not equal number of distinct turtles',
-                    'Map GeoJSON paths are hand-approximated, not survey extents']}
+                    'Map GeoJSON paths are hand-approximated, not survey extents',
+                    '2026 Mote counts are preliminary as of Week 42, not finished-season observations']}
 p=ROOT/'site'/'priorities.json';p.write_text(json.dumps(payload,indent=2),encoding='utf8')
 print(f'Wrote {p} for {len(regions)} regions (2027; length-adjusted):')
 for r in sorted(regions,key=lambda x:-x['priority_score']):

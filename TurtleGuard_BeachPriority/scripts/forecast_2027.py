@@ -1,11 +1,11 @@
-"""TurtleGuard: horizon-matched 2027 TimesFM v3 backtesting + conservative selection.
+"""TurtleGuard: TimesFM-only 2027 forecasts with horizon-matched diagnostics.
 
 Run in TurtleGuard_BeachPriority from your venv:
   ..\\turtleguard_timesfm\\.venv\\Scripts\\python.exe scripts\\forecast_2027.py
 
 Notes: forecasts are nest *counts*, never numbers of individual turtles.
-Latest finalized input counts are through 2024/2025, so horizon is 2 or 3 years.
-Any new final-year records are picked up automatically.
+The five Mote beach areas include a provisional 2026 Week 42 observation,
+which is not final season data. Use --exclude-provisional-2026 to omit it.
 """
 import argparse
 import csv
@@ -22,7 +22,9 @@ MIN_HISTORY = 6
 MAX_BACKTESTS = 9
 
 
-def read_series(filename):
+MOTE_AREAS = {'Longboat Key','Lido Key','Siesta Key','Casey Key','Venice'}
+
+def read_series(filename, exclude_provisional_2026=False):
     grouped = defaultdict(dict)
     with Path(filename).open(newline='', encoding='utf-8-sig') as handle:
         reader = csv.DictReader(handle)
@@ -31,6 +33,8 @@ def read_series(filename):
         for row in reader:
             key = (row['location'].strip(), row['species'].strip().lower())
             yr = int(row['year'])
+            if exclude_provisional_2026 and yr == 2026 and key[0] in MOTE_AREAS:
+                continue
             val = float(row['nests'])
             if not math.isfinite(val) or val < 0:
                 raise ValueError(f'Non-finite/negative nests: {key}, {yr}')
@@ -139,13 +143,9 @@ def select_and_report(tasks):
         assess = hist_tests[-holdout_count:] if holdout_count else []
         ma = {m: statistics.mean(abs(t['candidates'][m] - t['test_actual']) for t in choose)
               for m in method_names} if choose else {}
-        # Default for short histories, where tuning to 1–2 test years is unreliable.
-        selected = min(ma, key=ma.get) if len(choose) >= 3 else 'parity_mean'
-        # Small improvements don't justify trusting a more volatile AI estimate.
-        best_simple = min(('five_year_mean','recent_median','parity_mean'), key=lambda m:ma.get(m, float('inf')))
-        if selected in ('timesfm','timesfm_parity_blend') and len(choose)>=3:
-            if ma[selected] > .95 * ma[best_simple]:
-                selected = best_simple
+        # Product policy: TimesFM is always the displayed forecast.
+        # Historical methods are retained ONLY for honest comparative evaluation.
+        selected = 'timesfm'
         candidates = {k: round(max(0.,v),2) for k,v in future['candidates'].items()}
         pred = candidates[selected]
         holdout_mae = {m:round(statistics.mean(abs(t['candidates'][m]-t['test_actual']) for t in assess),2)
@@ -161,8 +161,11 @@ def select_and_report(tasks):
             'candidates':candidates,'selection_backtests':len(choose),
             'selection_mae':{m:round(v,2) for m,v in ma.items()},
             'holdout_backtests':len(assess),'holdout_mae':holdout_mae,
-            'confidence_note':('Short historical series; limited backtest evidence' if len(choose)<3 else
-                               'Horizon-matched backtesting; observational ecological uncertainty remains'),
+            'confidence_note':('2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. ' if (loc in MOTE_AREAS and years[-1]==2026) else '') +
+                   ('Short historical series; limited backtest evidence' if len(choose)<3 else
+                    'Horizon-matched backtesting; observational ecological uncertainty remains'),
+            'provisional_input_years':[2026] if loc in MOTE_AREAS and years[-1]==2026 else [],
+            'prediction_role':'TimesFM-only; statistical baselines are evaluation comparators',
             'model':'google/timesfm-3.0-pytorch',
         }
         predictions.append(output)
@@ -199,9 +202,12 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--input',default='data/nesting_counts.csv')
     parser.add_argument('--batch-size',type=int,default=6)
+    parser.add_argument('--exclude-provisional-2026',action='store_true',
+                        help='Ignore 2026 Mote counts from unfinished nesting season')
     args=parser.parse_args()
-    series=read_series(ROOT/args.input)
-    print(f'Found {len(series)} location/species series; generating 2027 forecasts')
+    series=read_series(ROOT/args.input,exclude_provisional_2026=args.exclude_provisional_2026)
+    print(f'Found {len(series)} location/species series; generating TimesFM-only 2027 forecasts')
+    if not args.exclude_provisional_2026: print('WARNING: Mote 2026 observations are provisional Week 42 counts, not final season totals.')
     tasks=run_model_forecasts(build_tasks(series),batch_size=args.batch_size)
     preds,tests=select_and_report(tasks)
     if len({r['location'] for r in preds}) != len({k[0] for k in series}):

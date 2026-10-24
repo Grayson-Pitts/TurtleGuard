@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-24T19:17:32.129396+00:00",
+  "generated_utc": "2026-10-24T20:20:10.996001+00:00",
   "forecast_year": 2027,
   "locations": [
     {
@@ -171,8 +171,8 @@
             "timesfm": 199.76,
             "timesfm_parity_blend": 234.8
           },
-          "selected_forecast": 253.67,
-          "selected_method": "parity_mean",
+          "selected_forecast": 199.76,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 199.76,
           "selection_mae": {
@@ -198,7 +198,8 @@
             2024,
             2025
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         },
         {
           "species": "leatherback",
@@ -366,8 +367,8 @@
             "timesfm": 18.9,
             "timesfm_parity_blend": 21.78
           },
-          "selected_forecast": 21.0,
-          "selected_method": "recent_median",
+          "selected_forecast": 18.9,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 18.9,
           "selection_mae": {
@@ -393,7 +394,8 @@
             2024,
             2025
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         },
         {
           "species": "loggerhead",
@@ -561,8 +563,8 @@
             "timesfm": 781.85,
             "timesfm_parity_blend": 816.18
           },
-          "selected_forecast": 845.2,
-          "selected_method": "five_year_mean",
+          "selected_forecast": 781.85,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 781.85,
           "selection_mae": {
@@ -588,7 +590,8 @@
             2024,
             2025
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         }
       ]
     },
@@ -769,8 +772,8 @@
             "timesfm": 4335.28,
             "timesfm_parity_blend": 6508.91
           },
-          "selected_forecast": 7679.33,
-          "selected_method": "parity_mean",
+          "selected_forecast": 4335.28,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 4335.28,
           "selection_mae": {
@@ -796,7 +799,8 @@
             2023,
             2024
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         },
         {
           "species": "leatherback",
@@ -972,8 +976,8 @@
             "timesfm": 33.18,
             "timesfm_parity_blend": 31.55
           },
-          "selected_forecast": 30.67,
-          "selected_method": "parity_mean",
+          "selected_forecast": 33.18,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 33.18,
           "selection_mae": {
@@ -999,7 +1003,8 @@
             2023,
             2024
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         },
         {
           "species": "loggerhead",
@@ -1175,8 +1180,8 @@
             "timesfm": 4952.19,
             "timesfm_parity_blend": 4989.98
           },
-          "selected_forecast": 5066.2,
-          "selected_method": "five_year_mean",
+          "selected_forecast": 4952.19,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 4952.19,
           "selection_mae": {
@@ -1202,7 +1207,8 @@
             2023,
             2024
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         }
       ]
     },
@@ -1213,8 +1219,40 @@
           "species": "all",
           "history": [
             {
+              "year": 2009,
+              "nests": 405.0
+            },
+            {
+              "year": 2010,
+              "nests": 594.0
+            },
+            {
+              "year": 2011,
+              "nests": 521.0
+            },
+            {
+              "year": 2012,
+              "nests": 956.0
+            },
+            {
+              "year": 2013,
+              "nests": 958.0
+            },
+            {
+              "year": 2014,
+              "nests": 1165.0
+            },
+            {
+              "year": 2015,
+              "nests": 1016.0
+            },
+            {
+              "year": 2016,
+              "nests": 2114.0
+            },
+            {
               "year": 2017,
-              "nests": 1844.0
+              "nests": 1853.0
             },
             {
               "year": 2018,
@@ -1222,7 +1260,7 @@
             },
             {
               "year": 2019,
-              "nests": 2312.0
+              "nests": 2314.0
             },
             {
               "year": 2020,
@@ -1238,7 +1276,7 @@
             },
             {
               "year": 2023,
-              "nests": 1964.0
+              "nests": 1965.0
             },
             {
               "year": 2024,
@@ -1247,35 +1285,53 @@
             {
               "year": 2025,
               "nests": 2727.0
+            },
+            {
+              "year": 2026,
+              "nests": 2272.0
             }
           ],
-          "last_year": 2025,
+          "last_year": 2026,
           "forecast_year": 2027,
-          "forecast_horizon_years": 2,
+          "forecast_horizon_years": 1,
           "forecasts": {
-            "five_year_mean": 2009.0,
-            "recent_median": 1964.0,
-            "parity_mean": 2054.0,
-            "timesfm": 2183.06,
-            "timesfm_parity_blend": 2099.17
+            "five_year_mean": 2169.4,
+            "recent_median": 2053.0,
+            "parity_mean": 2054.33,
+            "timesfm": 2203.82,
+            "timesfm_parity_blend": 2106.65
           },
-          "selected_forecast": 2054.0,
-          "selected_method": "parity_mean",
+          "selected_forecast": 2203.82,
+          "selected_method": "timesfm",
           "model_available": true,
-          "timesfm_forecast": 2183.06,
+          "timesfm_forecast": 2203.82,
           "selection_mae": {
-            "timesfm": 463.38,
-            "five_year_mean": 493.3,
-            "recent_median": 539.0,
-            "parity_mean": 528.33,
-            "timesfm_parity_blend": 505.6
+            "timesfm": 457.04,
+            "five_year_mean": 323.63,
+            "recent_median": 427.43,
+            "parity_mean": 332.33,
+            "timesfm_parity_blend": 365.0
           },
-          "evaluation_mae": null,
+          "evaluation_mae": {
+            "timesfm": 524.74,
+            "five_year_mean": 611.5,
+            "recent_median": 602.0,
+            "parity_mean": 641.5,
+            "timesfm_parity_blend": 578.19
+          },
           "backtest_years": [
+            2020,
+            2021,
+            2022,
+            2023,
             2024,
-            2025
+            2025,
+            2026
           ],
-          "confidence_note": "Short historical series; limited backtest evidence"
+          "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": [
+            2026
+          ]
         }
       ]
     },
@@ -1286,8 +1342,40 @@
           "species": "all",
           "history": [
             {
+              "year": 2009,
+              "nests": 16.0
+            },
+            {
+              "year": 2010,
+              "nests": 16.0
+            },
+            {
+              "year": 2011,
+              "nests": 51.0
+            },
+            {
+              "year": 2012,
+              "nests": 80.0
+            },
+            {
+              "year": 2013,
+              "nests": 80.0
+            },
+            {
+              "year": 2014,
+              "nests": 95.0
+            },
+            {
+              "year": 2015,
+              "nests": 97.0
+            },
+            {
+              "year": 2016,
+              "nests": 176.0
+            },
+            {
               "year": 2017,
-              "nests": 183.0
+              "nests": 184.0
             },
             {
               "year": 2018,
@@ -1311,7 +1399,7 @@
             },
             {
               "year": 2023,
-              "nests": 184.0
+              "nests": 188.0
             },
             {
               "year": 2024,
@@ -1320,35 +1408,53 @@
             {
               "year": 2025,
               "nests": 186.0
+            },
+            {
+              "year": 2026,
+              "nests": 150.0
             }
           ],
-          "last_year": 2025,
+          "last_year": 2026,
           "forecast_year": 2027,
-          "forecast_horizon_years": 2,
+          "forecast_horizon_years": 1,
           "forecasts": {
-            "five_year_mean": 167.0,
-            "recent_median": 184.0,
-            "parity_mean": 159.0,
-            "timesfm": 177.99,
-            "timesfm_parity_blend": 165.65
+            "five_year_mean": 176.4,
+            "recent_median": 186.0,
+            "parity_mean": 160.33,
+            "timesfm": 153.74,
+            "timesfm_parity_blend": 158.02
           },
-          "selected_forecast": 159.0,
-          "selected_method": "parity_mean",
+          "selected_forecast": 153.74,
+          "selected_method": "timesfm",
           "model_available": true,
-          "timesfm_forecast": 177.99,
+          "timesfm_forecast": 153.74,
           "selection_mae": {
-            "timesfm": 39.85,
-            "five_year_mean": 57.7,
-            "recent_median": 54.0,
-            "parity_mean": 54.5,
-            "timesfm_parity_blend": 49.37
+            "timesfm": 49.38,
+            "five_year_mean": 34.46,
+            "recent_median": 39.14,
+            "parity_mean": 27.1,
+            "timesfm_parity_blend": 33.78
           },
-          "evaluation_mae": null,
+          "evaluation_mae": {
+            "timesfm": 20.18,
+            "five_year_mean": 21.3,
+            "recent_median": 31.0,
+            "parity_mean": 37.67,
+            "timesfm_parity_blend": 28.94
+          },
           "backtest_years": [
+            2020,
+            2021,
+            2022,
+            2023,
             2024,
-            2025
+            2025,
+            2026
           ],
-          "confidence_note": "Short historical series; limited backtest evidence"
+          "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": [
+            2026
+          ]
         }
       ]
     },
@@ -1359,8 +1465,40 @@
           "species": "all",
           "history": [
             {
+              "year": 2009,
+              "nests": 207.0
+            },
+            {
+              "year": 2010,
+              "nests": 265.0
+            },
+            {
+              "year": 2011,
+              "nests": 267.0
+            },
+            {
+              "year": 2012,
+              "nests": 627.0
+            },
+            {
+              "year": 2013,
+              "nests": 628.0
+            },
+            {
+              "year": 2014,
+              "nests": 525.0
+            },
+            {
+              "year": 2015,
+              "nests": 698.0
+            },
+            {
+              "year": 2016,
+              "nests": 1184.0
+            },
+            {
               "year": 2017,
-              "nests": 1276.0
+              "nests": 1277.0
             },
             {
               "year": 2018,
@@ -1384,7 +1522,7 @@
             },
             {
               "year": 2023,
-              "nests": 990.0
+              "nests": 994.0
             },
             {
               "year": 2024,
@@ -1393,35 +1531,53 @@
             {
               "year": 2025,
               "nests": 1473.0
+            },
+            {
+              "year": 2026,
+              "nests": 1305.0
             }
           ],
-          "last_year": 2025,
+          "last_year": 2026,
           "forecast_year": 2027,
-          "forecast_horizon_years": 2,
+          "forecast_horizon_years": 1,
           "forecasts": {
-            "five_year_mean": 1210.8,
-            "recent_median": 1259.0,
-            "parity_mean": 1165.0,
-            "timesfm": 1268.93,
-            "timesfm_parity_blend": 1201.38
+            "five_year_mean": 1266.2,
+            "recent_median": 1300.0,
+            "parity_mean": 1166.33,
+            "timesfm": 1393.25,
+            "timesfm_parity_blend": 1245.76
           },
-          "selected_forecast": 1165.0,
-          "selected_method": "parity_mean",
+          "selected_forecast": 1393.25,
+          "selected_method": "timesfm",
           "model_available": true,
-          "timesfm_forecast": 1268.93,
+          "timesfm_forecast": 1393.25,
           "selection_mae": {
-            "timesfm": 198.97,
-            "five_year_mean": 205.7,
-            "recent_median": 230.0,
-            "parity_mean": 233.83,
-            "timesfm_parity_blend": 221.63
+            "timesfm": 270.6,
+            "five_year_mean": 162.51,
+            "recent_median": 181.86,
+            "parity_mean": 218.9,
+            "timesfm_parity_blend": 162.04
           },
-          "evaluation_mae": null,
+          "evaluation_mae": {
+            "timesfm": 165.18,
+            "five_year_mean": 211.1,
+            "recent_median": 191.5,
+            "parity_mean": 211.83,
+            "timesfm_parity_blend": 187.99
+          },
           "backtest_years": [
+            2020,
+            2021,
+            2022,
+            2023,
             2024,
-            2025
+            2025,
+            2026
           ],
-          "confidence_note": "Short historical series; limited backtest evidence"
+          "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": [
+            2026
+          ]
         }
       ]
     },
@@ -1432,12 +1588,44 @@
           "species": "all",
           "history": [
             {
+              "year": 2009,
+              "nests": 128.0
+            },
+            {
+              "year": 2010,
+              "nests": 137.0
+            },
+            {
+              "year": 2011,
+              "nests": 155.0
+            },
+            {
+              "year": 2012,
+              "nests": 327.0
+            },
+            {
+              "year": 2013,
+              "nests": 328.0
+            },
+            {
+              "year": 2014,
+              "nests": 272.0
+            },
+            {
+              "year": 2015,
+              "nests": 408.0
+            },
+            {
+              "year": 2016,
+              "nests": 476.0
+            },
+            {
               "year": 2017,
-              "nests": 634.0
+              "nests": 636.0
             },
             {
               "year": 2018,
-              "nests": 394.0
+              "nests": 395.0
             },
             {
               "year": 2019,
@@ -1449,7 +1637,7 @@
             },
             {
               "year": 2021,
-              "nests": 521.0
+              "nests": 544.0
             },
             {
               "year": 2022,
@@ -1457,7 +1645,7 @@
             },
             {
               "year": 2023,
-              "nests": 371.0
+              "nests": 379.0
             },
             {
               "year": 2024,
@@ -1465,36 +1653,54 @@
             },
             {
               "year": 2025,
-              "nests": 662.0
+              "nests": 663.0
+            },
+            {
+              "year": 2026,
+              "nests": 557.0
             }
           ],
-          "last_year": 2025,
+          "last_year": 2026,
           "forecast_year": 2027,
-          "forecast_horizon_years": 2,
+          "forecast_horizon_years": 1,
           "forecasts": {
-            "five_year_mean": 517.4,
-            "recent_median": 521.0,
-            "parity_mean": 518.0,
-            "timesfm": 566.71,
-            "timesfm_parity_blend": 535.05
+            "five_year_mean": 526.4,
+            "recent_median": 531.0,
+            "parity_mean": 528.67,
+            "timesfm": 544.74,
+            "timesfm_parity_blend": 534.29
           },
-          "selected_forecast": 518.0,
-          "selected_method": "parity_mean",
+          "selected_forecast": 544.74,
+          "selected_method": "timesfm",
           "model_available": true,
-          "timesfm_forecast": 566.71,
+          "timesfm_forecast": 544.74,
           "selection_mae": {
-            "timesfm": 129.34,
-            "five_year_mean": 82.3,
-            "recent_median": 80.0,
-            "parity_mean": 83.17,
-            "timesfm_parity_blend": 88.21
+            "timesfm": 131.17,
+            "five_year_mean": 80.51,
+            "recent_median": 84.14,
+            "parity_mean": 112.95,
+            "timesfm_parity_blend": 89.46
           },
-          "evaluation_mae": null,
+          "evaluation_mae": {
+            "timesfm": 105.77,
+            "five_year_mean": 106.0,
+            "recent_median": 93.5,
+            "parity_mean": 88.0,
+            "timesfm_parity_blend": 81.6
+          },
           "backtest_years": [
+            2020,
+            2021,
+            2022,
+            2023,
             2024,
-            2025
+            2025,
+            2026
           ],
-          "confidence_note": "Short historical series; limited backtest evidence"
+          "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": [
+            2026
+          ]
         }
       ]
     },
@@ -1505,8 +1711,40 @@
           "species": "all",
           "history": [
             {
+              "year": 2009,
+              "nests": 162.0
+            },
+            {
+              "year": 2010,
+              "nests": 210.0
+            },
+            {
+              "year": 2011,
+              "nests": 261.0
+            },
+            {
+              "year": 2012,
+              "nests": 398.0
+            },
+            {
+              "year": 2013,
+              "nests": 398.0
+            },
+            {
+              "year": 2014,
+              "nests": 350.0
+            },
+            {
+              "year": 2015,
+              "nests": 256.0
+            },
+            {
+              "year": 2016,
+              "nests": 638.0
+            },
+            {
               "year": 2017,
-              "nests": 552.0
+              "nests": 553.0
             },
             {
               "year": 2018,
@@ -1514,7 +1752,7 @@
             },
             {
               "year": 2019,
-              "nests": 645.0
+              "nests": 647.0
             },
             {
               "year": 2020,
@@ -1539,35 +1777,53 @@
             {
               "year": 2025,
               "nests": 684.0
+            },
+            {
+              "year": 2026,
+              "nests": 645.0
             }
           ],
-          "last_year": 2025,
+          "last_year": 2026,
           "forecast_year": 2027,
-          "forecast_horizon_years": 2,
+          "forecast_horizon_years": 1,
           "forecasts": {
-            "five_year_mean": 634.4,
-            "recent_median": 632.0,
+            "five_year_mean": 637.0,
+            "recent_median": 645.0,
             "parity_mean": 697.0,
-            "timesfm": 690.03,
-            "timesfm_parity_blend": 694.56
+            "timesfm": 661.66,
+            "timesfm_parity_blend": 684.63
           },
-          "selected_forecast": 697.0,
-          "selected_method": "parity_mean",
+          "selected_forecast": 661.66,
+          "selected_method": "timesfm",
           "model_available": true,
-          "timesfm_forecast": 690.03,
+          "timesfm_forecast": 661.66,
           "selection_mae": {
-            "timesfm": 41.15,
-            "five_year_mean": 59.6,
-            "recent_median": 72.5,
-            "parity_mean": 50.5,
-            "timesfm_parity_blend": 47.23
+            "timesfm": 133.46,
+            "five_year_mean": 94.0,
+            "recent_median": 112.57,
+            "parity_mean": 104.86,
+            "timesfm_parity_blend": 108.95
           },
-          "evaluation_mae": null,
+          "evaluation_mae": {
+            "timesfm": 49.45,
+            "five_year_mean": 50.7,
+            "recent_median": 55.0,
+            "parity_mean": 63.0,
+            "timesfm_parity_blend": 57.83
+          },
           "backtest_years": [
+            2020,
+            2021,
+            2022,
+            2023,
             2024,
-            2025
+            2025,
+            2026
           ],
-          "confidence_note": "Short historical series; limited backtest evidence"
+          "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": [
+            2026
+          ]
         }
       ]
     },
@@ -1736,8 +1992,8 @@
             "timesfm": 39.24,
             "timesfm_parity_blend": 107.77
           },
-          "selected_forecast": 97.6,
-          "selected_method": "five_year_mean",
+          "selected_forecast": 39.24,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 39.24,
           "selection_mae": {
@@ -1763,7 +2019,8 @@
             2023,
             2024
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         },
         {
           "species": "leatherback",
@@ -1954,7 +2211,8 @@
             2023,
             2024
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         },
         {
           "species": "loggerhead",
@@ -2118,8 +2376,8 @@
             "timesfm": 810.63,
             "timesfm_parity_blend": 896.24
           },
-          "selected_forecast": 999.0,
-          "selected_method": "five_year_mean",
+          "selected_forecast": 810.63,
+          "selected_method": "timesfm",
           "model_available": true,
           "timesfm_forecast": 810.63,
           "selection_mae": {
@@ -2145,10 +2403,11 @@
             2023,
             2024
           ],
-          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains"
+          "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+          "provisional_input_years": []
         }
       ]
     }
   ],
-  "notes": "2027 horizon-matched TimesFM experiments and baselines; annual counts are not distinct turtles or site-specific nest probabilities."
+  "notes": "All displayed 2027 forecasts are direct TimesFM predictions; statistical methods are backtest comparisons only. Mote 2026 data provisional."
 }

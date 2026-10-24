@@ -15,6 +15,8 @@ if keys!=set(raw):
     raise RuntimeError('Forecast series differ from historical series; run scripts/forecast_2027.py first.')
 if any(int(r.get('target_year',r.get('forecast_year',0)))!=TARGET for r in forecasts):
     raise RuntimeError('Mixed/outdated forecast years. Run scripts/forecast_2027.py first.')
+if any(r.get('selected_method')!='timesfm' for r in forecasts):
+    raise RuntimeError('Found baseline-selected predictions. Rerun the TimesFM-only forecast_2027.py first.')
 groups=defaultdict(list)
 for r in forecasts:
     obs=sorted(raw[(r['location'],r['species'])],key=lambda item:item['year'])
@@ -29,11 +31,12 @@ for r in forecasts:
         'selection_mae':r['selection_mae'],'evaluation_mae':r.get('holdout_mae'),
         'backtest_years':list(range(r['last_observed_year']-r['selection_backtests']+1,r['last_observed_year']+1)),
         'confidence_note':r['confidence_note'],
+        'provisional_input_years':r.get('provisional_input_years',[]),
     })
 locations=[{'name':loc,'species':specs} for loc,specs in sorted(groups.items())]
 out={'generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
      'forecast_year':TARGET,'locations':locations,
-     'notes':'2027 horizon-matched TimesFM experiments and baselines; annual counts are not distinct turtles or site-specific nest probabilities.'}
+     'notes':'All displayed 2027 forecasts are direct TimesFM predictions; statistical methods are backtest comparisons only. Mote 2026 data provisional.'}
 path=ROOT/'site'/'data.json'
 path.write_text(json.dumps(out,indent=2),encoding='utf8')
 print(f'Built {path}: {len(locations)} regions / {len(forecasts)} series for {TARGET}')

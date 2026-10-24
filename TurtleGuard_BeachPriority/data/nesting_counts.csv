@@ -233,6 +233,96 @@ Canaveral National Seashore,2021,loggerhead,3708
 Canaveral National Seashore,2022,loggerhead,6188
 Canaveral National Seashore,2023,loggerhead,5677
 Canaveral National Seashore,2024,loggerhead,5571
+Casey Key,2009,all,405
+Casey Key,2010,all,594
+Casey Key,2011,all,521
+Casey Key,2012,all,956
+Casey Key,2013,all,958
+Casey Key,2014,all,1165
+Casey Key,2015,all,1016
+Casey Key,2016,all,2114
+Casey Key,2017,all,1853
+Casey Key,2018,all,1186
+Casey Key,2019,all,2314
+Casey Key,2020,all,1515
+Casey Key,2021,all,1471
+Casey Key,2022,all,2053
+Casey Key,2023,all,1965
+Casey Key,2024,all,1830
+Casey Key,2025,all,2727
+Casey Key,2026,all,2272
+Lido Key,2009,all,16
+Lido Key,2010,all,16
+Lido Key,2011,all,51
+Lido Key,2012,all,80
+Lido Key,2013,all,80
+Lido Key,2014,all,95
+Lido Key,2015,all,97
+Lido Key,2016,all,176
+Lido Key,2017,all,184
+Lido Key,2018,all,123
+Lido Key,2019,all,98
+Lido Key,2020,all,153
+Lido Key,2021,all,107
+Lido Key,2022,all,160
+Lido Key,2023,all,188
+Lido Key,2024,all,198
+Lido Key,2025,all,186
+Lido Key,2026,all,150
+Longboat Key,2009,all,207
+Longboat Key,2010,all,265
+Longboat Key,2011,all,267
+Longboat Key,2012,all,627
+Longboat Key,2013,all,628
+Longboat Key,2014,all,525
+Longboat Key,2015,all,698
+Longboat Key,2016,all,1184
+Longboat Key,2017,all,1277
+Longboat Key,2018,all,993
+Longboat Key,2019,all,1342
+Longboat Key,2020,all,1136
+Longboat Key,2021,all,1032
+Longboat Key,2022,all,1300
+Longboat Key,2023,all,994
+Longboat Key,2024,all,1259
+Longboat Key,2025,all,1473
+Longboat Key,2026,all,1305
+Siesta Key,2009,all,128
+Siesta Key,2010,all,137
+Siesta Key,2011,all,155
+Siesta Key,2012,all,327
+Siesta Key,2013,all,328
+Siesta Key,2014,all,272
+Siesta Key,2015,all,408
+Siesta Key,2016,all,476
+Siesta Key,2017,all,636
+Siesta Key,2018,all,395
+Siesta Key,2019,all,711
+Siesta Key,2020,all,465
+Siesta Key,2021,all,544
+Siesta Key,2022,all,531
+Siesta Key,2023,all,379
+Siesta Key,2024,all,502
+Siesta Key,2025,all,663
+Siesta Key,2026,all,557
+Venice,2009,all,162
+Venice,2010,all,210
+Venice,2011,all,261
+Venice,2012,all,398
+Venice,2013,all,398
+Venice,2014,all,350
+Venice,2015,all,256
+Venice,2016,all,638
+Venice,2017,all,553
+Venice,2018,all,486
+Venice,2019,all,647
+Venice,2020,all,478
+Venice,2021,all,632
+Venice,2022,all,494
+Venice,2023,all,775
+Venice,2024,all,587
+Venice,2025,all,684
+Venice,2026,all,645
 Volusia County,1988,green,0
 Volusia County,1989,green,0
 Volusia County,1990,green,1
@@ -344,48 +434,3 @@ Volusia County,2021,loggerhead,698
 Volusia County,2022,loggerhead,1336
 Volusia County,2023,loggerhead,1249
 Volusia County,2024,loggerhead,870
-Longboat Key,2017,all,1276
-Lido Key,2017,all,183
-Siesta Key,2017,all,634
-Casey Key,2017,all,1844
-Venice,2017,all,552
-Longboat Key,2018,all,993
-Lido Key,2018,all,123
-Siesta Key,2018,all,394
-Casey Key,2018,all,1186
-Venice,2018,all,486
-Longboat Key,2019,all,1342
-Lido Key,2019,all,98
-Siesta Key,2019,all,711
-Casey Key,2019,all,2312
-Venice,2019,all,645
-Longboat Key,2020,all,1136
-Lido Key,2020,all,153
-Siesta Key,2020,all,465
-Casey Key,2020,all,1515
-Venice,2020,all,478
-Longboat Key,2021,all,1032
-Lido Key,2021,all,107
-Siesta Key,2021,all,521
-Casey Key,2021,all,1471
-Venice,2021,all,632
-Longboat Key,2022,all,1300
-Lido Key,2022,all,160
-Siesta Key,2022,all,531
-Casey Key,2022,all,2053
-Venice,2022,all,494
-Longboat Key,2023,all,990
-Lido Key,2023,all,184
-Siesta Key,2023,all,371
-Casey Key,2023,all,1964
-Venice,2023,all,775
-Longboat Key,2024,all,1259
-Lido Key,2024,all,198
-Siesta Key,2024,all,502
-Casey Key,2024,all,1830
-Venice,2024,all,587
-Longboat Key,2025,all,1473
-Lido Key,2025,all,186
-Siesta Key,2025,all,662
-Casey Key,2025,all,2727
-Venice,2025,all,684

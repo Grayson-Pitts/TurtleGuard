@@ -1,0 +1,1548 @@
+{
+  "generated_utc": "2026-10-24T03:26:47.668507+00:00",
+  "locations": [
+    {
+      "name": "Boca Raton",
+      "lat": 26.35,
+      "lng": -80.071,
+      "scope": "City monitoring area; representative map point",
+      "url": "https://www.myboca.us/2140/Sea-Turtle-Nesting-Totals",
+      "species": [
+        {
+          "species": "green",
+          "history": [
+            {
+              "year": 1988,
+              "nests": 15.0
+            },
+            {
+              "year": 1989,
+              "nests": 15.0
+            },
+            {
+              "year": 1990,
+              "nests": 31.0
+            },
+            {
+              "year": 1991,
+              "nests": 11.0
+            },
+            {
+              "year": 1992,
+              "nests": 43.0
+            },
+            {
+              "year": 1993,
+              "nests": 18.0
+            },
+            {
+              "year": 1994,
+              "nests": 61.0
+            },
+            {
+              "year": 1995,
+              "nests": 12.0
+            },
+            {
+              "year": 1996,
+              "nests": 82.0
+            },
+            {
+              "year": 1997,
+              "nests": 12.0
+            },
+            {
+              "year": 1998,
+              "nests": 89.0
+            },
+            {
+              "year": 1999,
+              "nests": 12.0
+            },
+            {
+              "year": 2000,
+              "nests": 124.0
+            },
+            {
+              "year": 2001,
+              "nests": 10.0
+            },
+            {
+              "year": 2002,
+              "nests": 60.0
+            },
+            {
+              "year": 2003,
+              "nests": 40.0
+            },
+            {
+              "year": 2004,
+              "nests": 66.0
+            },
+            {
+              "year": 2005,
+              "nests": 115.0
+            },
+            {
+              "year": 2006,
+              "nests": 68.0
+            },
+            {
+              "year": 2007,
+              "nests": 142.0
+            },
+            {
+              "year": 2008,
+              "nests": 90.0
+            },
+            {
+              "year": 2009,
+              "nests": 67.0
+            },
+            {
+              "year": 2010,
+              "nests": 131.0
+            },
+            {
+              "year": 2011,
+              "nests": 154.0
+            },
+            {
+              "year": 2012,
+              "nests": 116.0
+            },
+            {
+              "year": 2013,
+              "nests": 331.0
+            },
+            {
+              "year": 2014,
+              "nests": 75.0
+            },
+            {
+              "year": 2015,
+              "nests": 298.0
+            },
+            {
+              "year": 2016,
+              "nests": 38.0
+            },
+            {
+              "year": 2017,
+              "nests": 300.0
+            },
+            {
+              "year": 2018,
+              "nests": 19.0
+            },
+            {
+              "year": 2019,
+              "nests": 393.0
+            },
+            {
+              "year": 2020,
+              "nests": 132.0
+            },
+            {
+              "year": 2021,
+              "nests": 190.0
+            },
+            {
+              "year": 2022,
+              "nests": 241.0
+            },
+            {
+              "year": 2023,
+              "nests": 328.0
+            },
+            {
+              "year": 2024,
+              "nests": 72.0
+            },
+            {
+              "year": 2025,
+              "nests": 243.0
+            }
+          ],
+          "last_year": 2025,
+          "forecast_year": 2026,
+          "forecasts": {
+            "five_year": 214.8,
+            "two_year": 72.0,
+            "timesfm": 130.9
+          },
+          "selected_method": "two_year",
+          "selected_forecast": 72.0,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 122.7,
+            "five_year": 131.9,
+            "two_year": 107.0
+          },
+          "evaluation_mae": {
+            "timesfm": 89.7,
+            "five_year": 100.6,
+            "two_year": 125.2
+          },
+          "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ]
+        },
+        {
+          "species": "leatherback",
+          "history": [
+            {
+              "year": 1988,
+              "nests": 3.0
+            },
+            {
+              "year": 1989,
+              "nests": 6.0
+            },
+            {
+              "year": 1990,
+              "nests": 3.0
+            },
+            {
+              "year": 1991,
+              "nests": 3.0
+            },
+            {
+              "year": 1992,
+              "nests": 8.0
+            },
+            {
+              "year": 1993,
+              "nests": 9.0
+            },
+            {
+              "year": 1994,
+              "nests": 2.0
+            },
+            {
+              "year": 1995,
+              "nests": 9.0
+            },
+            {
+              "year": 1996,
+              "nests": 3.0
+            },
+            {
+              "year": 1997,
+              "nests": 18.0
+            },
+            {
+              "year": 1998,
+              "nests": 8.0
+            },
+            {
+              "year": 1999,
+              "nests": 9.0
+            },
+            {
+              "year": 2000,
+              "nests": 9.0
+            },
+            {
+              "year": 2001,
+              "nests": 13.0
+            },
+            {
+              "year": 2002,
+              "nests": 15.0
+            },
+            {
+              "year": 2003,
+              "nests": 13.0
+            },
+            {
+              "year": 2004,
+              "nests": 5.0
+            },
+            {
+              "year": 2005,
+              "nests": 18.0
+            },
+            {
+              "year": 2006,
+              "nests": 11.0
+            },
+            {
+              "year": 2007,
+              "nests": 29.0
+            },
+            {
+              "year": 2008,
+              "nests": 7.0
+            },
+            {
+              "year": 2009,
+              "nests": 21.0
+            },
+            {
+              "year": 2010,
+              "nests": 15.0
+            },
+            {
+              "year": 2011,
+              "nests": 13.0
+            },
+            {
+              "year": 2012,
+              "nests": 33.0
+            },
+            {
+              "year": 2013,
+              "nests": 12.0
+            },
+            {
+              "year": 2014,
+              "nests": 18.0
+            },
+            {
+              "year": 2015,
+              "nests": 25.0
+            },
+            {
+              "year": 2016,
+              "nests": 18.0
+            },
+            {
+              "year": 2017,
+              "nests": 5.0
+            },
+            {
+              "year": 2018,
+              "nests": 18.0
+            },
+            {
+              "year": 2019,
+              "nests": 18.0
+            },
+            {
+              "year": 2020,
+              "nests": 13.0
+            },
+            {
+              "year": 2021,
+              "nests": 21.0
+            },
+            {
+              "year": 2022,
+              "nests": 19.0
+            },
+            {
+              "year": 2023,
+              "nests": 28.0
+            },
+            {
+              "year": 2024,
+              "nests": 19.0
+            },
+            {
+              "year": 2025,
+              "nests": 21.0
+            }
+          ],
+          "last_year": 2025,
+          "forecast_year": 2026,
+          "forecasts": {
+            "five_year": 21.6,
+            "two_year": 19.0,
+            "timesfm": 19.1
+          },
+          "selected_method": "five_year",
+          "selected_forecast": 21.6,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 4.4,
+            "five_year": 3.5,
+            "two_year": 5.2
+          },
+          "evaluation_mae": {
+            "timesfm": 4.7,
+            "five_year": 4.0,
+            "two_year": 5.0
+          },
+          "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ]
+        },
+        {
+          "species": "loggerhead",
+          "history": [
+            {
+              "year": 1988,
+              "nests": 874.0
+            },
+            {
+              "year": 1989,
+              "nests": 896.0
+            },
+            {
+              "year": 1990,
+              "nests": 1075.0
+            },
+            {
+              "year": 1991,
+              "nests": 994.0
+            },
+            {
+              "year": 1992,
+              "nests": 974.0
+            },
+            {
+              "year": 1993,
+              "nests": 744.0
+            },
+            {
+              "year": 1994,
+              "nests": 771.0
+            },
+            {
+              "year": 1995,
+              "nests": 952.0
+            },
+            {
+              "year": 1996,
+              "nests": 901.0
+            },
+            {
+              "year": 1997,
+              "nests": 514.0
+            },
+            {
+              "year": 1998,
+              "nests": 776.0
+            },
+            {
+              "year": 1999,
+              "nests": 791.0
+            },
+            {
+              "year": 2000,
+              "nests": 723.0
+            },
+            {
+              "year": 2001,
+              "nests": 564.0
+            },
+            {
+              "year": 2002,
+              "nests": 550.0
+            },
+            {
+              "year": 2003,
+              "nests": 594.0
+            },
+            {
+              "year": 2004,
+              "nests": 421.0
+            },
+            {
+              "year": 2005,
+              "nests": 485.0
+            },
+            {
+              "year": 2006,
+              "nests": 421.0
+            },
+            {
+              "year": 2007,
+              "nests": 398.0
+            },
+            {
+              "year": 2008,
+              "nests": 438.0
+            },
+            {
+              "year": 2009,
+              "nests": 361.0
+            },
+            {
+              "year": 2010,
+              "nests": 577.0
+            },
+            {
+              "year": 2011,
+              "nests": 663.0
+            },
+            {
+              "year": 2012,
+              "nests": 994.0
+            },
+            {
+              "year": 2013,
+              "nests": 835.0
+            },
+            {
+              "year": 2014,
+              "nests": 856.0
+            },
+            {
+              "year": 2015,
+              "nests": 718.0
+            },
+            {
+              "year": 2016,
+              "nests": 729.0
+            },
+            {
+              "year": 2017,
+              "nests": 767.0
+            },
+            {
+              "year": 2018,
+              "nests": 686.0
+            },
+            {
+              "year": 2019,
+              "nests": 913.0
+            },
+            {
+              "year": 2020,
+              "nests": 756.0
+            },
+            {
+              "year": 2021,
+              "nests": 647.0
+            },
+            {
+              "year": 2022,
+              "nests": 898.0
+            },
+            {
+              "year": 2023,
+              "nests": 1038.0
+            },
+            {
+              "year": 2024,
+              "nests": 824.0
+            },
+            {
+              "year": 2025,
+              "nests": 819.0
+            }
+          ],
+          "last_year": 2025,
+          "forecast_year": 2026,
+          "forecasts": {
+            "five_year": 845.2,
+            "two_year": 824.0,
+            "timesfm": 810.4
+          },
+          "selected_method": "five_year",
+          "selected_forecast": 845.2,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 115.8,
+            "five_year": 96.7,
+            "two_year": 131.2
+          },
+          "evaluation_mae": {
+            "timesfm": 138.2,
+            "five_year": 110.5,
+            "two_year": 206.5
+          },
+          "backtest_years": [
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ]
+        }
+      ],
+      "illustrative_inspection_hours": 3
+    },
+    {
+      "name": "Canaveral National Seashore",
+      "lat": 28.78,
+      "lng": -80.77,
+      "scope": "National seashore monitoring area; representative map point",
+      "url": "https://www.nps.gov/cana/learn/nature/sea-turtle-monitoring.htm",
+      "species": [
+        {
+          "species": "green",
+          "history": [
+            {
+              "year": 1985,
+              "nests": 94.0
+            },
+            {
+              "year": 1986,
+              "nests": 22.0
+            },
+            {
+              "year": 1987,
+              "nests": 90.0
+            },
+            {
+              "year": 1988,
+              "nests": 43.0
+            },
+            {
+              "year": 1989,
+              "nests": 41.0
+            },
+            {
+              "year": 1990,
+              "nests": 185.0
+            },
+            {
+              "year": 1991,
+              "nests": 25.0
+            },
+            {
+              "year": 1992,
+              "nests": 298.0
+            },
+            {
+              "year": 1993,
+              "nests": 28.0
+            },
+            {
+              "year": 1994,
+              "nests": 364.0
+            },
+            {
+              "year": 1995,
+              "nests": 47.0
+            },
+            {
+              "year": 1996,
+              "nests": 222.0
+            },
+            {
+              "year": 1997,
+              "nests": 21.0
+            },
+            {
+              "year": 1998,
+              "nests": 427.0
+            },
+            {
+              "year": 1999,
+              "nests": 5.0
+            },
+            {
+              "year": 2000,
+              "nests": 662.0
+            },
+            {
+              "year": 2001,
+              "nests": 7.0
+            },
+            {
+              "year": 2002,
+              "nests": 856.0
+            },
+            {
+              "year": 2003,
+              "nests": 74.0
+            },
+            {
+              "year": 2004,
+              "nests": 255.0
+            },
+            {
+              "year": 2005,
+              "nests": 1040.0
+            },
+            {
+              "year": 2006,
+              "nests": 396.0
+            },
+            {
+              "year": 2007,
+              "nests": 1249.0
+            },
+            {
+              "year": 2008,
+              "nests": 899.0
+            },
+            {
+              "year": 2009,
+              "nests": 301.0
+            },
+            {
+              "year": 2010,
+              "nests": 1343.0
+            },
+            {
+              "year": 2011,
+              "nests": 1374.0
+            },
+            {
+              "year": 2012,
+              "nests": 816.0
+            },
+            {
+              "year": 2013,
+              "nests": 4152.0
+            },
+            {
+              "year": 2014,
+              "nests": 420.0
+            },
+            {
+              "year": 2015,
+              "nests": 3571.0
+            },
+            {
+              "year": 2016,
+              "nests": 381.0
+            },
+            {
+              "year": 2017,
+              "nests": 7736.0
+            },
+            {
+              "year": 2018,
+              "nests": 301.0
+            },
+            {
+              "year": 2019,
+              "nests": 7629.0
+            },
+            {
+              "year": 2020,
+              "nests": 367.0
+            },
+            {
+              "year": 2021,
+              "nests": 4303.0
+            },
+            {
+              "year": 2022,
+              "nests": 6331.0
+            },
+            {
+              "year": 2023,
+              "nests": 11106.0
+            },
+            {
+              "year": 2024,
+              "nests": 1801.0
+            }
+          ],
+          "last_year": 2024,
+          "forecast_year": 2025,
+          "forecasts": {
+            "five_year": 4781.6,
+            "two_year": 11106.0,
+            "timesfm": 4464.5
+          },
+          "selected_method": "two_year",
+          "selected_forecast": 11106.0,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 2887.7,
+            "five_year": 3708.6,
+            "two_year": 1548.8
+          },
+          "evaluation_mae": {
+            "timesfm": 5314.2,
+            "five_year": 4576.6,
+            "two_year": 5765.7
+          },
+          "backtest_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024
+          ]
+        },
+        {
+          "species": "leatherback",
+          "history": [
+            {
+              "year": 1985,
+              "nests": 0.0
+            },
+            {
+              "year": 1986,
+              "nests": 3.0
+            },
+            {
+              "year": 1987,
+              "nests": 1.0
+            },
+            {
+              "year": 1988,
+              "nests": 0.0
+            },
+            {
+              "year": 1989,
+              "nests": 1.0
+            },
+            {
+              "year": 1990,
+              "nests": 1.0
+            },
+            {
+              "year": 1991,
+              "nests": 1.0
+            },
+            {
+              "year": 1992,
+              "nests": 0.0
+            },
+            {
+              "year": 1993,
+              "nests": 0.0
+            },
+            {
+              "year": 1994,
+              "nests": 2.0
+            },
+            {
+              "year": 1995,
+              "nests": 1.0
+            },
+            {
+              "year": 1996,
+              "nests": 3.0
+            },
+            {
+              "year": 1997,
+              "nests": 4.0
+            },
+            {
+              "year": 1998,
+              "nests": 5.0
+            },
+            {
+              "year": 1999,
+              "nests": 9.0
+            },
+            {
+              "year": 2000,
+              "nests": 9.0
+            },
+            {
+              "year": 2001,
+              "nests": 10.0
+            },
+            {
+              "year": 2002,
+              "nests": 8.0
+            },
+            {
+              "year": 2003,
+              "nests": 16.0
+            },
+            {
+              "year": 2004,
+              "nests": 6.0
+            },
+            {
+              "year": 2005,
+              "nests": 13.0
+            },
+            {
+              "year": 2006,
+              "nests": 1.0
+            },
+            {
+              "year": 2007,
+              "nests": 21.0
+            },
+            {
+              "year": 2008,
+              "nests": 5.0
+            },
+            {
+              "year": 2009,
+              "nests": 26.0
+            },
+            {
+              "year": 2010,
+              "nests": 26.0
+            },
+            {
+              "year": 2011,
+              "nests": 24.0
+            },
+            {
+              "year": 2012,
+              "nests": 27.0
+            },
+            {
+              "year": 2013,
+              "nests": 23.0
+            },
+            {
+              "year": 2014,
+              "nests": 20.0
+            },
+            {
+              "year": 2015,
+              "nests": 34.0
+            },
+            {
+              "year": 2016,
+              "nests": 9.0
+            },
+            {
+              "year": 2017,
+              "nests": 23.0
+            },
+            {
+              "year": 2018,
+              "nests": 15.0
+            },
+            {
+              "year": 2019,
+              "nests": 33.0
+            },
+            {
+              "year": 2020,
+              "nests": 26.0
+            },
+            {
+              "year": 2021,
+              "nests": 31.0
+            },
+            {
+              "year": 2022,
+              "nests": 27.0
+            },
+            {
+              "year": 2023,
+              "nests": 28.0
+            },
+            {
+              "year": 2024,
+              "nests": 30.0
+            }
+          ],
+          "last_year": 2024,
+          "forecast_year": 2025,
+          "forecasts": {
+            "five_year": 28.4,
+            "two_year": 28.0,
+            "timesfm": 31.2
+          },
+          "selected_method": "timesfm",
+          "selected_forecast": 31.2,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 5.8,
+            "five_year": 6.6,
+            "two_year": 8.0
+          },
+          "evaluation_mae": {
+            "timesfm": 1.7,
+            "five_year": 1.3,
+            "two_year": 2.3
+          },
+          "backtest_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024
+          ]
+        },
+        {
+          "species": "loggerhead",
+          "history": [
+            {
+              "year": 1985,
+              "nests": 2389.0
+            },
+            {
+              "year": 1986,
+              "nests": 3349.0
+            },
+            {
+              "year": 1987,
+              "nests": 1670.0
+            },
+            {
+              "year": 1988,
+              "nests": 2203.0
+            },
+            {
+              "year": 1989,
+              "nests": 3091.0
+            },
+            {
+              "year": 1990,
+              "nests": 3922.0
+            },
+            {
+              "year": 1991,
+              "nests": 4074.0
+            },
+            {
+              "year": 1992,
+              "nests": 3279.0
+            },
+            {
+              "year": 1993,
+              "nests": 3140.0
+            },
+            {
+              "year": 1994,
+              "nests": 3886.0
+            },
+            {
+              "year": 1995,
+              "nests": 4121.0
+            },
+            {
+              "year": 1996,
+              "nests": 3260.0
+            },
+            {
+              "year": 1997,
+              "nests": 2702.0
+            },
+            {
+              "year": 1998,
+              "nests": 3976.0
+            },
+            {
+              "year": 1999,
+              "nests": 4501.0
+            },
+            {
+              "year": 2000,
+              "nests": 3892.0
+            },
+            {
+              "year": 2001,
+              "nests": 3257.0
+            },
+            {
+              "year": 2002,
+              "nests": 3161.0
+            },
+            {
+              "year": 2003,
+              "nests": 3229.0
+            },
+            {
+              "year": 2004,
+              "nests": 2281.0
+            },
+            {
+              "year": 2005,
+              "nests": 2547.0
+            },
+            {
+              "year": 2006,
+              "nests": 2470.0
+            },
+            {
+              "year": 2007,
+              "nests": 2356.0
+            },
+            {
+              "year": 2008,
+              "nests": 3637.0
+            },
+            {
+              "year": 2009,
+              "nests": 2729.0
+            },
+            {
+              "year": 2010,
+              "nests": 4250.0
+            },
+            {
+              "year": 2011,
+              "nests": 3742.0
+            },
+            {
+              "year": 2012,
+              "nests": 5154.0
+            },
+            {
+              "year": 2013,
+              "nests": 3758.0
+            },
+            {
+              "year": 2014,
+              "nests": 3322.0
+            },
+            {
+              "year": 2015,
+              "nests": 3905.0
+            },
+            {
+              "year": 2016,
+              "nests": 5057.0
+            },
+            {
+              "year": 2017,
+              "nests": 4556.0
+            },
+            {
+              "year": 2018,
+              "nests": 4223.0
+            },
+            {
+              "year": 2019,
+              "nests": 5646.0
+            },
+            {
+              "year": 2020,
+              "nests": 4187.0
+            },
+            {
+              "year": 2021,
+              "nests": 3708.0
+            },
+            {
+              "year": 2022,
+              "nests": 6188.0
+            },
+            {
+              "year": 2023,
+              "nests": 5677.0
+            },
+            {
+              "year": 2024,
+              "nests": 5571.0
+            }
+          ],
+          "last_year": 2024,
+          "forecast_year": 2025,
+          "forecasts": {
+            "five_year": 5066.2,
+            "two_year": 5677.0,
+            "timesfm": 5184.9
+          },
+          "selected_method": "timesfm",
+          "selected_forecast": 5184.9,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 596.0,
+            "five_year": 674.0,
+            "two_year": 909.8
+          },
+          "evaluation_mae": {
+            "timesfm": 1230.3,
+            "five_year": 1033.5,
+            "two_year": 1529.0
+          },
+          "backtest_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024
+          ]
+        }
+      ],
+      "illustrative_inspection_hours": 4
+    },
+    {
+      "name": "Volusia County",
+      "lat": 29.21,
+      "lng": -81.01,
+      "scope": "County monitoring area; representative map point",
+      "url": "https://www.volusia.org/services/growth-and-resource-management/environmental-management/sustainability-and-resilience/sea-turtles/Volusia-nesting-summary.stml",
+      "species": [
+        {
+          "species": "green",
+          "history": [
+            {
+              "year": 1988,
+              "nests": 0.0
+            },
+            {
+              "year": 1989,
+              "nests": 0.0
+            },
+            {
+              "year": 1990,
+              "nests": 1.0
+            },
+            {
+              "year": 1991,
+              "nests": 3.0
+            },
+            {
+              "year": 1992,
+              "nests": 5.0
+            },
+            {
+              "year": 1993,
+              "nests": 0.0
+            },
+            {
+              "year": 1994,
+              "nests": 5.0
+            },
+            {
+              "year": 1995,
+              "nests": 0.0
+            },
+            {
+              "year": 1996,
+              "nests": 7.0
+            },
+            {
+              "year": 1997,
+              "nests": 4.0
+            },
+            {
+              "year": 1998,
+              "nests": 16.0
+            },
+            {
+              "year": 1999,
+              "nests": 0.0
+            },
+            {
+              "year": 2000,
+              "nests": 20.0
+            },
+            {
+              "year": 2001,
+              "nests": 1.0
+            },
+            {
+              "year": 2002,
+              "nests": 21.0
+            },
+            {
+              "year": 2003,
+              "nests": 1.0
+            },
+            {
+              "year": 2004,
+              "nests": 9.0
+            },
+            {
+              "year": 2005,
+              "nests": 24.0
+            },
+            {
+              "year": 2006,
+              "nests": 20.0
+            },
+            {
+              "year": 2007,
+              "nests": 55.0
+            },
+            {
+              "year": 2008,
+              "nests": 32.0
+            },
+            {
+              "year": 2009,
+              "nests": 8.0
+            },
+            {
+              "year": 2010,
+              "nests": 15.0
+            },
+            {
+              "year": 2011,
+              "nests": 21.0
+            },
+            {
+              "year": 2012,
+              "nests": 25.0
+            },
+            {
+              "year": 2013,
+              "nests": 52.0
+            },
+            {
+              "year": 2014,
+              "nests": 7.0
+            },
+            {
+              "year": 2015,
+              "nests": 37.0
+            },
+            {
+              "year": 2016,
+              "nests": 4.0
+            },
+            {
+              "year": 2017,
+              "nests": 82.0
+            },
+            {
+              "year": 2018,
+              "nests": 7.0
+            },
+            {
+              "year": 2019,
+              "nests": 98.0
+            },
+            {
+              "year": 2020,
+              "nests": 53.0
+            },
+            {
+              "year": 2021,
+              "nests": 77.0
+            },
+            {
+              "year": 2022,
+              "nests": 80.0
+            },
+            {
+              "year": 2023,
+              "nests": 259.0
+            },
+            {
+              "year": 2024,
+              "nests": 19.0
+            }
+          ],
+          "last_year": 2024,
+          "forecast_year": 2025,
+          "forecasts": {
+            "five_year": 97.6,
+            "two_year": 259.0,
+            "timesfm": 41.5
+          },
+          "selected_method": "two_year",
+          "selected_forecast": 259.0,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 47.3,
+            "five_year": 38.5,
+            "two_year": 26.2
+          },
+          "evaluation_mae": {
+            "timesfm": 105.4,
+            "five_year": 102.3,
+            "two_year": 90.0
+          },
+          "backtest_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024
+          ]
+        },
+        {
+          "species": "loggerhead",
+          "history": [
+            {
+              "year": 1988,
+              "nests": 245.0
+            },
+            {
+              "year": 1989,
+              "nests": 283.0
+            },
+            {
+              "year": 1990,
+              "nests": 403.0
+            },
+            {
+              "year": 1991,
+              "nests": 384.0
+            },
+            {
+              "year": 1992,
+              "nests": 198.0
+            },
+            {
+              "year": 1993,
+              "nests": 338.0
+            },
+            {
+              "year": 1994,
+              "nests": 490.0
+            },
+            {
+              "year": 1995,
+              "nests": 443.0
+            },
+            {
+              "year": 1996,
+              "nests": 491.0
+            },
+            {
+              "year": 1997,
+              "nests": 337.0
+            },
+            {
+              "year": 1998,
+              "nests": 517.0
+            },
+            {
+              "year": 1999,
+              "nests": 626.0
+            },
+            {
+              "year": 2000,
+              "nests": 596.0
+            },
+            {
+              "year": 2001,
+              "nests": 438.0
+            },
+            {
+              "year": 2002,
+              "nests": 435.0
+            },
+            {
+              "year": 2003,
+              "nests": 393.0
+            },
+            {
+              "year": 2004,
+              "nests": 230.0
+            },
+            {
+              "year": 2005,
+              "nests": 408.0
+            },
+            {
+              "year": 2006,
+              "nests": 378.0
+            },
+            {
+              "year": 2007,
+              "nests": 503.0
+            },
+            {
+              "year": 2008,
+              "nests": 617.0
+            },
+            {
+              "year": 2009,
+              "nests": 324.0
+            },
+            {
+              "year": 2010,
+              "nests": 594.0
+            },
+            {
+              "year": 2011,
+              "nests": 488.0
+            },
+            {
+              "year": 2012,
+              "nests": 885.0
+            },
+            {
+              "year": 2013,
+              "nests": 617.0
+            },
+            {
+              "year": 2014,
+              "nests": 414.0
+            },
+            {
+              "year": 2015,
+              "nests": 615.0
+            },
+            {
+              "year": 2016,
+              "nests": 666.0
+            },
+            {
+              "year": 2017,
+              "nests": 634.0
+            },
+            {
+              "year": 2018,
+              "nests": 567.0
+            },
+            {
+              "year": 2019,
+              "nests": 880.0
+            },
+            {
+              "year": 2020,
+              "nests": 842.0
+            },
+            {
+              "year": 2021,
+              "nests": 698.0
+            },
+            {
+              "year": 2022,
+              "nests": 1336.0
+            },
+            {
+              "year": 2023,
+              "nests": 1249.0
+            },
+            {
+              "year": 2024,
+              "nests": 870.0
+            }
+          ],
+          "last_year": 2024,
+          "forecast_year": 2025,
+          "forecasts": {
+            "five_year": 999.0,
+            "two_year": 1249.0,
+            "timesfm": 858.6
+          },
+          "selected_method": "five_year",
+          "selected_forecast": 999.0,
+          "model_available": true,
+          "selection_mae": {
+            "timesfm": 104.3,
+            "five_year": 103.6,
+            "two_year": 164.2
+          },
+          "evaluation_mae": {
+            "timesfm": 393.9,
+            "five_year": 375.7,
+            "two_year": 503.7
+          },
+          "backtest_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024
+          ]
+        }
+      ],
+      "illustrative_inspection_hours": 5
+    }
+  ],
+  "notes": "Experimental regional nest forecasts; no beach-level probabilities. Beach segment mapping is a planning proxy, not a direct observation."
+}

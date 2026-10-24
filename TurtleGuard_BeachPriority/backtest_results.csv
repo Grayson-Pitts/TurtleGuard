@@ -1,0 +1,65 @@
+location,species,year,actual,timesfm,mean_5yr,same_parity_2yr,timesfm_absolute_error,mean_5yr_absolute_error,same_parity_2yr_absolute_error
+Boca Raton,green,2018,19.0,59.55,208.4,38.0,40.55,189.4,19.0
+Boca Raton,green,2019,393.0,184.4,146.0,300.0,208.6,247.0,93.0
+Boca Raton,green,2020,132.0,3.86,209.6,19.0,128.14,77.6,113.0
+Boca Raton,green,2021,190.0,303.49,176.4,393.0,113.49,13.6,203.0
+Boca Raton,green,2022,241.0,125.58,206.8,132.0,115.42,34.2,109.0
+Boca Raton,green,2023,328.0,194.38,195.0,190.0,133.62,133.0,138.0
+Boca Raton,green,2024,72.0,155.66,256.8,241.0,83.66,184.8,169.0
+Boca Raton,green,2025,243.0,216.99,192.6,328.0,26.01,50.4,85.0
+Boca Raton,leatherback,2018,18.0,12.29,15.6,18.0,5.71,2.4,0.0
+Boca Raton,leatherback,2019,18.0,15.51,16.8,5.0,2.49,1.2,13.0
+Boca Raton,leatherback,2020,13.0,15.33,16.8,18.0,2.33,3.8,5.0
+Boca Raton,leatherback,2021,21.0,13.98,14.4,18.0,7.02,6.6,3.0
+Boca Raton,leatherback,2022,19.0,15.83,15.0,13.0,3.17,4.0,6.0
+Boca Raton,leatherback,2023,28.0,16.01,17.8,21.0,11.99,10.2,7.0
+Boca Raton,leatherback,2024,19.0,17.67,19.8,19.0,1.33,0.8,0.0
+Boca Raton,leatherback,2025,21.0,18.83,20.0,28.0,2.17,1.0,7.0
+Boca Raton,loggerhead,2018,686.0,755.28,781.0,729.0,69.28,95.0,43.0
+Boca Raton,loggerhead,2019,913.0,715.16,751.2,767.0,197.84,161.8,146.0
+Boca Raton,loggerhead,2020,756.0,838.19,762.6,686.0,82.19,6.6,70.0
+Boca Raton,loggerhead,2021,647.0,760.69,770.2,913.0,113.69,123.2,266.0
+Boca Raton,loggerhead,2022,898.0,690.58,753.8,756.0,207.42,144.2,142.0
+Boca Raton,loggerhead,2023,1038.0,804.43,780.0,647.0,233.57,258.0,391.0
+Boca Raton,loggerhead,2024,824.0,907.61,850.4,898.0,83.61,26.4,74.0
+Boca Raton,loggerhead,2025,819.0,790.98,832.6,1038.0,28.02,13.6,219.0
+Canaveral National Seashore,green,2017,7736.0,778.56,1868.0,3571.0,6957.44,5868.0,4165.0
+Canaveral National Seashore,green,2018,301.0,1049.05,3252.0,381.0,748.05,2951.0,80.0
+Canaveral National Seashore,green,2019,7629.0,1948.64,2481.8,7736.0,5680.36,5147.2,107.0
+Canaveral National Seashore,green,2020,367.0,888.57,3923.6,301.0,521.57,3556.6,66.0
+Canaveral National Seashore,green,2021,4303.0,3771.76,3282.8,7629.0,531.24,1020.2,3326.0
+Canaveral National Seashore,green,2022,6331.0,701.36,4067.2,367.0,5629.64,2263.8,5964.0
+Canaveral National Seashore,green,2023,11106.0,2122.94,3786.2,4303.0,8983.06,7319.8,6803.0
+Canaveral National Seashore,green,2024,1801.0,3130.92,5947.2,6331.0,1329.92,4146.2,4530.0
+Canaveral National Seashore,leatherback,2017,23.0,24.39,22.6,34.0,1.39,0.4,11.0
+Canaveral National Seashore,leatherback,2018,15.0,22.32,21.8,9.0,7.32,6.8,6.0
+Canaveral National Seashore,leatherback,2019,33.0,20.66,20.2,23.0,12.34,12.8,10.0
+Canaveral National Seashore,leatherback,2020,26.0,27.21,22.8,15.0,1.21,3.2,11.0
+Canaveral National Seashore,leatherback,2021,31.0,24.36,21.2,33.0,6.64,9.8,2.0
+Canaveral National Seashore,leatherback,2022,27.0,27.63,25.6,26.0,0.63,1.4,1.0
+Canaveral National Seashore,leatherback,2023,28.0,27.47,26.4,31.0,0.53,1.6,3.0
+Canaveral National Seashore,leatherback,2024,30.0,26.17,29.0,27.0,3.83,1.0,3.0
+Canaveral National Seashore,loggerhead,2017,4556.0,4387.75,4239.2,3905.0,168.25,316.8,651.0
+Canaveral National Seashore,loggerhead,2018,4223.0,4124.72,4119.6,5057.0,98.28,103.4,834.0
+Canaveral National Seashore,loggerhead,2019,5646.0,4070.08,4212.6,4556.0,1575.92,1433.4,1090.0
+Canaveral National Seashore,loggerhead,2020,4187.0,4833.68,4677.4,4223.0,646.68,490.4,36.0
+Canaveral National Seashore,loggerhead,2021,3708.0,4198.93,4733.8,5646.0,490.93,1025.8,1938.0
+Canaveral National Seashore,loggerhead,2022,6188.0,3941.75,4464.0,4187.0,2246.25,1724.0,2001.0
+Canaveral National Seashore,loggerhead,2023,5677.0,4798.11,4790.4,3708.0,878.89,886.6,1969.0
+Canaveral National Seashore,loggerhead,2024,5571.0,5005.3,5081.2,6188.0,565.7,489.8,617.0
+Volusia County,green,2017,82.0,14.11,25.0,37.0,67.89,57.0,45.0
+Volusia County,green,2018,7.0,31.07,36.4,4.0,24.07,29.4,3.0
+Volusia County,green,2019,98.0,16.39,27.4,82.0,81.61,70.6,16.0
+Volusia County,green,2020,53.0,29.42,45.6,7.0,23.58,7.4,46.0
+Volusia County,green,2021,77.0,37.84,48.8,98.0,39.16,28.2,21.0
+Volusia County,green,2022,80.0,42.6,63.4,53.0,37.4,16.6,27.0
+Volusia County,green,2023,259.0,54.39,63.0,77.0,204.61,196.0,182.0
+Volusia County,green,2024,19.0,93.17,113.4,80.0,74.17,94.4,61.0
+Volusia County,loggerhead,2017,634.0,604.4,639.4,615.0,29.6,5.4,19.0
+Volusia County,loggerhead,2018,567.0,594.01,589.2,666.0,27.01,22.2,99.0
+Volusia County,loggerhead,2019,880.0,581.13,579.2,634.0,298.87,300.8,246.0
+Volusia County,loggerhead,2020,842.0,696.84,672.4,567.0,145.16,169.6,275.0
+Volusia County,loggerhead,2021,698.0,718.83,717.8,880.0,20.83,19.8,182.0
+Volusia County,loggerhead,2022,1336.0,706.86,724.2,842.0,629.14,611.8,494.0
+Volusia County,loggerhead,2023,1249.0,863.45,864.6,698.0,385.55,384.4,551.0
+Volusia County,loggerhead,2024,870.0,1036.89,1001.0,1336.0,166.89,131.0,466.0

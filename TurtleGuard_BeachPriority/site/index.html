@@ -66,8 +66,8 @@
       <section class="tab-content" id="concern">
         <h2>Beaches of Greatest Concern</h2>
         <p>Explore Florida beaches and the potential threats to sea turtle habitats.</p>
-        <p>Select a colored beach segment on the map to see its forecast-informed priority.</p>
-        <p class="note">Priorities use forecast-informed regional estimates. A colored section does not establish a beach-specific prediction or measured debris hazard.</p>
+        <p>Select a highlighted beach to see its forecast-informed priority.</p>
+        <p class="note">Highlighted shorelines are approximate boundaries for monitored areas. Priorities are experimental comparisons, not confirmed nest densities or debris hazards.</p>
       </section>
 
       <section class="tab-content" id="species" hidden>
@@ -102,7 +102,7 @@
         <span class="legend-item"><span class="dot medium"></span>Moderate concern</span>
         <span class="legend-item"><span class="dot low"></span>Low concern</span>
       </div>
-      <p class="note">Colors use FWC historical nesting density, with a modest regional forecast adjustment where matched. They do not measure actual debris hazards.</p>
+      <p class="note">Colors indicate experimental priorities for areas with nesting forecasts. Shoreline lines are approximate, not official survey boundaries.</p>
       <section class="beach-details" aria-live="polite">
         <h3 id="beach-name">Select a Beach</h3>
         <p id="beach-description">Click a colored beach segment on the map to see its details here.</p>
@@ -148,119 +148,69 @@
       status.hidden = false;
     });
 
-    // All mapped segments come from FWC. Matching forecasts provide a conservative
-    // contextual adjustment, not a beach-specific forecast or calibrated risk.
+    // Forecasts are linked by stable monitoring-area IDs, without requiring FWC atlas matches.
     const statusEl = document.getElementById('map-status');
     const nameEl = document.getElementById('beach-name');
     const descriptionEl = document.getElementById('beach-description');
     const riskEl = document.getElementById('beach-risk');
-    const formatNests = value => Math.round(Number(value) || 0).toLocaleString();
     const showStatus = message => { statusEl.hidden = false; statusEl.textContent = message; };
     const clamp = (v, lo=0, hi=1) => Math.min(hi, Math.max(lo, v));
     const gradient = [[39,174,96],[169,217,110],[242,204,74],[243,156,18],[231,76,60]];
     function priorityColor(score) {
-      const pos = clamp(score / 100)*4;
-      const i = Math.min(3,Math.floor(pos)), t=pos-i;
+      const pos = clamp(score / 100) * 4;
+      const i = Math.min(3,Math.floor(pos)), t = pos - i;
       return 'rgb(' + gradient[i].map((v,k)=>Math.round(v+(gradient[i+1][k]-v)*t)).join(',') + ')';
     }
-    const clean = v => String(v ?? '').trim().toLowerCase().replace(/[^a-z0-9]+/g,' ');
-    function classValue(value) {
-      const s=clean(value);
-      if (/(very high|high)/.test(s)) return 85;
-      if (/medium|moderate/.test(s)) return 55;
-      if (/low/.test(s)) return 25;
-      return null;
-    }
-    // FWC's density classes are independently meaningful, while raw nest totals
-    // from entire monitoring regions are NOT comparable beach by beach.
-    function densityScore(properties) {
-      const values = ['ccDensClass','cmDensClass','dcDensClass'].map(k=>classValue(properties[k])).filter(v=>v!==null);
-      return values.length ? Math.round(values.reduce((a,b)=>a+b,0)/values.length) : null;
-    }
-    function regionForSegment(p,regions) {
-      const county=clean(p.County), beach=clean(p.Beach);
-      return regions.find(r=>{
-        const rule=r.proxy_mapping || {}, terms=rule.match_terms || [];
-        return Array.isArray(terms) && terms.length && county===clean(rule.county)
-          && terms.some(term=>beach.includes(clean(term)));
-      }) || null;
-    }
-    function attachForecastRanks(regions) {
-      // Rank each region against the others, using log totals to reduce dominance
-      // by large reporting areas. An adjustment based on these ranks remains a
-      // non-validated regional proxy, never a nest-density or per-beach count.
-      const ascending=[...regions].sort((a,b)=>Number(a.projected_total_nests)-Number(b.projected_total_nests));
-      ascending.forEach((r,i)=>r._rankIndex=ascending.length===1?.5:i/(ascending.length-1));
+    const numeric = n => Number.isFinite(Number(n)) ? Number(n) : null;
+    const formatNests = n => Math.round(Number(n)).toLocaleString();
+    function addPriorityScores(regions) {
+      // Rank-based index, to avoid incorrectly assuming raw counts from unlike
+      // monitoring-area sizes are directly comparable nesting densities.
+      const usable = regions.filter(r => numeric(r.projected_total_nests) !== null && Number(r.projected_total_nests) >= 0);
+      const sorted = [...usable].sort((a,b) => Number(a.projected_total_nests) - Number(b.projected_total_nests));
+      sorted.forEach((r, i) => { r._score = Math.round(20 + 65 * (sorted.length <= 1 ? .5 : i / (sorted.length - 1))); });
       return regions;
     }
-    function segmentPriority(properties, region) {
-      const atlas = densityScore(properties);
-      if (atlas===null) return null;
-      // Put the FWC beach-level category first (85%); a modest 15% forecast
-      // context for matched monitoring areas. Don't punish unlinked beaches.
-      const forecastContext = region ? (20+80*region._rankIndex) : atlas;
-      return Math.round(0.85*atlas + 0.15*forecastContext);
-    }
-    function showBeach(p,region,score) {
-      const name=p.Beach || 'Unnamed FWC surveyed beach';
+    function showBeach(feature, region) {
+      const name=feature.properties.name;
       nameEl.textContent=name;
-      const categories=['ccDensClass','cmDensClass','dcDensClass'].map(k=>p[k]).filter(v=>v && classValue(v)!==null);
-      let details = `FWC historical nesting-density classifications: ${categories.join(', ') || 'not classified'}. `;
-      if (region) {
-        details += `Linked monitoring area: ${region.name}; ${formatNests(region.projected_total_nests)} total projected nests for ${region.year} across that entire monitored area. The forecast is NOT a count for this beach segment.`;
-      } else {
-        details += 'No matched regional TimesFM forecast; the score uses FWC historical beach-level density only.';
+      if (!region || region._score == null) {
+        descriptionEl.textContent='No matched annual nesting forecast for this area. The line is an approximate geographic outline.';
+        riskEl.textContent='Priority unavailable — insufficient forecast data';
+        riskEl.style.color='#919b99';
+        return;
       }
-      descriptionEl.textContent=details;
-      riskEl.textContent=score===null ? 'Priority unavailable: no density classification' :
-        `Illustrative inspection priority: ${score}/100 — ${score>=70?'HIGH':score>=40?'MODERATE':'LOW'}`;
-      riskEl.style.color=score===null?'#5b7066':priorityColor(score);
+      descriptionEl.textContent=`${formatNests(region.projected_total_nests)} projected nests for ${region.year} across the ${name} monitoring area. Geographic line is an approximate visual estimate of the named beach or coastline, not a verified survey boundary. This is not a debris measurement or a forecast for every point along the line.`;
+      riskEl.textContent=`Illustrative relative inspection priority: ${region._score}/100 — ${region._score>=70?'HIGH':region._score>=40?'MODERATE':'LOW'}`;
+      riskEl.style.color=priorityColor(region._score);
     }
-    async function loadForecasts() {
-      const response=await fetch('./priorities.json',{cache:'no-store'});
-      if(!response.ok)throw new Error(`Cannot load priorities.json (HTTP ${response.status})`);
-      const data=await response.json();
-      if(!Array.isArray(data.regions))throw new Error('Invalid priorities.json regions');
-      return attachForecastRanks(data.regions);
+    async function getJson(url) {
+      const response=await fetch(url,{cache:'no-store'});
+      if(!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+      return response.json();
     }
-    async function loadSegments(regions) {
-      const endpoint='https://gis.myfwc.com/hosting/rest/services/Projects_FWC/Sea_Turtle_Nest_Density_Florida/MapServer/2/query';
-      let loaded=0, scored=0, matched=0;
-      const drawn=[];
-      for(let offset=0,page=0;page<20;page++){
-        const params=new URLSearchParams({where:'1=1',outFields:'OBJECTID,Beach,County,muLength,ccDensClass,cmDensClass,dcDensClass',outSR:'4326',f:'geojson',resultOffset:String(offset),resultRecordCount:'500'});
-        const response=await fetch(`${endpoint}?${params}`);
-        if(!response.ok)throw new Error(`FWC service returned HTTP ${response.status}`);
-        const data=await response.json();
-        if(data.error)throw new Error(data.error.message || 'FWC returned an error');
-        const features=data.features || [];
-        if(!features.length)break;
-        features.forEach(f=>{
-          const p=f.properties || {};
-          const region=regionForSegment(p,regions);
-          const score=segmentPriority(p,region);
-          const color=score===null?'#9ca9a5':priorityColor(score);
-          const layer=L.geoJSON(f,{style:{color,weight:score===null?3:7,opacity:score===null?.45:.94}}).addTo(map);
-          layer.bindTooltip(`${p.Beach || 'Surveyed beach'}: ${score===null?'unclassified':`${score}/100`} ${region?'(regional forecast context)':'(FWC atlas)'}`);
-          layer.on('click',e=>{showBeach(p,region,score);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
-          drawn.push(layer);
-          loaded++; if(score!==null)scored++; if(region)matched++;
-        });
-        offset+=features.length;
-        if(features.length<500)break;
+    async function loadMap() {
+      const [data,geo] = await Promise.all([getJson('./priorities.json'),getJson('./beach_areas.geojson')]);
+      if (!Array.isArray(data.regions) || !Array.isArray(geo.features)) throw new Error('Invalid forecast or coastline GeoJSON data');
+      const regions=addPriorityScores(data.regions), byName=new Map(regions.map(r=>[r.name,r]));
+      const drawn=[]; let colored=0,unmatched=0;
+      for (const f of geo.features) {
+        const region=byName.get(f.properties.region_id);
+        const valid=region && region._score != null;
+        const color=valid?priorityColor(region._score):'#919b99';
+        const layer=L.geoJSON(f,{style:{color,weight:7,opacity:.94,lineCap:'round'}}).addTo(map);
+        layer.bindTooltip(`${f.properties.name}: ${valid?`${region._score}/100 priority`:'No forecast'} · approximate shoreline`);
+        layer.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
+        drawn.push(layer); if(valid)colored++;else unmatched++;
       }
-      if(!loaded)throw new Error('FWC returned no beach geometry');
-      showStatus(`Loaded ${loaded} FWC beach segments; ${scored} scored from FWC historical densities; ${matched} also linked to regional forecasts. Other scores are atlas-based, not AI beach predictions.`);
-      if(drawn.length){const bounds=L.featureGroup(drawn).getBounds();if(bounds.isValid())map.fitBounds(bounds.pad(.04),{maxZoom:7});}
+      const notMapped=regions.filter(r=>!geo.features.some(f=>f.properties.region_id===r.name));
+      showStatus(`${colored} forecast-backed areas shown with approximate coastline lines; ${unmatched} without forecasts shown gray.${notMapped.length?' Unmapped forecast areas: '+notMapped.map(r=>r.name).join(', '):''} Boundaries are estimates, not surveyed extents.`);
+      if(drawn.length) {
+        const bounds=L.featureGroup(drawn).getBounds();
+        if(bounds.isValid())map.fitBounds(bounds.pad(.05),{maxZoom:8});
+      }
     }
-    (async()=>{
-      try{
-        showStatus('Loading nesting data…');
-        const regions=await loadForecasts();
-        showStatus('Loading FWC beach boundaries…');
-        await loadSegments(regions);
-      }catch(e){showStatus(`Map data failed: ${e.message}`);}
-    })();
+    loadMap().catch(e=>showStatus(`Map data failed: ${e.message}`));
   </script>
 </body>
 </html>

@@ -227,26 +227,24 @@
           let countyOutline = null;
           if (isDirect) {
             destination=directOfficialLayer;
-            // The dark border is deliberately reserved for DIRECT forecasts.
-            // A continuous outer stroke and continuous inner stroke remain distinguishable.
+            // Direct forecasts stay as solid colored lines with a continuous dark border.
             L.geoJSON(f,{style:{color:'#102a43',weight:12,opacity:.97,
               lineCap:'round',lineJoin:'round'}}).addTo(destination);
           } else if (valid) {
             destination=estimatedLayer;
-            // One continuous dark casing per FWC feature. The colored interior is dashed,
-            // so gaps expose the dark center while the segment remains clearly outlined.
-            countyOutline=L.geoJSON(f,{style:{color:'#102a43',weight:9,opacity:.96,
-              lineCap:'round',lineJoin:'round'}}).addTo(destination);
+            // Estimated segments use MATCHING dashed black and colored strokes.
+            // This creates transparent gaps that show the map through them,
+            // instead of black blocks in the center gap.
+            countyOutline=L.geoJSON(f,{style:{color:'#102a43',weight:8.5,opacity:.96,
+              dashArray:'13 11',lineCap:'round',lineJoin:'round'}}).addTo(destination);
           } else {
             destination=grayOfficialLayer;
           }
           const line=L.geoJSON(f,{style:isDirect
             ?{color:priorityColor(direct._score),weight:7,opacity:1,lineCap:'round',lineJoin:'round'}
             :valid
-            // Colored dashes sit INSIDE the single continuous dark casing, not
-            // around each dash individually. Black remains visible in every gap.
             ?{color:priorityColor(score),weight:5.5,opacity:1,dashArray:'13 11',
-                lineCap:'butt',lineJoin:'round'}
+                lineCap:'round',lineJoin:'round'}
             :{color:'#929c98',weight:3,opacity:.50,lineCap:'butt'}
           }).addTo(destination);
           const sourceTag=isDirect?'Direct region':valid?'County estimate':'No forecast';

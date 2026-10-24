@@ -96,13 +96,16 @@
       <h2 class="map-heading">Florida Sea Turtle Conservation Map</h2>
       <p>Click a highlighted beach shoreline to learn about its nesting priority.</p>
       <div id="map" aria-label="Interactive map of Florida beaches"></div>
+      <label class="note" style="display:flex;gap:8px;align-items:center;margin-top:12px;cursor:pointer">
+        <input id="show-statewide" type="checkbox" checked> Show 2027 county-based shoreline estimates (dashed)
+      </label>
       <p class="map-status" id="map-status" role="status" hidden></p>
       <div class="map-legend" aria-label="Forecast-informed priority categories">
         <span class="legend-item"><span class="dot high"></span>High concern</span>
         <span class="legend-item"><span class="dot medium"></span>Moderate concern</span>
         <span class="legend-item"><span class="dot low"></span>Low concern</span>
       </div>
-      <p class="note">Colors indicate experimental priorities for areas with nesting forecasts. Shoreline lines are approximate, not official survey boundaries.</p>
+      <p class="note">Thick solid lines with dark borders = direct TimesFM monitoring-area forecasts (approximate matches). Dark continuous outlines with colored dashes inside = county-level TimesFM forecasts allocated heuristically to FWC beaches. Gray = insufficient evidence. Estimates are not measured debris or independently forecasted beach counts.</p>
       <section class="beach-details" aria-live="polite">
         <h3 id="beach-name">Select a Beach</h3>
         <p id="beach-description">Click a colored beach segment on the map to see its details here.</p>
@@ -195,27 +198,112 @@
       if (!Array.isArray(data.regions) || !Array.isArray(geo.features)) throw new Error('Invalid forecast or coastline GeoJSON data');
       const regions=addPriorityScores(data.regions), byName=new Map(regions.map(r=>[r.name,r]));
       const drawn=[]; let colored=0,unmatched=0;
+      let officialDirectNames=new Set();
+      // Load real FWC geometry from a local snapshot; no beach-name matching.
+      // Each estimated coastline has an official FWC OBJECTID, County field, and TimesFM-derived county allocation.
+      const estimateToggle=document.getElementById('show-statewide');
+      // Three independent groups. Order matters: gray below dashed, solid direct on top.
+      const grayOfficialLayer=L.featureGroup().addTo(map);
+      const estimatedLayer=L.featureGroup().addTo(map);
+      const directOfficialLayer=L.featureGroup().addTo(map);
+      try {
+        const statewide=await getJson('./statewide_estimates.geojson');
+        if (!Array.isArray(statewide.features) || statewide.features.length < 150)
+          throw new Error('Incomplete official FWC beach geometry (expected 150+ segments)');
+        let countEst=0,countGray=0,countDirect=0;
+        const zoomTo=e=>map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});
+
+        for (const f of statewide.features) {
+          const p=f.properties || {};
+          const raw=p.turtleguard_priority_score;
+          const score=raw===null || raw===undefined ? null : numeric(raw);
+          const directName=p.turtleguard_direct_region;
+          const direct=directName && byName.get(directName);
+          const isDirect=!!(direct && direct._score!==null);
+          const valid=p.turtleguard_type==='timesfm_county_disaggregation' && score!==null;
+          if (isDirect) officialDirectNames.add(directName);
+
+          let destination;
+          let countyOutline = null;
+          if (isDirect) {
+            destination=directOfficialLayer;
+            // Direct forecasts stay as solid colored lines with a continuous dark border.
+            L.geoJSON(f,{style:{color:'#102a43',weight:12,opacity:.97,
+              lineCap:'round',lineJoin:'round'}}).addTo(destination);
+          } else if (valid) {
+            destination=estimatedLayer;
+            // Estimated segments use MATCHING dashed black and colored strokes.
+            // This creates transparent gaps that show the map through them,
+            // instead of black blocks in the center gap.
+            countyOutline=L.geoJSON(f,{style:{color:'#102a43',weight:8.5,opacity:.96,
+              dashArray:'13 11',lineCap:'round',lineJoin:'round'}}).addTo(destination);
+          } else {
+            destination=grayOfficialLayer;
+          }
+          const line=L.geoJSON(f,{style:isDirect
+            ?{color:priorityColor(direct._score),weight:7,opacity:1,lineCap:'round',lineJoin:'round'}
+            :valid
+            ?{color:priorityColor(score),weight:5.5,opacity:1,dashArray:'13 11',
+                lineCap:'round',lineJoin:'round'}
+            :{color:'#929c98',weight:3,opacity:.50,lineCap:'butt'}
+          }).addTo(destination);
+          const sourceTag=isDirect?'Direct region':valid?'County estimate':'No forecast';
+          const segmentTooltip=`${p.Beach || 'FWC surveyed beach'} (${p.County || 'county unavailable'}) — ${sourceTag} · FWC ID ${p.turtleguard_fwc_objectid}`;
+          line.bindTooltip(segmentTooltip,{sticky:true});
+          if(countyOutline) countyOutline.bindTooltip(segmentTooltip,{sticky:true});
+          const selectSegment=e=>{
+            nameEl.textContent=p.Beach || 'FWC surveyed beach';
+            descriptionEl.textContent=isDirect
+              ?`${Number(direct.projected_total_nests).toLocaleString()} TimesFM nests forecast for the entire ${directName} monitoring area in 2027. This FWC coastline was matched by an approximate geographic rule, not verified nest-survey boundaries; it is NOT a separate prediction for this particular segment.`
+              :valid
+              ?`${Number(p.turtleguard_estimated_nests).toLocaleString()} nests allocated to this FWC segment for 2027 (${Number(p.turtleguard_nests_per_mile).toFixed(1)} per mile). TimesFM forecast the whole county using 2021–2025 observations; 0.5/1/2 ordinal FWC class weights were used to allocate those nests. This is a heuristic, not an independent beach prediction.`
+              :'Official FWC surveyed coastline, but insufficient compatible data for a 2027 estimate.';
+            riskEl.textContent=isDirect?`Direct TimesFM region priority: ${direct._score}/100`:valid?`Experimental county-derived priority: ${score}/100`:'Priority unavailable';
+            riskEl.style.color=isDirect?priorityColor(direct._score):valid?priorityColor(score):'#929c98';
+            zoomTo(e);
+          };
+          line.on('click',selectSegment);
+          // The continuous outline is clickable even in the colored dash gaps.
+          if(countyOutline) countyOutline.on('click',selectSegment);
+          if(isDirect)countDirect++;else if(valid)countEst++;else countGray++;
+        }
+        estimateToggle.addEventListener('change',()=>{
+          if(estimateToggle.checked) {
+            estimatedLayer.addTo(map);
+            grayOfficialLayer.addTo(map);
+          } else {
+            map.removeLayer(estimatedLayer);
+            map.removeLayer(grayOfficialLayer);
+          }
+          // Keep solid direct regions on top regardless of the toggle order.
+          map.removeLayer(directOfficialLayer); directOfficialLayer.addTo(map);
+          map.removeLayer(directLayer); directLayer.addTo(map);
+        });
+        showStatus(`${countDirect} official beach segments mapped to direct TimesFM regions (solid), ${countEst} county-derived estimated segments (dashed), ${countGray} gray. Direct matches are approximate geographic matches; county allocations use unvalidated weights.`);
+      } catch(e) {
+        estimateToggle.checked=false;
+        estimateToggle.disabled=true;
+        showStatus(`Statewide estimates unavailable: ${e.message}. Direct TimesFM forecasts remain available. Run scripts/run_all.py to download FWC geometry and build the estimated layer.`);
+      }
+      const directLayer=L.featureGroup().addTo(map);
       for (const f of geo.features) {
+        // Do not draw inaccurate hand-traced paths when official FWC polylines match this region.
+        if(officialDirectNames.has(f.properties.region_id))continue;
         const region=byName.get(f.properties.region_id);
         const valid=region && region._score != null;
         const color=valid?priorityColor(region._score):'#919b99';
-
-        const outline = L.geoJSON(f,{style:{color:'#102a43',weight:12,opacity:.95,lineCap:'round',lineJoin:'round'}}).addTo(map);
-        const line = L.geoJSON(f,{style:{color,weight:7,opacity:1,lineCap:'round',lineJoin:'round'}}).addTo(map);
-        const layer = L.featureGroup([outline, line]);
-
-        line.bindTooltip(`${f.properties.name}: ${valid?`${region._score}/100 priority`:'No forecast'} · approximate shoreline`, {sticky:true});
-        line.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
-        outline.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
-
-        drawn.push(layer); if(valid)colored++;else unmatched++;
+        const outline=L.geoJSON(f,{style:{color:'#102a43',weight:10,opacity:.94,lineCap:'round',lineJoin:'round'}}).addTo(directLayer);
+        const line=L.geoJSON(f,{style:{color,weight:6,opacity:1,lineCap:'round',lineJoin:'round'}}).addTo(directLayer);
+        line.bindTooltip(`${f.properties.name}: ${valid?`${region._score}/100 direct priority`:'No direct forecast'} · approximate monitoring boundary`,{sticky:true});
+        for (const layer of [line,outline])layer.on('click',e=>{showBeach(f,region);map.flyTo(e.latlng,Math.max(map.getZoom(),9),{duration:.8});});
+        drawn.push(line);if(valid)colored++;else unmatched++;
       }
       const notMapped=regions.filter(r=>!geo.features.some(f=>f.properties.region_id===r.name));
-      showStatus(`${colored} forecast-backed areas shown with approximate coastline lines; ${unmatched} without forecasts shown gray.${notMapped.length?' Unmapped forecast areas: '+notMapped.map(r=>r.name).join(', '):''} Boundaries are estimates, not surveyed extents.`);
-      if(drawn.length) {
-        const bounds=L.featureGroup(drawn).getBounds();
-        if(bounds.isValid())map.fitBounds(bounds.pad(.05),{maxZoom:8});
-      }
+      if(notMapped.length)showStatus(statusEl.textContent+' Unmapped direct areas: '+notMapped.map(r=>r.name).join(', '));
+      // FWC geometry is used to frame the map where available; direct fallback paths are supplementary.
+      const allBounds=L.featureGroup([grayOfficialLayer,estimatedLayer,directOfficialLayer]).getBounds();
+      if(allBounds.isValid()) map.fitBounds(allBounds.pad(.03),{maxZoom:7});
+      else if(drawn.length){const bounds=L.featureGroup(drawn).getBounds();if(bounds.isValid())map.fitBounds(bounds.pad(.05),{maxZoom:8});}
     }
     loadMap().catch(e=>showStatus(`Map data failed: ${e.message}`));
   </script>

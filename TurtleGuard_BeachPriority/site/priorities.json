@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-10-24T03:27:03.129383+00:00",
+  "regions": [
+    {
+      "id": "Boca Raton",
+      "name": "Boca Raton",
+      "year": 2026,
+      "projected_total_nests": 938.8,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 1081.6,
+      "source_count": 3,
+      "series_count": 3,
+      "timesfm_selected_series": 0,
+      "available_species": [
+        "green",
+        "leatherback",
+        "loggerhead"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Boca Raton beach name only",
+        "county": "PALM BEACH",
+        "match_terms": [
+          "boca"
+        ]
+      },
+      "scope": "City monitoring area; representative map point",
+      "source_url": "https://www.myboca.us/2140/Sea-Turtle-Nesting-Totals"
+    },
+    {
+      "id": "Canaveral National Seashore",
+      "name": "Canaveral National Seashore",
+      "year": 2025,
+      "projected_total_nests": 16322.1,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 9876.2,
+      "source_count": 3,
+      "series_count": 3,
+      "timesfm_selected_series": 2,
+      "available_species": [
+        "green",
+        "leatherback",
+        "loggerhead"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "Canaveral-named FWC segments only",
+        "county": "BREVARD",
+        "match_terms": [
+          "canaveral"
+        ]
+      },
+      "scope": "National seashore monitoring area; representative map point",
+      "source_url": "https://www.nps.gov/cana/learn/nature/sea-turtle-monitoring.htm"
+    },
+    {
+      "id": "Volusia County",
+      "name": "Volusia County",
+      "year": 2025,
+      "projected_total_nests": 1258.0,
+      "historical_active_year_fraction": 1.0,
+      "historical_mean_5yr_nests": 1096.6,
+      "source_count": 2,
+      "series_count": 2,
+      "timesfm_selected_series": 0,
+      "available_species": [
+        "green",
+        "loggerhead"
+      ],
+      "proxy_mapping": {
+        "matching_rule": "All FWC segments within Volusia County; regional allocation proxy",
+        "county": "VOLUSIA",
+        "match_terms": []
+      },
+      "scope": "County monitoring area; representative map point",
+      "source_url": "https://www.volusia.org/services/growth-and-resource-management/environmental-management/sustainability-and-resilience/sea-turtles/Volusia-nesting-summary.stml"
+    }
+  ],
+  "caveats": [
+    "Regions differ in surveyed extent and protocols",
+    "No beach-specific predicted nest counts are claimed",
+    "Forecast year varies by source",
+    "Undocumented species may be omitted from total"
+  ]
+}

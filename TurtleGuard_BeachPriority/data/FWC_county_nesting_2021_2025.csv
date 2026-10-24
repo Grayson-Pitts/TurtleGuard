@@ -1,0 +1,421 @@
+location,year,species,nests,time_resolution,geographic_scope,source,status
+Bay County,2021,green,17,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2021,loggerhead,104,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2022,green,23,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2022,loggerhead,152,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2023,green,64,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2023,loggerhead,149,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2024,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2024,leatherback,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2024,loggerhead,135,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2025,green,54,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Bay County,2025,loggerhead,186,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2021,green,15281,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2021,leatherback,95,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2021,loggerhead,22554,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2022,green,17464,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2022,leatherback,143,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2022,loggerhead,31623,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2023,green,37920,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2023,leatherback,88,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2023,loggerhead,33434,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2024,green,6312,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2024,leatherback,128,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2024,loggerhead,26671,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2025,green,30431,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2025,leatherback,130,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Brevard County,2025,loggerhead,22716,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2021,green,463,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2021,leatherback,86,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2021,loggerhead,2557,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2022,green,409,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2022,leatherback,28,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2022,loggerhead,3225,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2023,green,852,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2023,leatherback,88,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2023,loggerhead,3863,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2024,green,230,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2024,leatherback,41,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2024,loggerhead,2934,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2025,green,645,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2025,leatherback,56,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Broward County,2025,loggerhead,2652,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2021,green,124,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2021,loggerhead,1966,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2022,green,108,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2022,loggerhead,2031,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2023,green,265,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2023,loggerhead,2020,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2024,green,70,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2024,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2024,loggerhead,1488,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2025,green,297,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Charlotte County,2025,loggerhead,1558,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2021,green,25,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2021,loggerhead,1715,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2022,green,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2022,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2022,loggerhead,1983,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2023,green,25,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2023,loggerhead,2138,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2024,green,3,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2024,loggerhead,1752,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2025,green,39,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2025,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Collier County,2025,loggerhead,2115,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2021,green,3,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2021,loggerhead,189,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2022,green,3,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2022,leatherback,4,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2022,loggerhead,278,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2023,green,7,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2023,loggerhead,219,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2024,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2024,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2024,loggerhead,222,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2025,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2025,leatherback,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Duval County,2025,loggerhead,180,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2021,green,10,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2021,loggerhead,64,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2022,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2022,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2022,loggerhead,99,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2023,green,18,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2023,loggerhead,71,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2024,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2024,loggerhead,72,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2025,green,9,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Escambia County,2025,loggerhead,105,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2021,green,124,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2021,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2021,loggerhead,508,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2022,green,243,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2022,leatherback,8,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2022,loggerhead,1008,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2023,green,353,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2023,leatherback,7,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2023,loggerhead,673,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2024,green,88,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2024,leatherback,7,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2024,loggerhead,661,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2025,green,269,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2025,leatherback,8,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Flagler County,2025,loggerhead,680,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2021,green,33,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2021,loggerhead,497,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2022,green,29,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2022,loggerhead,686,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2023,green,106,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2023,loggerhead,690,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2024,green,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2024,leatherback,8,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2024,loggerhead,627,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2025,green,78,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Franklin County,2025,loggerhead,763,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2021,green,28,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2021,loggerhead,446,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2022,green,43,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2022,loggerhead,507,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2023,green,77,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2023,loggerhead,580,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2024,green,3,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2024,leatherback,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2024,loggerhead,476,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2025,green,73,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Gulf County,2025,loggerhead,597,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2021,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2021,loggerhead,137,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2022,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2022,loggerhead,120,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2023,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2023,loggerhead,129,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2024,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2024,loggerhead,128,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2025,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Hillsborough County,2025,loggerhead,,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,not_surveyed
+Indian River County,2021,green,1498,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2021,leatherback,26,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2021,loggerhead,5691,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2022,green,1825,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2022,leatherback,106,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2022,loggerhead,7547,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2023,green,4190,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2023,leatherback,27,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2023,loggerhead,8815,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2024,green,807,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2024,leatherback,47,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2024,loggerhead,7094,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2025,green,4598,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2025,leatherback,78,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Indian River County,2025,loggerhead,6630,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2021,green,60,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2021,loggerhead,2235,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2022,green,85,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2022,loggerhead,2732,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2023,green,79,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2023,loggerhead,2910,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2024,green,16,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2024,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2024,loggerhead,2414,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2025,green,84,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Lee County,2025,loggerhead,2381,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2021,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2021,loggerhead,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2022,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2022,loggerhead,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2023,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2023,loggerhead,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2024,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2024,loggerhead,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2025,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Levy County,2025,loggerhead,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2021,green,10,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2021,loggerhead,1089,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2022,green,12,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2022,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2022,loggerhead,1165,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2023,green,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2023,loggerhead,840,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2024,green,5,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2024,loggerhead,1263,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2025,green,25,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Manatee County,2025,loggerhead,1235,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2021,green,5005,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2021,leatherback,522,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2021,loggerhead,11907,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2022,green,4419,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2022,leatherback,720,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2022,loggerhead,11779,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2023,green,8147,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2023,leatherback,630,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2023,loggerhead,15398,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2024,green,2312,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2024,leatherback,759,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2024,loggerhead,13202,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2025,green,9666,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2025,leatherback,915,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Martin County,2025,loggerhead,11985,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2021,green,17,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2021,leatherback,11,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2021,loggerhead,653,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2022,green,49,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2022,leatherback,11,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2022,loggerhead,863,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2023,green,17,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2023,leatherback,37,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2023,loggerhead,878,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2024,green,8,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2024,leatherback,8,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2024,loggerhead,833,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2025,green,63,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2025,leatherback,11,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Miami-Dade County,2025,loggerhead,793,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2021,green,185,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2021,loggerhead,394,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2022,green,481,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2022,loggerhead,457,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2023,green,457,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2023,loggerhead,518,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2024,green,80,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2024,loggerhead,349,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2025,green,298,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Monroe County,2025,loggerhead,321,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2021,green,8,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2021,loggerhead,232,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2022,green,7,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2022,loggerhead,284,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2023,green,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2023,loggerhead,273,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2024,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2024,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2024,loggerhead,222,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2025,green,16,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2025,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Nassau County,2025,loggerhead,155,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2021,green,11,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2021,loggerhead,26,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2022,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2022,loggerhead,28,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2023,green,18,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2023,leatherback,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2023,loggerhead,38,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2024,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2024,loggerhead,54,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2025,green,5,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Okaloosa County,2025,loggerhead,61,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2021,green,6788,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2021,leatherback,484,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2021,loggerhead,25880,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2022,green,7725,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2022,leatherback,536,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2022,loggerhead,28922,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2023,green,16464,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2023,leatherback,575,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2023,loggerhead,37352,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2024,green,2978,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2024,leatherback,551,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2024,loggerhead,28948,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2025,green,13202,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2025,leatherback,493,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Palm Beach County,2025,loggerhead,25614,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2021,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2021,loggerhead,458,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2022,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2022,loggerhead,488,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2023,green,3,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2023,loggerhead,404,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2024,green,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2024,leatherback,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2024,loggerhead,419,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2025,green,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Pinellas County,2025,loggerhead,638,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2021,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2021,loggerhead,11,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2022,green,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2022,loggerhead,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2023,green,6,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2023,loggerhead,12,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2024,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2024,loggerhead,18,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2025,green,1,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Santa Rosa County,2025,loggerhead,27,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2021,green,405,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2021,loggerhead,6966,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2022,green,492,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2022,loggerhead,7771,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2023,green,750,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2023,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2023,loggerhead,7790,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2024,green,162,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2024,leatherback,2,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2024,loggerhead,7626,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2025,green,1043,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Sarasota County,2025,loggerhead,8197,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2021,green,20,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2021,leatherback,7,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2021,loggerhead,799,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2022,green,65,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2022,leatherback,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2022,loggerhead,1154,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2023,green,130,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2023,leatherback,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2023,loggerhead,1061,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2024,green,20,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2024,leatherback,9,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2024,loggerhead,831,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2025,green,63,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2025,leatherback,4,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Johns County,2025,loggerhead,932,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2021,green,778,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2021,leatherback,143,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2021,loggerhead,7224,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2022,green,682,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2022,leatherback,251,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2022,loggerhead,7163,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2023,green,2071,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2023,leatherback,166,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2023,loggerhead,10533,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2024,green,361,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2024,leatherback,207,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2024,loggerhead,8299,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2025,green,1568,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2025,leatherback,286,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+St. Lucie County,2025,loggerhead,7346,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2021,green,1781,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2021,leatherback,15,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2021,loggerhead,2302,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2022,green,2831,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2022,leatherback,23,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2022,loggerhead,4626,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2023,green,4956,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2023,leatherback,14,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2023,loggerhead,4084,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2024,green,830,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2024,leatherback,23,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2024,loggerhead,3517,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2025,green,3920,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2025,leatherback,28,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Volusia County,2025,loggerhead,3040,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2021,green,5,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2021,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2021,loggerhead,62,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2022,green,16,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2022,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2022,loggerhead,59,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2023,green,37,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2023,leatherback,3,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2023,loggerhead,58,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2024,green,6,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2024,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2024,loggerhead,84,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2025,green,26,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2025,leatherback,0,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed
+Walton County,2025,loggerhead,42,annual,county,FWC FWRI statewide nesting beach survey 2021-2025,observed

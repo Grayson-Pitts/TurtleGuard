@@ -1,0 +1,190 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Boca Raton",
+        "name": "Boca Raton",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-80.075, 26.347],
+          [-80.073, 26.355],
+          [-80.071, 26.364],
+          [-80.069, 26.373],
+          [-80.067, 26.382],
+          [-80.065, 26.392],
+          [-80.063, 26.402]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Canaveral National Seashore",
+        "name": "Canaveral National Seashore",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-80.594, 28.612],
+          [-80.603, 28.639],
+          [-80.613, 28.668],
+          [-80.626, 28.697],
+          [-80.641, 28.728],
+          [-80.658, 28.759],
+          [-80.677, 28.790],
+          [-80.699, 28.822],
+          [-80.721, 28.854],
+          [-80.744, 28.887],
+          [-80.768, 28.922]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Casey Key",
+        "name": "Casey Key",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-82.519, 27.229],
+          [-82.516, 27.220],
+          [-82.511, 27.209],
+          [-82.506, 27.198],
+          [-82.501, 27.186],
+          [-82.495, 27.176],
+          [-82.490, 27.167]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Lido Key",
+        "name": "Lido Key",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-82.582, 27.329],
+          [-82.582, 27.322],
+          [-82.581, 27.315],
+          [-82.579, 27.308],
+          [-82.577, 27.301]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Longboat Key",
+        "name": "Longboat Key",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-82.693, 27.457],
+          [-82.687, 27.446],
+          [-82.680, 27.434],
+          [-82.673, 27.422],
+          [-82.665, 27.409],
+          [-82.656, 27.396],
+          [-82.646, 27.383],
+          [-82.636, 27.370],
+          [-82.625, 27.357],
+          [-82.613, 27.345],
+          [-82.602, 27.336]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Siesta Key",
+        "name": "Siesta Key",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-82.582, 27.306],
+          [-82.579, 27.293],
+          [-82.575, 27.280],
+          [-82.571, 27.267],
+          [-82.565, 27.253],
+          [-82.558, 27.239],
+          [-82.550, 27.225],
+          [-82.541, 27.211]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Venice",
+        "name": "Venice",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-82.463, 27.109],
+          [-82.461, 27.103],
+          [-82.459, 27.097],
+          [-82.456, 27.091],
+          [-82.452, 27.084],
+          [-82.448, 27.078]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "region_id": "Volusia County",
+        "name": "Volusia County",
+        "geometry_quality": "approximate_visual_trace",
+        "warning": "Approximate coastline visualization; not surveyed nesting coverage or exact shore boundary"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-80.772, 28.937],
+          [-80.783, 28.957],
+          [-80.795, 28.979],
+          [-80.808, 29.003],
+          [-80.820, 29.027],
+          [-80.833, 29.052],
+          [-80.847, 29.078],
+          [-80.862, 29.105],
+          [-80.879, 29.133],
+          [-80.897, 29.162],
+          [-80.916, 29.193],
+          [-80.936, 29.224],
+          [-80.955, 29.255],
+          [-80.974, 29.287],
+          [-80.992, 29.320],
+          [-81.008, 29.354],
+          [-81.025, 29.389],
+          [-81.042, 29.425]
+        ]
+      }
+    }
+  ]
+}

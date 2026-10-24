@@ -1,83 +1,280 @@
 {
-  "created_utc": "2026-10-24T03:27:03.129383+00:00",
+  "created_utc": "2026-10-24T20:20:11.229679+00:00",
+  "forecast_year": 2027,
   "regions": [
     {
       "id": "Boca Raton",
       "name": "Boca Raton",
-      "year": 2026,
-      "projected_total_nests": 938.8,
-      "historical_active_year_fraction": 1.0,
-      "historical_mean_5yr_nests": 1081.6,
-      "source_count": 3,
-      "series_count": 3,
-      "timesfm_selected_series": 0,
-      "available_species": [
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 1000.5,
+      "timesfm_total_nests": 1000.5,
+      "survey_length_miles": 5.0,
+      "length_quality": "city_surveys",
+      "length_source": "https://www.myboca.us/2139/Nesting",
+      "length_limitations": "City states it surveys five miles each morning",
+      "projected_nests_per_mile": 200.1,
+      "species_covered": [
         "green",
         "leatherback",
         "loggerhead"
       ],
-      "proxy_mapping": {
-        "matching_rule": "Boca Raton beach name only",
-        "county": "PALM BEACH",
-        "match_terms": [
-          "boca"
-        ]
+      "uses_provisional_2026": false,
+      "methods_used": {
+        "green": "timesfm",
+        "leatherback": "timesfm",
+        "loggerhead": "timesfm"
       },
-      "scope": "City monitoring area; representative map point",
-      "source_url": "https://www.myboca.us/2140/Sea-Turtle-Nesting-Totals"
+      "source_years": {
+        "green": 2025,
+        "leatherback": 2025,
+        "loggerhead": 2025
+      },
+      "source_count": 3,
+      "series_count": 3,
+      "timesfm_selected_series": 3,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 67.4,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
     },
     {
       "id": "Canaveral National Seashore",
       "name": "Canaveral National Seashore",
-      "year": 2025,
-      "projected_total_nests": 16322.1,
-      "historical_active_year_fraction": 1.0,
-      "historical_mean_5yr_nests": 9876.2,
-      "source_count": 3,
-      "series_count": 3,
-      "timesfm_selected_series": 2,
-      "available_species": [
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 9320.6,
+      "timesfm_total_nests": 9320.6,
+      "survey_length_miles": 24.0,
+      "length_quality": "park_beach_length_proxy",
+      "length_source": "https://www.nps.gov/cana/planyourvisit/basicinfo.htm",
+      "length_limitations": "Park beach length, not independently verified annual survey boundary",
+      "projected_nests_per_mile": 388.36,
+      "species_covered": [
         "green",
         "leatherback",
         "loggerhead"
       ],
-      "proxy_mapping": {
-        "matching_rule": "Canaveral-named FWC segments only",
-        "county": "BREVARD",
-        "match_terms": [
-          "canaveral"
-        ]
+      "uses_provisional_2026": false,
+      "methods_used": {
+        "green": "timesfm",
+        "leatherback": "timesfm",
+        "loggerhead": "timesfm"
       },
-      "scope": "National seashore monitoring area; representative map point",
-      "source_url": "https://www.nps.gov/cana/learn/nature/sea-turtle-monitoring.htm"
+      "source_years": {
+        "green": 2024,
+        "leatherback": 2024,
+        "loggerhead": 2024
+      },
+      "source_count": 3,
+      "series_count": 3,
+      "timesfm_selected_series": 3,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 90.0,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+    },
+    {
+      "id": "Casey Key",
+      "name": "Casey Key",
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 2203.8,
+      "timesfm_total_nests": 2203.8,
+      "survey_length_miles": 7.3,
+      "length_quality": "research_monitored_length",
+      "length_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/",
+      "length_limitations": "11.8 km / 7.3 mi monitored beach",
+      "projected_nests_per_mile": 301.89,
+      "species_covered": [
+        "all"
+      ],
+      "uses_provisional_2026": true,
+      "methods_used": {
+        "all": "timesfm"
+      },
+      "source_years": {
+        "all": 2026
+      },
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 80.5,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+    },
+    {
+      "id": "Lido Key",
+      "name": "Lido Key",
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 153.7,
+      "timesfm_total_nests": 153.7,
+      "survey_length_miles": 3.3,
+      "length_quality": "research_monitored_length",
+      "length_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/",
+      "length_limitations": "5.3 km / 3.3 mi monitored beach",
+      "projected_nests_per_mile": 46.59,
+      "species_covered": [
+        "all"
+      ],
+      "uses_provisional_2026": true,
+      "methods_used": {
+        "all": "timesfm"
+      },
+      "source_years": {
+        "all": 2026
+      },
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 37.7,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+    },
+    {
+      "id": "Longboat Key",
+      "name": "Longboat Key",
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 1393.2,
+      "timesfm_total_nests": 1393.2,
+      "survey_length_miles": 10.6,
+      "length_quality": "research_monitored_length",
+      "length_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/",
+      "length_limitations": "17.1 km / 10.6 mi monitored beach",
+      "projected_nests_per_mile": 131.44,
+      "species_covered": [
+        "all"
+      ],
+      "uses_provisional_2026": true,
+      "methods_used": {
+        "all": "timesfm"
+      },
+      "source_years": {
+        "all": 2026
+      },
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 56.5,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+    },
+    {
+      "id": "Siesta Key",
+      "name": "Siesta Key",
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 544.7,
+      "timesfm_total_nests": 544.7,
+      "survey_length_miles": 5.8,
+      "length_quality": "research_monitored_length",
+      "length_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/",
+      "length_limitations": "North 5.2 km plus South 4.1 km = 9.3 km, about 5.8 mi; paper rounds 3.2+2.5=5.7 mi",
+      "projected_nests_per_mile": 93.92,
+      "species_covered": [
+        "all"
+      ],
+      "uses_provisional_2026": true,
+      "methods_used": {
+        "all": "timesfm"
+      },
+      "source_years": {
+        "all": 2026
+      },
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 49.3,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+    },
+    {
+      "id": "Venice",
+      "name": "Venice",
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 661.7,
+      "timesfm_total_nests": 661.7,
+      "survey_length_miles": 4.6,
+      "length_quality": "research_monitored_length",
+      "length_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10567714/",
+      "length_limitations": "7.4 km / 4.6 mi monitored beach",
+      "projected_nests_per_mile": 143.84,
+      "species_covered": [
+        "all"
+      ],
+      "uses_provisional_2026": true,
+      "methods_used": {
+        "all": "timesfm"
+      },
+      "source_years": {
+        "all": 2026
+      },
+      "source_count": 1,
+      "series_count": 1,
+      "timesfm_selected_series": 1,
+      "scope": "Named beach monitoring area (geographic path approximate)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": true,
+      "priority_score": 58.7,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
     },
     {
       "id": "Volusia County",
       "name": "Volusia County",
-      "year": 2025,
-      "projected_total_nests": 1258.0,
-      "historical_active_year_fraction": 1.0,
-      "historical_mean_5yr_nests": 1096.6,
-      "source_count": 2,
-      "series_count": 2,
-      "timesfm_selected_series": 0,
-      "available_species": [
+      "year": 2027,
+      "forecast_year": 2027,
+      "projected_total_nests": 854.7,
+      "timesfm_total_nests": 854.7,
+      "survey_length_miles": 49.59,
+      "length_quality": "county_extent_proxy_UNVERIFIED",
+      "length_source": "https://myfwc.com/research/wildlife/sea-turtles/nesting/statewide/",
+      "length_limitations": "79.8 km 2025 county survey, may not match county-managed beaches historical series; low-confidence denominator",
+      "projected_nests_per_mile": 17.24,
+      "species_covered": [
         "green",
+        "leatherback",
         "loggerhead"
       ],
-      "proxy_mapping": {
-        "matching_rule": "All FWC segments within Volusia County; regional allocation proxy",
-        "county": "VOLUSIA",
-        "match_terms": []
+      "uses_provisional_2026": false,
+      "methods_used": {
+        "green": "timesfm",
+        "leatherback": "timesfm",
+        "loggerhead": "timesfm"
       },
-      "scope": "County monitoring area; representative map point",
-      "source_url": "https://www.volusia.org/services/growth-and-resource-management/environmental-management/sustainability-and-resilience/sea-turtles/Volusia-nesting-summary.stml"
+      "source_years": {
+        "green": 2024,
+        "leatherback": 2024,
+        "loggerhead": 2024
+      },
+      "source_count": 3,
+      "series_count": 3,
+      "timesfm_selected_series": 3,
+      "scope": "County-managed nesting area (length proxy from broader survey)",
+      "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
+      "length_verified_for_series": false,
+      "priority_score": 26.9,
+      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
     }
   ],
   "caveats": [
-    "Regions differ in surveyed extent and protocols",
-    "No beach-specific predicted nest counts are claimed",
-    "Forecast year varies by source",
-    "Undocumented species may be omitted from total"
+    "Priority is a relative nesting-density index, not measured beach litter or cleanup effectiveness",
+    "Volusia length is a county-level proxy and does not exactly match the historical nesting survey boundary",
+    "Forecasts have differing historical end years and therefore differing direct model horizons",
+    "Some records omit rare species, and nest counts do not equal number of distinct turtles",
+    "Map GeoJSON paths are hand-approximated, not survey extents",
+    "2026 Mote counts are preliminary as of Week 42, not finished-season observations"
   ]
 }

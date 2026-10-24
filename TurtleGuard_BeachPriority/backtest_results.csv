@@ -1,65 +1,127 @@
-location,species,year,actual,timesfm,mean_5yr,same_parity_2yr,timesfm_absolute_error,mean_5yr_absolute_error,same_parity_2yr_absolute_error
-Boca Raton,green,2018,19.0,59.55,208.4,38.0,40.55,189.4,19.0
-Boca Raton,green,2019,393.0,184.4,146.0,300.0,208.6,247.0,93.0
-Boca Raton,green,2020,132.0,3.86,209.6,19.0,128.14,77.6,113.0
-Boca Raton,green,2021,190.0,303.49,176.4,393.0,113.49,13.6,203.0
-Boca Raton,green,2022,241.0,125.58,206.8,132.0,115.42,34.2,109.0
-Boca Raton,green,2023,328.0,194.38,195.0,190.0,133.62,133.0,138.0
-Boca Raton,green,2024,72.0,155.66,256.8,241.0,83.66,184.8,169.0
-Boca Raton,green,2025,243.0,216.99,192.6,328.0,26.01,50.4,85.0
-Boca Raton,leatherback,2018,18.0,12.29,15.6,18.0,5.71,2.4,0.0
-Boca Raton,leatherback,2019,18.0,15.51,16.8,5.0,2.49,1.2,13.0
-Boca Raton,leatherback,2020,13.0,15.33,16.8,18.0,2.33,3.8,5.0
-Boca Raton,leatherback,2021,21.0,13.98,14.4,18.0,7.02,6.6,3.0
-Boca Raton,leatherback,2022,19.0,15.83,15.0,13.0,3.17,4.0,6.0
-Boca Raton,leatherback,2023,28.0,16.01,17.8,21.0,11.99,10.2,7.0
-Boca Raton,leatherback,2024,19.0,17.67,19.8,19.0,1.33,0.8,0.0
-Boca Raton,leatherback,2025,21.0,18.83,20.0,28.0,2.17,1.0,7.0
-Boca Raton,loggerhead,2018,686.0,755.28,781.0,729.0,69.28,95.0,43.0
-Boca Raton,loggerhead,2019,913.0,715.16,751.2,767.0,197.84,161.8,146.0
-Boca Raton,loggerhead,2020,756.0,838.19,762.6,686.0,82.19,6.6,70.0
-Boca Raton,loggerhead,2021,647.0,760.69,770.2,913.0,113.69,123.2,266.0
-Boca Raton,loggerhead,2022,898.0,690.58,753.8,756.0,207.42,144.2,142.0
-Boca Raton,loggerhead,2023,1038.0,804.43,780.0,647.0,233.57,258.0,391.0
-Boca Raton,loggerhead,2024,824.0,907.61,850.4,898.0,83.61,26.4,74.0
-Boca Raton,loggerhead,2025,819.0,790.98,832.6,1038.0,28.02,13.6,219.0
-Canaveral National Seashore,green,2017,7736.0,778.56,1868.0,3571.0,6957.44,5868.0,4165.0
-Canaveral National Seashore,green,2018,301.0,1049.05,3252.0,381.0,748.05,2951.0,80.0
-Canaveral National Seashore,green,2019,7629.0,1948.64,2481.8,7736.0,5680.36,5147.2,107.0
-Canaveral National Seashore,green,2020,367.0,888.57,3923.6,301.0,521.57,3556.6,66.0
-Canaveral National Seashore,green,2021,4303.0,3771.76,3282.8,7629.0,531.24,1020.2,3326.0
-Canaveral National Seashore,green,2022,6331.0,701.36,4067.2,367.0,5629.64,2263.8,5964.0
-Canaveral National Seashore,green,2023,11106.0,2122.94,3786.2,4303.0,8983.06,7319.8,6803.0
-Canaveral National Seashore,green,2024,1801.0,3130.92,5947.2,6331.0,1329.92,4146.2,4530.0
-Canaveral National Seashore,leatherback,2017,23.0,24.39,22.6,34.0,1.39,0.4,11.0
-Canaveral National Seashore,leatherback,2018,15.0,22.32,21.8,9.0,7.32,6.8,6.0
-Canaveral National Seashore,leatherback,2019,33.0,20.66,20.2,23.0,12.34,12.8,10.0
-Canaveral National Seashore,leatherback,2020,26.0,27.21,22.8,15.0,1.21,3.2,11.0
-Canaveral National Seashore,leatherback,2021,31.0,24.36,21.2,33.0,6.64,9.8,2.0
-Canaveral National Seashore,leatherback,2022,27.0,27.63,25.6,26.0,0.63,1.4,1.0
-Canaveral National Seashore,leatherback,2023,28.0,27.47,26.4,31.0,0.53,1.6,3.0
-Canaveral National Seashore,leatherback,2024,30.0,26.17,29.0,27.0,3.83,1.0,3.0
-Canaveral National Seashore,loggerhead,2017,4556.0,4387.75,4239.2,3905.0,168.25,316.8,651.0
-Canaveral National Seashore,loggerhead,2018,4223.0,4124.72,4119.6,5057.0,98.28,103.4,834.0
-Canaveral National Seashore,loggerhead,2019,5646.0,4070.08,4212.6,4556.0,1575.92,1433.4,1090.0
-Canaveral National Seashore,loggerhead,2020,4187.0,4833.68,4677.4,4223.0,646.68,490.4,36.0
-Canaveral National Seashore,loggerhead,2021,3708.0,4198.93,4733.8,5646.0,490.93,1025.8,1938.0
-Canaveral National Seashore,loggerhead,2022,6188.0,3941.75,4464.0,4187.0,2246.25,1724.0,2001.0
-Canaveral National Seashore,loggerhead,2023,5677.0,4798.11,4790.4,3708.0,878.89,886.6,1969.0
-Canaveral National Seashore,loggerhead,2024,5571.0,5005.3,5081.2,6188.0,565.7,489.8,617.0
-Volusia County,green,2017,82.0,14.11,25.0,37.0,67.89,57.0,45.0
-Volusia County,green,2018,7.0,31.07,36.4,4.0,24.07,29.4,3.0
-Volusia County,green,2019,98.0,16.39,27.4,82.0,81.61,70.6,16.0
-Volusia County,green,2020,53.0,29.42,45.6,7.0,23.58,7.4,46.0
-Volusia County,green,2021,77.0,37.84,48.8,98.0,39.16,28.2,21.0
-Volusia County,green,2022,80.0,42.6,63.4,53.0,37.4,16.6,27.0
-Volusia County,green,2023,259.0,54.39,63.0,77.0,204.61,196.0,182.0
-Volusia County,green,2024,19.0,93.17,113.4,80.0,74.17,94.4,61.0
-Volusia County,loggerhead,2017,634.0,604.4,639.4,615.0,29.6,5.4,19.0
-Volusia County,loggerhead,2018,567.0,594.01,589.2,666.0,27.01,22.2,99.0
-Volusia County,loggerhead,2019,880.0,581.13,579.2,634.0,298.87,300.8,246.0
-Volusia County,loggerhead,2020,842.0,696.84,672.4,567.0,145.16,169.6,275.0
-Volusia County,loggerhead,2021,698.0,718.83,717.8,880.0,20.83,19.8,182.0
-Volusia County,loggerhead,2022,1336.0,706.86,724.2,842.0,629.14,611.8,494.0
-Volusia County,loggerhead,2023,1249.0,863.45,864.6,698.0,385.55,384.4,551.0
-Volusia County,loggerhead,2024,870.0,1036.89,1001.0,1336.0,166.89,131.0,466.0
+location,species,target_year,forecast_horizon_years,origin_year,phase,actual_nests,timesfm,timesfm_abs_error,five_year_mean,five_year_mean_abs_error,recent_median,recent_median_abs_error,parity_mean,parity_mean_abs_error,timesfm_parity_blend,timesfm_parity_blend_abs_error
+Boca Raton,green,2017,2,2015,method_selection,300.0,144.74,155.26,194.8,105.2,154.0,146.0,261.0,39.0,220.31,79.69
+Boca Raton,green,2018,2,2016,method_selection,19.0,63.92,44.92,171.6,152.6,116.0,97.0,76.33,57.33,71.99,52.99
+Boca Raton,green,2019,2,2017,method_selection,393.0,228.64,164.36,208.4,184.6,298.0,95.0,309.67,83.33,281.31,111.69
+Boca Raton,green,2020,2,2018,method_selection,132.0,54.76,77.24,146.0,14.0,75.0,57.0,44.0,88.0,47.76,84.24
+Boca Raton,green,2021,2,2019,method_selection,190.0,309.72,119.72,209.6,19.6,298.0,108.0,330.33,140.33,323.12,133.12
+Boca Raton,green,2022,2,2020,method_selection,241.0,89.99,151.01,176.4,64.6,132.0,109.0,63.0,178.0,72.45,168.55
+Boca Raton,green,2023,2,2021,method_selection,328.0,145.89,182.11,206.8,121.2,190.0,138.0,294.33,33.67,242.38,85.62
+Boca Raton,green,2024,2,2022,independent_holdout,72.0,180.4,108.4,195.0,123.0,190.0,118.0,130.67,58.67,148.07,76.07
+Boca Raton,green,2025,2,2023,independent_holdout,243.0,209.79,33.21,256.8,13.8,241.0,2.0,303.67,60.67,270.81,27.81
+Boca Raton,leatherback,2017,2,2015,method_selection,5.0,20.04,15.04,20.2,15.2,18.0,13.0,16.67,11.67,17.85,12.85
+Boca Raton,leatherback,2018,2,2016,method_selection,18.0,18.57,0.57,21.2,3.2,18.0,0.0,23.0,5.0,21.45,3.45
+Boca Raton,leatherback,2019,2,2017,method_selection,18.0,12.52,5.48,15.6,2.4,18.0,0.0,14.0,4.0,13.48,4.52
+Boca Raton,leatherback,2020,2,2018,method_selection,13.0,14.12,1.12,16.8,3.8,18.0,5.0,18.0,5.0,16.64,3.64
+Boca Raton,leatherback,2021,2,2019,method_selection,21.0,14.76,6.24,16.8,4.2,18.0,3.0,16.0,5.0,15.56,5.44
+Boca Raton,leatherback,2022,2,2020,method_selection,19.0,13.49,5.51,14.4,4.6,18.0,1.0,16.33,2.67,15.34,3.66
+Boca Raton,leatherback,2023,2,2021,method_selection,28.0,15.36,12.64,15.0,13.0,18.0,10.0,14.67,13.33,14.91,13.09
+Boca Raton,leatherback,2024,2,2022,independent_holdout,19.0,15.67,3.33,17.8,1.2,18.0,1.0,16.67,2.33,16.32,2.68
+Boca Raton,leatherback,2025,2,2023,independent_holdout,21.0,17.13,3.87,19.8,1.2,19.0,2.0,22.33,1.33,20.51,0.49
+Boca Raton,loggerhead,2017,2,2015,method_selection,767.0,744.39,22.61,813.2,46.2,835.0,68.0,738.67,28.33,740.67,26.33
+Boca Raton,loggerhead,2018,2,2016,method_selection,686.0,705.78,19.78,826.4,140.4,835.0,149.0,859.67,173.67,805.81,119.81
+Boca Raton,loggerhead,2019,2,2017,method_selection,913.0,746.16,166.84,781.0,132.0,767.0,146.0,773.33,139.67,763.82,149.18
+Boca Raton,loggerhead,2020,2,2018,method_selection,756.0,707.62,48.38,751.2,4.8,729.0,27.0,757.0,1.0,739.72,16.28
+Boca Raton,loggerhead,2021,2,2019,method_selection,647.0,767.62,120.62,762.6,115.6,729.0,82.0,799.33,152.33,788.23,141.23
+Boca Raton,loggerhead,2022,2,2020,method_selection,898.0,763.64,134.36,770.2,127.8,756.0,142.0,723.67,174.33,737.66,160.34
+Boca Raton,loggerhead,2023,2,2021,method_selection,1038.0,698.24,339.76,753.8,284.2,756.0,282.0,775.67,262.33,748.57,289.43
+Boca Raton,loggerhead,2024,2,2022,independent_holdout,824.0,783.37,40.63,780.0,44.0,756.0,68.0,780.0,44.0,781.18,42.82
+Boca Raton,loggerhead,2025,2,2023,independent_holdout,819.0,863.5,44.5,850.4,31.4,898.0,79.0,866.0,47.0,865.12,46.12
+Canaveral National Seashore,green,2016,3,2013,method_selection,381.0,1083.59,702.59,1597.2,1216.2,1343.0,962.0,1019.33,638.33,1041.82,660.82
+Canaveral National Seashore,green,2017,3,2014,method_selection,7736.0,529.64,7206.36,1621.0,6115.0,1343.0,6393.0,1942.33,5793.67,1447.89,6288.11
+Canaveral National Seashore,green,2018,3,2015,method_selection,301.0,995.44,694.44,2066.6,1765.6,1374.0,1073.0,859.67,558.67,907.19,606.19
+Canaveral National Seashore,green,2019,3,2016,method_selection,7629.0,693.53,6935.47,1868.0,5761.0,816.0,6813.0,3032.33,4596.67,2213.75,5415.25
+Canaveral National Seashore,green,2020,3,2017,method_selection,367.0,882.5,515.5,3252.0,2885.0,3571.0,3204.0,539.0,172.0,659.23,292.23
+Canaveral National Seashore,green,2021,3,2018,method_selection,4303.0,1968.52,2334.48,2481.8,1821.2,420.0,3883.0,5153.0,850.0,4038.43,264.57
+Canaveral National Seashore,green,2022,3,2019,method_selection,6331.0,650.07,5680.93,3923.6,2407.4,3571.0,2760.0,367.33,5963.67,466.29,5864.71
+Canaveral National Seashore,green,2023,3,2020,independent_holdout,11106.0,3448.61,7657.39,3282.8,7823.2,381.0,10725.0,6312.0,4794.0,5309.81,5796.19
+Canaveral National Seashore,green,2024,3,2021,independent_holdout,1801.0,687.85,1113.15,4067.2,2266.2,4303.0,2502.0,349.67,1451.33,468.03,1332.97
+Canaveral National Seashore,leatherback,2016,3,2013,method_selection,9.0,21.75,12.75,25.2,16.2,26.0,17.0,19.33,10.33,20.18,11.18
+Canaveral National Seashore,leatherback,2017,3,2014,method_selection,23.0,18.91,4.09,24.0,1.0,24.0,1.0,24.33,1.33,22.43,0.57
+Canaveral National Seashore,leatherback,2018,3,2015,method_selection,15.0,26.56,11.56,25.6,10.6,24.0,9.0,24.33,9.33,25.11,10.11
+Canaveral National Seashore,leatherback,2019,3,2016,method_selection,33.0,19.77,13.23,22.6,10.4,23.0,10.0,27.0,6.0,24.47,8.53
+Canaveral National Seashore,leatherback,2020,3,2017,method_selection,26.0,21.16,4.84,21.8,4.2,23.0,3.0,18.67,7.33,19.54,6.46
+Canaveral National Seashore,leatherback,2021,3,2018,method_selection,31.0,17.69,13.31,20.2,10.8,20.0,11.0,26.67,4.33,23.52,7.48
+Canaveral National Seashore,leatherback,2022,3,2019,method_selection,27.0,25.11,1.89,22.8,4.2,23.0,4.0,14.67,12.33,18.32,8.68
+Canaveral National Seashore,leatherback,2023,3,2020,independent_holdout,28.0,22.52,5.48,21.2,6.8,23.0,5.0,30.0,2.0,27.38,0.62
+Canaveral National Seashore,leatherback,2024,3,2021,independent_holdout,30.0,24.41,5.59,25.6,4.4,26.0,4.0,16.67,13.33,19.38,10.62
+Canaveral National Seashore,loggerhead,2016,3,2013,method_selection,5057.0,3632.08,1424.92,3926.6,1130.4,3758.0,1299.0,4347.0,710.0,4096.78,960.22
+Canaveral National Seashore,loggerhead,2017,3,2014,method_selection,4556.0,3391.21,1164.79,4045.2,510.8,3758.0,798.0,3409.67,1146.33,3403.21,1152.79
+Canaveral National Seashore,loggerhead,2018,3,2015,method_selection,4223.0,3587.28,635.72,3976.2,246.8,3758.0,465.0,4242.0,19.0,4012.85,210.15
+Canaveral National Seashore,loggerhead,2019,3,2016,method_selection,5646.0,4040.44,1605.56,4239.2,1406.8,3905.0,1741.0,3801.67,1844.33,3885.24,1760.76
+Canaveral National Seashore,loggerhead,2020,3,2017,method_selection,4187.0,4036.12,150.88,4119.6,67.4,3905.0,282.0,4511.0,324.0,4344.79,157.79
+Canaveral National Seashore,loggerhead,2021,3,2018,method_selection,3708.0,3975.64,267.64,4212.6,504.6,4223.0,515.0,4073.0,365.0,4038.93,330.93
+Canaveral National Seashore,loggerhead,2022,3,2019,method_selection,6188.0,4517.4,1670.6,4677.4,1510.6,4556.0,1632.0,4200.67,1987.33,4311.52,1876.48
+Canaveral National Seashore,loggerhead,2023,3,2020,independent_holdout,5677.0,4077.88,1599.12,4733.8,943.2,4556.0,1121.0,4702.33,974.67,4483.78,1193.22
+Canaveral National Seashore,loggerhead,2024,3,2021,independent_holdout,5571.0,3906.41,1664.59,4464.0,1107.0,4223.0,1348.0,4489.0,1082.0,4285.09,1285.91
+Casey Key,all,2018,1,2017,method_selection,1186.0,2033.13,847.13,1421.2,235.2,1165.0,21.0,1411.67,225.67,1629.18,443.18
+Casey Key,all,2019,1,2018,method_selection,2314.0,1204.19,1109.81,1466.8,847.2,1186.0,1128.0,1275.67,1038.33,1250.65,1063.35
+Casey Key,all,2020,1,2019,method_selection,1515.0,1987.04,472.04,1696.6,181.6,1853.0,338.0,1488.33,26.67,1662.88,147.88
+Casey Key,all,2021,1,2020,method_selection,1471.0,1443.53,27.47,1796.4,325.4,1853.0,382.0,1727.67,256.67,1628.22,157.22
+Casey Key,all,2022,1,2021,method_selection,2053.0,1505.22,547.78,1667.8,385.2,1515.0,538.0,1605.0,448.0,1570.08,482.92
+Casey Key,all,2023,1,2022,method_selection,1965.0,1802.74,162.26,1707.8,257.2,1515.0,450.0,1879.33,85.67,1852.53,112.47
+Casey Key,all,2024,1,2023,method_selection,1830.0,1862.77,32.77,1863.6,33.6,1965.0,135.0,1584.67,245.33,1682.0,148.0
+Casey Key,all,2025,1,2024,independent_holdout,2727.0,1741.63,985.37,1766.8,960.2,1830.0,897.0,1916.67,810.33,1855.41,871.59
+Casey Key,all,2026,1,2025,independent_holdout,2272.0,2336.11,64.11,2009.2,262.8,1965.0,307.0,1799.33,472.67,1987.21,284.79
+Lido Key,all,2018,1,2017,method_selection,123.0,198.22,75.22,126.4,3.4,97.0,26.0,117.0,6.0,145.43,22.43
+Lido Key,all,2019,1,2018,method_selection,98.0,176.25,78.25,135.0,37.0,123.0,25.0,120.33,22.33,139.91,41.91
+Lido Key,all,2020,1,2019,method_selection,153.0,90.79,62.21,135.6,17.4,123.0,30.0,131.33,21.67,117.14,35.86
+Lido Key,all,2021,1,2020,method_selection,107.0,141.67,34.67,146.8,39.8,153.0,46.0,126.33,19.33,131.7,24.7
+Lido Key,all,2022,1,2021,method_selection,160.0,108.85,51.15,133.0,27.0,123.0,37.0,150.67,9.33,136.03,23.97
+Lido Key,all,2023,1,2022,method_selection,188.0,144.26,43.74,128.2,59.8,123.0,65.0,129.67,58.33,134.77,53.23
+Lido Key,all,2024,1,2023,method_selection,198.0,197.57,0.43,141.2,56.8,153.0,45.0,145.33,52.67,163.62,34.38
+Lido Key,all,2025,1,2024,independent_holdout,186.0,193.45,7.45,161.2,24.8,160.0,26.0,131.0,55.0,152.86,33.14
+Lido Key,all,2026,1,2025,independent_holdout,150.0,182.91,32.91,167.8,17.8,186.0,36.0,170.33,20.33,174.74,24.74
+Longboat Key,all,2018,1,2017,method_selection,993.0,1334.94,341.94,862.4,130.6,698.0,295.0,778.67,214.33,973.36,19.64
+Longboat Key,all,2019,1,2018,method_selection,1342.0,1227.32,114.68,935.4,406.6,993.0,349.0,867.67,474.33,993.55,348.45
+Longboat Key,all,2020,1,2019,method_selection,1136.0,1543.7,407.7,1098.8,37.2,1184.0,48.0,900.67,235.33,1125.73,10.27
+Longboat Key,all,2021,1,2020,method_selection,1032.0,1399.38,367.38,1186.4,154.4,1184.0,152.0,1105.67,73.67,1208.47,176.47
+Longboat Key,all,2022,1,2021,method_selection,1300.0,1287.32,12.68,1156.0,144.0,1136.0,164.0,1104.33,195.67,1168.38,131.62
+Longboat Key,all,2023,1,2022,method_selection,994.0,1407.3,413.3,1160.6,166.6,1136.0,142.0,1217.0,223.0,1283.6,289.6
+Longboat Key,all,2024,1,2023,method_selection,1259.0,1022.45,236.55,1160.8,98.2,1136.0,123.0,1143.0,116.0,1100.81,158.19
+Longboat Key,all,2025,1,2024,independent_holdout,1473.0,1164.11,308.89,1144.2,328.8,1136.0,337.0,1122.67,350.33,1137.17,335.83
+Longboat Key,all,2026,1,2025,independent_holdout,1305.0,1326.47,21.47,1211.6,93.4,1259.0,46.0,1231.67,73.33,1264.85,40.15
+Siesta Key,all,2018,1,2017,method_selection,395.0,639.95,244.95,424.0,29.0,408.0,13.0,358.33,36.67,456.9,61.9
+Siesta Key,all,2019,1,2018,method_selection,711.0,550.31,160.69,437.4,273.6,408.0,303.0,457.33,253.67,489.87,221.13
+Siesta Key,all,2020,1,2019,method_selection,465.0,699.55,234.55,525.2,60.2,476.0,11.0,381.0,84.0,492.49,27.49
+Siesta Key,all,2021,1,2020,method_selection,544.0,469.45,74.55,536.6,7.4,476.0,68.0,585.0,41.0,544.56,0.56
+Siesta Key,all,2022,1,2021,method_selection,531.0,527.17,3.83,550.2,19.2,544.0,13.0,445.33,85.67,473.98,57.02
+Siesta Key,all,2023,1,2022,method_selection,379.0,527.3,148.3,529.2,150.2,531.0,152.0,630.33,251.33,594.27,215.27
+Siesta Key,all,2024,1,2023,method_selection,502.0,450.7,51.3,526.0,24.0,531.0,29.0,463.67,38.33,459.13,42.87
+Siesta Key,all,2025,1,2024,independent_holdout,663.0,487.5,175.5,484.2,178.8,502.0,161.0,544.67,118.33,524.66,138.34
+Siesta Key,all,2026,1,2025,independent_holdout,557.0,593.04,36.04,523.8,33.2,531.0,26.0,499.33,57.67,532.13,24.87
+Venice,all,2018,1,2017,method_selection,486.0,466.5,19.5,439.0,47.0,398.0,88.0,462.0,24.0,463.58,22.42
+Venice,all,2019,1,2018,method_selection,647.0,433.03,213.97,456.6,190.4,486.0,161.0,402.33,244.67,413.08,233.92
+Venice,all,2020,1,2019,method_selection,478.0,608.83,130.83,516.0,38.0,553.0,75.0,491.33,13.33,532.46,54.46
+Venice,all,2021,1,2020,method_selection,632.0,481.64,150.36,560.4,71.6,553.0,79.0,485.33,146.67,484.04,147.96
+Venice,all,2022,1,2021,method_selection,494.0,586.34,92.34,559.2,65.2,553.0,59.0,534.0,40.0,552.32,58.32
+Venice,all,2023,1,2022,method_selection,775.0,506.99,268.01,547.4,227.6,494.0,281.0,610.67,164.33,574.38,200.62
+Venice,all,2024,1,2023,method_selection,587.0,646.21,59.21,605.2,18.2,632.0,45.0,486.0,101.0,542.07,44.93
+Venice,all,2025,1,2024,independent_holdout,684.0,595.1,88.9,593.2,90.8,587.0,97.0,684.67,0.67,653.32,30.68
+Venice,all,2026,1,2025,independent_holdout,645.0,634.99,10.01,634.4,10.6,632.0,13.0,519.67,125.33,560.03,84.97
+Volusia County,green,2016,3,2013,method_selection,4.0,23.22,19.22,24.2,20.2,21.0,17.0,24.0,20.0,23.73,19.73
+Volusia County,green,2017,3,2014,method_selection,82.0,16.74,65.26,24.0,58.0,21.0,61.0,27.0,55.0,23.41,58.59
+Volusia County,green,2018,3,2015,method_selection,7.0,20.05,13.05,28.4,21.4,25.0,18.0,15.67,8.67,17.2,10.2
+Volusia County,green,2019,3,2016,method_selection,98.0,12.94,85.06,25.0,73.0,25.0,73.0,36.67,61.33,28.36,69.64
+Volusia County,green,2020,3,2017,method_selection,53.0,27.01,25.99,36.4,16.6,37.0,16.0,12.0,41.0,17.25,35.75
+Volusia County,green,2021,3,2018,method_selection,77.0,15.91,61.09,27.4,49.6,7.0,70.0,57.0,20.0,42.62,34.38
+Volusia County,green,2022,3,2019,method_selection,80.0,23.58,56.42,45.6,34.4,37.0,43.0,6.0,74.0,12.15,67.85
+Volusia County,green,2023,3,2020,independent_holdout,259.0,30.53,228.47,48.8,210.2,53.0,206.0,72.33,186.67,57.7,201.3
+Volusia County,green,2024,3,2021,independent_holdout,19.0,36.74,17.74,63.4,44.4,77.0,58.0,21.33,2.33,26.73,7.73
+Volusia County,leatherback,2016,3,2013,method_selection,5.0,4.9,0.1,8.0,3.0,8.0,3.0,4.33,0.67,4.53,0.47
+Volusia County,leatherback,2017,3,2014,method_selection,0.0,6.08,6.08,7.8,7.8,8.0,8.0,9.0,9.0,7.98,7.98
+Volusia County,leatherback,2018,3,2015,method_selection,3.0,5.35,2.35,9.6,6.6,8.0,5.0,6.0,3.0,5.77,2.77
+Volusia County,leatherback,2019,3,2016,method_selection,4.0,8.42,4.42,8.0,4.0,8.0,4.0,11.67,7.67,10.53,6.53
+Volusia County,leatherback,2020,3,2017,method_selection,6.0,2.73,3.27,6.4,0.4,5.0,1.0,6.0,0.0,4.85,1.15
+Volusia County,leatherback,2021,3,2018,method_selection,4.0,4.04,0.04,5.4,1.4,5.0,1.0,7.33,3.33,6.18,2.18
+Volusia County,leatherback,2022,3,2019,method_selection,10.0,4.45,5.55,5.2,4.8,4.0,6.0,4.33,5.67,4.37,5.63
+Volusia County,leatherback,2023,3,2020,independent_holdout,4.0,4.32,0.32,3.6,0.4,4.0,0.0,6.0,2.0,5.41,1.41
+Volusia County,leatherback,2024,3,2021,independent_holdout,7.0,3.95,3.05,3.4,3.6,4.0,3.0,4.67,2.33,4.42,2.58
+Volusia County,loggerhead,2016,3,2013,method_selection,666.0,515.6,150.4,581.6,84.4,594.0,72.0,698.67,32.67,634.59,31.41
+Volusia County,loggerhead,2017,3,2014,method_selection,634.0,474.34,159.66,599.6,34.4,594.0,40.0,476.33,157.67,475.64,158.36
+Volusia County,loggerhead,2018,3,2015,method_selection,567.0,528.0,39.0,603.8,36.8,615.0,48.0,631.0,64.0,594.95,27.95
+Volusia County,loggerhead,2019,3,2016,method_selection,880.0,576.32,303.68,639.4,240.6,617.0,263.0,573.33,306.67,574.38,305.62
+Volusia County,loggerhead,2020,3,2017,method_selection,842.0,590.99,251.01,589.2,252.8,617.0,225.0,655.0,187.0,632.6,209.4
+Volusia County,loggerhead,2021,3,2018,method_selection,698.0,550.72,147.28,579.2,118.8,615.0,83.0,622.0,76.0,597.05,100.95
+Volusia County,loggerhead,2022,3,2019,method_selection,1336.0,676.28,659.72,672.4,663.6,634.0,702.0,549.0,787.0,593.55,742.45
+Volusia County,loggerhead,2023,3,2020,independent_holdout,1249.0,702.83,546.17,717.8,531.2,666.0,583.0,709.67,539.33,707.27,541.73
+Volusia County,loggerhead,2024,3,2021,independent_holdout,870.0,696.24,173.76,724.2,145.8,698.0,172.0,691.67,178.33,693.27,176.73

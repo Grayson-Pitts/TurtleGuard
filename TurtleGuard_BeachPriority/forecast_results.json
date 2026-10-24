@@ -2,81 +2,571 @@
   {
     "location": "Boca Raton",
     "species": "green",
-    "training_years": "1988\u20132025",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2025,
-    "forecast_year": 2026,
-    "forecast_nests": 130.92,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "City of Boca Raton annual nesting totals"
+    "forecast_horizon_years": 2,
+    "training_years": "1988-2025",
+    "forecast_nests": 199.76,
+    "selected_forecast": 199.76,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 199.76,
+    "candidates": {
+      "five_year_mean": 214.8,
+      "recent_median": 241.0,
+      "parity_mean": 253.67,
+      "timesfm": 199.76,
+      "timesfm_parity_blend": 234.8
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 127.8,
+      "five_year_mean": 94.54,
+      "recent_median": 107.14,
+      "parity_mean": 88.52,
+      "timesfm_parity_blend": 102.27
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 70.8,
+      "five_year_mean": 68.4,
+      "recent_median": 60.0,
+      "parity_mean": 59.67,
+      "timesfm_parity_blend": 51.94
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Boca Raton",
     "species": "leatherback",
-    "training_years": "1988\u20132025",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2025,
-    "forecast_year": 2026,
-    "forecast_nests": 19.11,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "City of Boca Raton annual nesting totals"
+    "forecast_horizon_years": 2,
+    "training_years": "1988-2025",
+    "forecast_nests": 18.9,
+    "selected_forecast": 18.9,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 18.9,
+    "candidates": {
+      "five_year_mean": 21.6,
+      "recent_median": 21.0,
+      "parity_mean": 23.33,
+      "timesfm": 18.9,
+      "timesfm_parity_blend": 21.78
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 6.66,
+      "five_year_mean": 6.63,
+      "recent_median": 4.57,
+      "parity_mean": 6.67,
+      "timesfm_parity_blend": 6.66
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 3.6,
+      "five_year_mean": 1.2,
+      "recent_median": 1.5,
+      "parity_mean": 1.83,
+      "timesfm_parity_blend": 1.59
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Boca Raton",
     "species": "loggerhead",
-    "training_years": "1988\u20132025",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2025,
-    "forecast_year": 2026,
-    "forecast_nests": 810.41,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "City of Boca Raton annual nesting totals"
+    "forecast_horizon_years": 2,
+    "training_years": "1988-2025",
+    "forecast_nests": 781.85,
+    "selected_forecast": 781.85,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 781.85,
+    "candidates": {
+      "five_year_mean": 845.2,
+      "recent_median": 824.0,
+      "parity_mean": 834.67,
+      "timesfm": 781.85,
+      "timesfm_parity_blend": 816.18
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 121.76,
+      "five_year_mean": 121.57,
+      "recent_median": 128.0,
+      "parity_mean": 133.1,
+      "timesfm_parity_blend": 128.94
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 42.56,
+      "five_year_mean": 37.7,
+      "recent_median": 73.5,
+      "parity_mean": 45.5,
+      "timesfm_parity_blend": 44.47
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Canaveral National Seashore",
     "species": "green",
-    "training_years": "1985\u20132024",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2024,
-    "forecast_year": 2025,
-    "forecast_nests": 4464.5,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "NPS Canaveral Sea Turtle Monitoring"
+    "forecast_horizon_years": 3,
+    "training_years": "1985-2024",
+    "forecast_nests": 4335.28,
+    "selected_forecast": 4335.28,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 4335.28,
+    "candidates": {
+      "five_year_mean": 4781.6,
+      "recent_median": 4303.0,
+      "parity_mean": 7679.33,
+      "timesfm": 4335.28,
+      "timesfm_parity_blend": 6508.91
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 3438.54,
+      "five_year_mean": 3138.77,
+      "recent_median": 3584.0,
+      "parity_mean": 2653.29,
+      "timesfm_parity_blend": 2770.27
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 4385.27,
+      "five_year_mean": 5044.7,
+      "recent_median": 6613.5,
+      "parity_mean": 3122.67,
+      "timesfm_parity_blend": 3564.58
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Canaveral National Seashore",
     "species": "leatherback",
-    "training_years": "1985\u20132024",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2024,
-    "forecast_year": 2025,
-    "forecast_nests": 31.22,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "NPS Canaveral Sea Turtle Monitoring"
+    "forecast_horizon_years": 3,
+    "training_years": "1985-2024",
+    "forecast_nests": 33.18,
+    "selected_forecast": 33.18,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 33.18,
+    "candidates": {
+      "five_year_mean": 28.4,
+      "recent_median": 28.0,
+      "parity_mean": 30.67,
+      "timesfm": 33.18,
+      "timesfm_parity_blend": 31.55
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 8.81,
+      "five_year_mean": 8.2,
+      "recent_median": 7.86,
+      "parity_mean": 7.29,
+      "timesfm_parity_blend": 7.57
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 5.53,
+      "five_year_mean": 5.6,
+      "recent_median": 4.5,
+      "parity_mean": 7.67,
+      "timesfm_parity_blend": 5.62
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Canaveral National Seashore",
     "species": "loggerhead",
-    "training_years": "1985\u20132024",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2024,
-    "forecast_year": 2025,
-    "forecast_nests": 5184.94,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "NPS Canaveral Sea Turtle Monitoring"
+    "forecast_horizon_years": 3,
+    "training_years": "1985-2024",
+    "forecast_nests": 4952.19,
+    "selected_forecast": 4952.19,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 4952.19,
+    "candidates": {
+      "five_year_mean": 5066.2,
+      "recent_median": 5571.0,
+      "parity_mean": 5010.33,
+      "timesfm": 4952.19,
+      "timesfm_parity_blend": 4989.98
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 988.59,
+      "five_year_mean": 768.2,
+      "recent_median": 961.71,
+      "parity_mean": 913.71,
+      "timesfm_parity_blend": 921.3
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 1631.86,
+      "five_year_mean": 1025.1,
+      "recent_median": 1234.5,
+      "parity_mean": 1028.33,
+      "timesfm_parity_blend": 1239.57
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "location": "Casey Key",
+    "species": "all",
+    "target_year": 2027,
+    "forecast_year": 2027,
+    "last_observed_year": 2026,
+    "forecast_horizon_years": 1,
+    "training_years": "2009-2026",
+    "forecast_nests": 2203.82,
+    "selected_forecast": 2203.82,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 2203.82,
+    "candidates": {
+      "five_year_mean": 2169.4,
+      "recent_median": 2053.0,
+      "parity_mean": 2054.33,
+      "timesfm": 2203.82,
+      "timesfm_parity_blend": 2106.65
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 457.04,
+      "five_year_mean": 323.63,
+      "recent_median": 427.43,
+      "parity_mean": 332.33,
+      "timesfm_parity_blend": 365.0
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 524.74,
+      "five_year_mean": 611.5,
+      "recent_median": 602.0,
+      "parity_mean": 641.5,
+      "timesfm_parity_blend": 578.19
+    },
+    "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [
+      2026
+    ],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "location": "Lido Key",
+    "species": "all",
+    "target_year": 2027,
+    "forecast_year": 2027,
+    "last_observed_year": 2026,
+    "forecast_horizon_years": 1,
+    "training_years": "2009-2026",
+    "forecast_nests": 153.74,
+    "selected_forecast": 153.74,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 153.74,
+    "candidates": {
+      "five_year_mean": 176.4,
+      "recent_median": 186.0,
+      "parity_mean": 160.33,
+      "timesfm": 153.74,
+      "timesfm_parity_blend": 158.02
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 49.38,
+      "five_year_mean": 34.46,
+      "recent_median": 39.14,
+      "parity_mean": 27.1,
+      "timesfm_parity_blend": 33.78
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 20.18,
+      "five_year_mean": 21.3,
+      "recent_median": 31.0,
+      "parity_mean": 37.67,
+      "timesfm_parity_blend": 28.94
+    },
+    "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [
+      2026
+    ],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "location": "Longboat Key",
+    "species": "all",
+    "target_year": 2027,
+    "forecast_year": 2027,
+    "last_observed_year": 2026,
+    "forecast_horizon_years": 1,
+    "training_years": "2009-2026",
+    "forecast_nests": 1393.25,
+    "selected_forecast": 1393.25,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 1393.25,
+    "candidates": {
+      "five_year_mean": 1266.2,
+      "recent_median": 1300.0,
+      "parity_mean": 1166.33,
+      "timesfm": 1393.25,
+      "timesfm_parity_blend": 1245.76
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 270.6,
+      "five_year_mean": 162.51,
+      "recent_median": 181.86,
+      "parity_mean": 218.9,
+      "timesfm_parity_blend": 162.04
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 165.18,
+      "five_year_mean": 211.1,
+      "recent_median": 191.5,
+      "parity_mean": 211.83,
+      "timesfm_parity_blend": 187.99
+    },
+    "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [
+      2026
+    ],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "location": "Siesta Key",
+    "species": "all",
+    "target_year": 2027,
+    "forecast_year": 2027,
+    "last_observed_year": 2026,
+    "forecast_horizon_years": 1,
+    "training_years": "2009-2026",
+    "forecast_nests": 544.74,
+    "selected_forecast": 544.74,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 544.74,
+    "candidates": {
+      "five_year_mean": 526.4,
+      "recent_median": 531.0,
+      "parity_mean": 528.67,
+      "timesfm": 544.74,
+      "timesfm_parity_blend": 534.29
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 131.17,
+      "five_year_mean": 80.51,
+      "recent_median": 84.14,
+      "parity_mean": 112.95,
+      "timesfm_parity_blend": 89.46
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 105.77,
+      "five_year_mean": 106.0,
+      "recent_median": 93.5,
+      "parity_mean": 88.0,
+      "timesfm_parity_blend": 81.6
+    },
+    "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [
+      2026
+    ],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "location": "Venice",
+    "species": "all",
+    "target_year": 2027,
+    "forecast_year": 2027,
+    "last_observed_year": 2026,
+    "forecast_horizon_years": 1,
+    "training_years": "2009-2026",
+    "forecast_nests": 661.66,
+    "selected_forecast": 661.66,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 661.66,
+    "candidates": {
+      "five_year_mean": 637.0,
+      "recent_median": 645.0,
+      "parity_mean": 697.0,
+      "timesfm": 661.66,
+      "timesfm_parity_blend": 684.63
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 133.46,
+      "five_year_mean": 94.0,
+      "recent_median": 112.57,
+      "parity_mean": 104.86,
+      "timesfm_parity_blend": 108.95
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 49.45,
+      "five_year_mean": 50.7,
+      "recent_median": 55.0,
+      "parity_mean": 63.0,
+      "timesfm_parity_blend": 57.83
+    },
+    "confidence_note": "2026 Mote nesting observation is provisional (Week 42); final annual totals may differ. Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [
+      2026
+    ],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Volusia County",
     "species": "green",
-    "training_years": "1988\u20132024",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2024,
-    "forecast_year": 2025,
-    "forecast_nests": 41.49,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "Volusia County nesting summary"
+    "forecast_horizon_years": 3,
+    "training_years": "1988-2024",
+    "forecast_nests": 39.24,
+    "selected_forecast": 39.24,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 39.24,
+    "candidates": {
+      "five_year_mean": 97.6,
+      "recent_median": 77.0,
+      "parity_mean": 144.67,
+      "timesfm": 39.24,
+      "timesfm_parity_blend": 107.77
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 46.58,
+      "five_year_mean": 39.03,
+      "recent_median": 42.57,
+      "parity_mean": 40.0,
+      "timesfm_parity_blend": 42.3
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 123.1,
+      "five_year_mean": 127.3,
+      "recent_median": 132.0,
+      "parity_mean": 94.5,
+      "timesfm_parity_blend": 104.51
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
+  },
+  {
+    "location": "Volusia County",
+    "species": "leatherback",
+    "target_year": 2027,
+    "forecast_year": 2027,
+    "last_observed_year": 2024,
+    "forecast_horizon_years": 3,
+    "training_years": "1988-2024",
+    "forecast_nests": 4.8,
+    "selected_forecast": 4.8,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 4.8,
+    "candidates": {
+      "five_year_mean": 6.2,
+      "recent_median": 6.0,
+      "parity_mean": 4.0,
+      "timesfm": 4.8,
+      "timesfm_parity_blend": 4.28
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 3.12,
+      "five_year_mean": 4.0,
+      "recent_median": 4.0,
+      "parity_mean": 4.19,
+      "timesfm_parity_blend": 3.81
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 1.68,
+      "five_year_mean": 2.0,
+      "recent_median": 1.5,
+      "parity_mean": 2.17,
+      "timesfm_parity_blend": 2.0
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   },
   {
     "location": "Volusia County",
     "species": "loggerhead",
-    "training_years": "1988\u20132024",
+    "target_year": 2027,
+    "forecast_year": 2027,
     "last_observed_year": 2024,
-    "forecast_year": 2025,
-    "forecast_nests": 858.6,
-    "model": "google/timesfm-3.0-pytorch",
-    "source": "Volusia County nesting summary"
+    "forecast_horizon_years": 3,
+    "training_years": "1988-2024",
+    "forecast_nests": 810.63,
+    "selected_forecast": 810.63,
+    "selected_method": "timesfm",
+    "timesfm_forecast_nests": 810.63,
+    "candidates": {
+      "five_year_mean": 999.0,
+      "recent_median": 870.0,
+      "parity_mean": 942.33,
+      "timesfm": 810.63,
+      "timesfm_parity_blend": 896.24
+    },
+    "selection_backtests": 7,
+    "selection_mae": {
+      "timesfm": 244.39,
+      "five_year_mean": 204.49,
+      "recent_median": 204.71,
+      "parity_mean": 230.14,
+      "timesfm_parity_blend": 225.16
+    },
+    "holdout_backtests": 2,
+    "holdout_mae": {
+      "timesfm": 359.96,
+      "five_year_mean": 338.5,
+      "recent_median": 377.5,
+      "parity_mean": 358.83,
+      "timesfm_parity_blend": 359.23
+    },
+    "confidence_note": "Horizon-matched backtesting; observational ecological uncertainty remains",
+    "provisional_input_years": [],
+    "prediction_role": "TimesFM-only; statistical baselines are evaluation comparators",
+    "model": "google/timesfm-3.0-pytorch"
   }
 ]

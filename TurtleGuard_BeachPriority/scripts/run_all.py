@@ -26,5 +26,6 @@ if not args.skip_forecast:
 run('build_dashboard_data.py')
 run('build_beach_priorities.py')
 run('build_statewide_estimates.py')
+run('normalize_priority_scores.py')
 run('audit_statewide_outputs.py')
 print('\nBuilt direct + statewide estimated 2027 map from TimesFM. Launch local web server and refresh.')

@@ -33,7 +33,7 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(len(self.series),14)
         self.assertEqual(len({x['location'] for x in self.preds}),8)
         self.assertTrue(all(x['target_year']==2027 for x in self.preds))
-        self.assertEqual({x['forecast_horizon_years'] for x in self.preds},{2,3})
+        self.assertEqual({x['forecast_horizon_years'] for x in self.preds},{1, 2, 3})
         self.assertTrue(all(t['training_end']+t['horizon']==t['target_year'] for t in self.tasks))
 
     def test_no_leakage(self):

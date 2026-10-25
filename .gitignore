@@ -12,3 +12,4 @@ models--*/
 
 # Temporary files
 *.log
+.vs/

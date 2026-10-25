@@ -36,8 +36,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 67.4,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 42.5,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Canaveral National Seashore",
@@ -73,8 +73,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 90.0,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 55.3,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Casey Key",
@@ -104,8 +104,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 80.5,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 49.9,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Lido Key",
@@ -135,8 +135,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 37.7,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 25.7,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Longboat Key",
@@ -166,8 +166,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 56.5,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 36.3,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Siesta Key",
@@ -197,8 +197,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 49.3,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 32.3,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Venice",
@@ -228,8 +228,8 @@
       "scope": "Named beach monitoring area (geographic path approximate)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": true,
-      "priority_score": 58.7,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 37.5,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     },
     {
       "id": "Volusia County",
@@ -265,8 +265,8 @@
       "scope": "County-managed nesting area (length proxy from broader survey)",
       "mapping_uncertainty": "Approximate line; not surveyed GPS boundary",
       "length_verified_for_series": false,
-      "priority_score": 26.9,
-      "priority_basis": "relative projected nests per mile (sqrt normalized), 2027"
+      "priority_score": 19.5,
+      "priority_basis": "statewide-relative 2027 projected nests per mile (sqrt normalized; shared direct+county reference)"
     }
   ],
   "caveats": [
@@ -275,6 +275,9 @@
     "Forecasts have differing historical end years and therefore differing direct model horizons",
     "Some records omit rare species, and nest counts do not equal number of distinct turtles",
     "Map GeoJSON paths are hand-approximated, not survey extents",
-    "2026 Mote counts are preliminary as of Week 42, not finished-season observations"
-  ]
+    "2026 Mote counts are preliminary as of Week 42, not finished-season observations",
+    "Index scores share one statewide reference but county-derived nests/mile depend on uncalibrated FWC category weights."
+  ],
+  "priority_index_reference_nests_per_mile": 1213.3,
+  "priority_index_method": "10 + 80 * sqrt(nests_per_mile / max density across mapped direct and county areas), shared 2027 normalization; max 90 by design"
 }

@@ -3,1045 +3,600 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TurtleGuard | Florida Sea Turtle Conservation</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <style>
-:root {
-  --paper: #f7f7f2;
-  --white: #fdfdfb;
-  --ink: #202b27;
-  --quiet: #65716b;
-  --muted: #7d8780;
-  --rule: #d9ded7;
-  --forest: #234e41;
-  --forest-wash: #edf3ed;
-  --high: #b75b4e;
-  --mid: #ab792e;
-  --low: #3b7a60;
-  --sans: "DM Sans", Arial, sans-serif;
-  --serif: "Newsreader", Georgia, serif;
+:root{
+--paper:#f6f7f3;
+--white:#fff;
+--ink:#193632;
+--quiet:#526b63;
+--muted:#73877e;
+--rule:#d5dfd8;
+--forest:#145b50;
+--light:#e8f2eb;
+--high:#d7473e;
+--mid:#f0c14b;
+--low:#27845d;
+--sans:"DM Sans",Arial,sans-serif;
+--serif:"Newsreader",Georgia,serif;
 }
-
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--paper);
-  font: 14px/1.55 var(--sans);
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;background:var(--paper);color:var(--ink);
+font:14px/1.65 var(--sans)
 }
-
-button, select { font: inherit; }
-
-a {
-  color: var(--forest);
-  text-underline-offset: 3px;
+[hidden]{display:none!important}
+button,select{font:inherit}
+button{cursor:pointer}
+a{color:var(--forest);text-underline-offset:4px}
+button:focus-visible,a:focus-visible,
+select:focus-visible,summary:focus-visible{
+outline:2px solid var(--forest);outline-offset:3px
 }
-
-button:focus-visible,
-select:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--forest);
-  outline-offset: 3px;
+.shell{
+max-width:1500px;margin:auto;
+padding:0 clamp(18px,4vw,64px)
 }
-
-.shell {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 4.3vw, 70px);
+.mono{
+font-size:10px;font-weight:700;
+letter-spacing:.11em;text-transform:uppercase
 }
-
-.mono {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .13em;
-  text-transform: uppercase;
+.section-label{
+color:var(--forest);margin:0 0 8px
+}
+.section-heading{
+font:400 clamp(29px,2.8vw,40px)/1.12 var(--serif);
+letter-spacing:-.035em;margin:0
+}
+.section-description{
+font-size:12px;line-height:1.8;
+color:var(--quiet);margin:10px 0 0
 }
 
 /* HEADER */
-
-.site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--rule);
-}
-
-.brandbar {
-  min-height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  border-bottom: 1px solid var(--rule);
-}
-
-.brand {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -.045em;
-}
-
-.brand-mark {
-  color: var(--forest);
-  font: 500 22px var(--serif);
-}
-
-.brandbar-note { color: var(--quiet); }
-
-.masthead {
-  display: grid;
-  grid-template-columns: 1.3fr .62fr;
-  align-items: end;
-  gap: 60px;
-  padding: 43px 0 39px;
-}
-
-.kicker {
-  margin: 0 0 12px;
-  color: var(--forest);
-}
-
-.masthead h1 {
-  max-width: 800px;
-  margin: 0;
-  font: 400 clamp(40px, 4.4vw, 68px)/1 var(--serif);
-  letter-spacing: -.037em;
-}
-
-.lede {
-  max-width: 350px;
-  margin: 0 0 5px;
-  color: #57655e;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* NAVIGATION */
-
-.navigation {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  min-height: 57px;
-  border-top: 1px solid var(--rule);
-}
-
-.tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(16px, 2.6vw, 36px);
-}
-
-.tab {
-  position: relative;
-  padding: 17px 0 15px;
-  border: 0;
-  background: none;
-  color: var(--quiet);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color .16s;
-}
-
-.tab::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: transparent;
-}
-
-.tab:hover { color: var(--forest); }
-.tab.active { color: var(--ink); }
-.tab.active::after { background: var(--forest); }
-
-.nav-aside {
-  margin-left: auto;
-  white-space: nowrap;
-  color: var(--muted);
-}
-
-/* MAIN LAYOUT */
-
-.workspace {
-  display: grid;
-  grid-template-columns: minmax(310px,.86fr) minmax(0,1.24fr);
-  gap: clamp(35px,5.1vw,85px);
-  padding-top: 39px;
-  padding-bottom: 76px;
-  align-items: start;
-}
-
-.left-panel, .map-panel { min-width: 0; }
-
-.section-label {
-  margin: 0 0 8px;
-  color: var(--forest);
-}
-
-.section-heading {
-  margin: 0;
-  font: 400 clamp(30px,2.7vw,40px)/1.08 var(--serif);
-  letter-spacing: -.028em;
-}
-
-.section-description {
-  max-width: 570px;
-  margin: 11px 0 0;
-  color: var(--quiet);
-  font-size: 13px;
-  line-height: 1.75;
-}
-
-/* PROJECT EXPLANATION */
-
-.project-context {
-  margin: 24px 0 25px;
-  padding: 18px 19px;
-  background: #edf3ed;
-  border-left: 2px solid var(--forest);
-}
-
-.project-context h3 {
-  margin: 0 0 9px;
-  font: 400 25px/1.1 var(--serif);
-  letter-spacing: -.02em;
-}
-
-.project-context p {
-  margin: 0;
-  color: #53645a;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.project-context .process {
-  margin-top: 14px;
-  color: var(--forest);
-  font-size: 11px;
-  font-weight: 700;
-}
-
-/* RANKINGS */
-
-.rank-table-head,
-.rank-button {
-  display: grid;
-  grid-template-columns: 39px minmax(0,1fr) 65px;
-  gap: 12px;
-  align-items: center;
-}
-
-.rank-table-head {
-  padding: 0 9px 10px 5px;
-  color: var(--muted);
-  border-bottom: 1px solid var(--rule);
-}
-
-.rank-table-head span:last-child { text-align: right; }
-
-.priority-ranking {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.priority-ranking li {
-  border-bottom: 1px solid var(--rule);
-}
-
-.rank-button {
-  width: 100%;
-  min-height: 74px;
-  padding: 12px 9px 12px 5px;
-  border: 0;
-  border-left: 2px solid transparent;
-  text-align: left;
-  color: var(--ink);
-  background: transparent;
-  cursor: pointer;
-  transition: background .16s;
-}
-
-.rank-button:hover { background: #ecefe9; }
-
-.rank-button.selected {
-  background: var(--forest-wash);
-  border-left-color: var(--forest);
-}
-
-.rank-index {
-  color: #8a938c;
-  font: 400 22px var(--serif);
-}
-
-.rank-button.selected .rank-index {
-  color: var(--forest);
-}
-
-.rank-main { min-width: 0; }
-
-.rank-name {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.rank-detail {
-  display: block;
-  margin-top: 5px;
-  color: var(--quiet);
-  font-size: 11px;
-}
-
-.rank-score {
-  text-align: right;
-  font-size: 20px;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-}
-
-.rank-score::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin: 0 7px 3px 0;
-  border-radius: 50%;
-  background: var(--score-color,var(--forest));
-}
-
-.ranking-context {
-  margin: 13px 0 0;
-  color: var(--quiet);
-  font-size: 11px;
-  line-height: 1.75;
-}
-
-.loading-line {
-  padding: 22px 5px;
-  color: var(--quiet);
-}
-
-/* RESEARCH METHODOLOGY */
-
-.method {
-  margin-top: 43px;
-  padding-top: 25px;
-  border-top: 1px solid #aebbb0;
-}
-
-.method h3 {
-  margin: 0 0 22px;
-  font: 400 29px/1.12 var(--serif);
-}
-
-.method-row {
-  display: grid;
-  grid-template-columns: 33px 1fr;
-  gap: 12px;
-  padding: 14px 0;
-  border-top: 1px solid var(--rule);
-}
-
-.method-number { color: var(--forest); }
-
-.method-row h4 {
-  margin: 0 0 5px;
-  font-size: 12px;
-}
-
-.method-row p {
-  margin: 0;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.75;
-}
-
-.method-limit {
-  margin: 15px 0 0;
-  color: var(--quiet);
-  font-size: 11px;
-  line-height: 1.75;
-}
-
-/* SPECIES INFORMATION */
-
-.species-introduction {
-  margin: 17px 0 24px;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.species-profile {
-  padding: 22px 0 25px;
-  border-top: 1px solid var(--rule);
-}
-
-.species-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.species-profile h3 {
-  margin: 0;
-  font: 400 26px/1.13 var(--serif);
-  letter-spacing: -.02em;
-}
-
-.scientific-name {
-  margin: 4px 0 0;
-  color: var(--quiet);
-  font: italic 14px var(--serif);
-}
-
-.species-status {
-  color: var(--forest);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.species-description {
-  margin: 14px 0 0;
-  color: #43564c;
-  font-size: 12px;
-  line-height: 1.75;
-}
-
-.species-facts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 23px;
-  row-gap: 14px;
-  margin: 20px 0 0;
-}
-
-.species-facts div {
-  padding-top: 10px;
-  border-top: 1px solid var(--rule);
-}
-
-.species-facts dt {
-  margin-bottom: 5px;
-  color: var(--forest);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.species-facts dd {
-  margin: 0;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.65;
-}
-
-.reference-note {
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.75;
-}
-
-/* TAKE ACTION */
-
-.action-step {
-  display: grid;
-  grid-template-columns: 32px minmax(0,1fr);
-  gap: 12px;
-  padding: 19px 0;
-  border-top: 1px solid var(--rule);
-}
-
-.action-step:first-of-type { margin-top: 25px; }
-
-.action-number { color: var(--forest); }
-
-.action-step h3 {
-  margin: 0 0 6px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.action-step p {
-  margin: 0;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.75;
-}
-
-.action-button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 8px 0;
-  border: 0;
-  border-bottom: 1px solid var(--forest);
-  background: transparent;
-  color: var(--forest);
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* EMERGENCY CONTACT */
-
-.emergency {
-  margin-top: 24px;
-  padding: 18px;
-  background: #edf3ed;
-  border-left: 2px solid var(--forest);
-}
-
-.emergency h3 {
-  margin: 0 0 7px;
-  font: 400 23px/1.15 var(--serif);
-}
-
-.emergency a {
-  display: inline-block;
-  margin-top: 5px;
-  font-size: 19px;
-  font-weight: 700;
-}
-
-.emergency p {
-  margin: 10px 0 0;
-  color: #53645a;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* CONSERVATION ORGANIZATIONS */
-
-.organizations {
-  margin-top: 34px;
-  padding-top: 23px;
-  border-top: 1px solid #aebbb0;
-}
-
-.organizations h3 {
-  margin: 0 0 10px;
-  font: 400 28px/1.12 var(--serif);
-}
-
-.organization {
-  padding: 15px 0;
-  border-bottom: 1px solid var(--rule);
+.site-header{
+background:var(--white);
+border-bottom:1px solid var(--rule)
+}
+.brandbar{
+display:flex;align-items:center;min-height:94px;
+border-bottom:1px solid var(--rule)
+}
+.brand{display:flex;align-items:center;gap:15px}
+.brand-logo{width:76px;height:76px;object-fit:contain}
+.brand-name{
+font-size:28px;line-height:1.1;font-weight:700;
+letter-spacing:-.065em
+}
+.masthead{padding:20px 0 23px}
+.masthead h1{
+font:400 clamp(30px,3vw,42px)/1.1 var(--serif);
+letter-spacing:-.04em;margin:0
+}
+.masthead p{
+max-width:1050px;color:var(--quiet);
+font-size:13px;line-height:1.8;margin:7px 0 0
+}
+.navigation{
+display:flex;gap:clamp(19px,3vw,38px);
+border-top:1px solid var(--rule);flex-wrap:wrap
+}
+.tab{
+position:relative;background:none;border:0;
+padding:16px 0;font-size:12px;
+font-weight:600;color:var(--quiet)
+}
+.tab:hover,.tab.active{color:var(--forest)}
+.tab.active:after{
+content:"";position:absolute;bottom:-1px;
+height:2px;background:var(--forest);left:0;right:0
+}
+
+/* LAYOUT */
+.workspace{
+display:grid;
+grid-template-columns:minmax(315px,410px) minmax(0,1fr);
+gap:clamp(24px,3.4vw,50px);
+align-items:start;padding-top:30px;padding-bottom:70px
+}
+.left-panel,.map-panel{min-width:0}
+.map-panel{
+border-left:1px solid var(--rule);
+padding-left:clamp(15px,2vw,27px)
+}
+.comparison-heading{
+padding-bottom:22px;min-height:118px
+}
+.map-heading{
+padding-bottom:18px;min-height:118px
+}
+
+/* BEACH RANKING */
+.rank-table-head,.rank-button{
+display:grid;
+grid-template-columns:32px minmax(0,1fr) 65px;
+gap:10px;align-items:center
+}
+.rank-table-head{
+padding:0 8px 11px;
+border-bottom:1px solid var(--ink);
+color:var(--muted)
+}
+.rank-table-head span:last-child{text-align:right}
+.priority-ranking{margin:0;padding:0;list-style:none}
+.priority-ranking li{border-bottom:1px solid var(--rule)}
+.rank-button{
+width:100%;min-height:75px;padding:12px 7px;
+background:transparent;border:0;
+border-left:3px solid transparent;
+color:var(--ink);text-align:left;
+transition:background .15s
+}
+.rank-button:hover{background:#eaf0e9}
+.rank-button.selected{
+background:var(--light);border-left-color:var(--forest)
+}
+.rank-index{
+color:#84968b;font:400 23px var(--serif)
+}
+.rank-name{
+display:block;font-size:13px;font-weight:700
+}
+.rank-detail{
+display:block;color:var(--quiet);font-size:10.5px;
+line-height:1.6;margin-top:4px
+}
+.rank-score{
+text-align:right;font-size:19px;font-weight:700;
+font-variant-numeric:tabular-nums
+}
+.rank-score:before{
+content:"";display:inline-block;width:9px;height:9px;
+border-radius:50%;background:var(--score-color);
+margin-right:7px
+}
+.ranking-context{
+margin-top:17px;color:var(--quiet);
+font-size:11px;line-height:1.8
 }
-
-.organization strong {
-  display: block;
-  font-size: 13px;
-}
-
-.organization p {
-  margin: 5px 0;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.organization a {
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* VOLUNTEER DIRECTORY */
-
-.volunteer-filters {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 24px 0 12px;
-}
-
-.volunteer-field { min-width: 0; }
-
-.volunteer-field label {
-  display: block;
-  margin-bottom: 7px;
-  color: var(--quiet);
-}
-
-.volunteer-field select {
-  width: 100%;
-  padding: 11px 10px;
-  border: 1px solid #cbd5c9;
-  border-radius: 3px;
-  background: var(--white);
-  color: var(--ink);
-  font-size: 12px;
-}
-
-.volunteer-summary-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.volunteer-summary-head p {
-  margin: 0;
-  color: var(--quiet);
-}
-
-.clear-filter {
-  padding: 2px 0;
-  border: 0;
-  border-bottom: 1px solid var(--forest);
-  background: transparent;
-  color: var(--forest);
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.opportunity {
-  padding: 17px 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-.opportunity-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.opportunity h3 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.opportunity p {
-  margin: 5px 0 0;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.65;
-}
-
-.opportunity-organization {
-  color: var(--forest) !important;
-  font-weight: 600;
-}
-
-.opportunity-season {
-  flex-shrink: 0;
-  color: var(--forest);
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.opportunity-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 11px;
-}
-
-.opportunity-location {
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.opportunity-link {
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.volunteer-empty {
-  padding: 24px 0;
-  color: var(--quiet);
-  font-size: 13px;
-}
-
-.volunteer-advisory {
-  margin: 20px 0 0;
-  color: var(--quiet);
-  font-size: 11px;
-  line-height: 1.75;
-}
-
-.volunteer-safety {
-  margin-top: 23px;
-  padding-top: 18px;
-  border-top: 1px solid #aebbb0;
-}
-
-.volunteer-safety summary {
-  color: var(--forest);
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.volunteer-safety ul {
-  margin: 10px 0 0;
-  padding-left: 19px;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.75;
-}
-
-.volunteer-help {
-  margin: 15px 0 0;
-  color: var(--quiet);
-  font-size: 12px;
-  line-height: 1.65;
+.loading-line{
+padding:23px 8px;color:var(--quiet)
 }
 
 /* MAP */
-
-.map-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-  padding-bottom: 19px;
+#map{
+width:100%;height:clamp(440px,44vw,610px);
+border:1px solid #cad8ce;
+background:#e5ede8;z-index:0
+}
+.leaflet-container{font-family:var(--sans)}
+.leaflet-tooltip{
+font:600 11px var(--sans);
+box-shadow:none;border-radius:2px
+}
+.map-error{
+margin-top:10px;padding:12px;background:#fff0ec;
+border-left:3px solid var(--high);
+color:#963b31;font-size:12px
+}
+.analysis{
+margin-top:24px;padding:23px 0;
+border-top:1px solid var(--rule);
+scroll-margin-top:25px
+}
+.analysis-empty h3{
+font:400 clamp(27px,2.6vw,36px)/1.13 var(--serif);
+margin:0 0 9px
+}
+.analysis-empty p:not(.section-label){
+color:var(--quiet);font-size:12px;line-height:1.8;
+max-width:540px;margin:0
+}
+.analysis-top{
+display:flex;justify-content:space-between;
+align-items:start;gap:14px
+}
+.analysis-top h3{
+font:400 clamp(28px,2.6vw,39px)/1.12 var(--serif);
+margin:0
+}
+.rank-caption{
+color:var(--forest);font-size:10px;text-align:right
+}
+.analysis-metrics{
+display:grid;grid-template-columns:1.1fr 1fr 1fr;
+margin:22px 0;border-top:1px solid var(--ink);
+border-bottom:1px solid var(--rule)
+}
+.metric{padding:15px 9px 18px 0;min-width:0}
+.metric+.metric{
+border-left:1px solid var(--rule);padding-left:14px
+}
+.metric-label{
+display:block;min-height:34px;font-size:11px;
+color:var(--quiet);line-height:1.5
+}
+.metric-value{
+display:block;margin-top:8px;
+font-size:clamp(23px,2.2vw,34px);
+font-weight:700;letter-spacing:-.04em
+}
+.metric-suffix{font-size:12px;color:var(--muted)}
+.level{
+display:flex;align-items:center;gap:8px;
+font-size:11px;font-weight:700;margin-top:12px
+}
+.level-dot,.legend-dot{
+display:inline-block;flex-shrink:0;
+width:10px;height:10px;border-radius:50%
+}
+.meter{
+height:4px;background:#dfe6df;margin-top:12px
+}
+.meter-fill{
+height:100%;width:0;transition:width .3s
+}
+.analysis-insight h4{
+font-size:12px;margin:0 0 7px
+}
+.analysis-insight p,.analysis-note{
+font-size:12px;line-height:1.8;
+color:var(--quiet);margin:0
+}
+.analysis-note{
+font-size:10.5px;color:var(--muted);margin-top:16px
+}
+.map-controls{
+border-top:1px solid var(--rule);
+border-bottom:1px solid var(--rule);
+padding-bottom:14px
+}
+.map-coverage{
+display:flex;align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;gap:10px;padding:12px 0;
+border-bottom:1px solid var(--rule)
+}
+.map-coverage label{
+display:flex;align-items:center;gap:7px;
+font-size:11px;font-weight:700
+}
+.map-coverage input{accent-color:var(--forest)}
+.map-coverage-detail{
+font-size:10px;color:var(--muted)
+}
+.map-legend{
+display:flex;flex-wrap:wrap;
+gap:11px 20px;margin-top:13px
+}
+.legend-entry{
+display:inline-flex;align-items:center;
+gap:7px;font-size:11px;color:var(--quiet)
+}
+.line-symbol{
+width:29px;display:inline-block;
+border-top:5px solid #24554b
+}
+.line-symbol.estimated{
+border-top:5px dashed #ba9143
+}
+.line-symbol.unknown{
+border-top:3px solid #9da8a0
+}
+.legend-dot{background:var(--dot)}
+.show-key{
+margin-top:13px;padding:5px 0;
+background:none;border:0;
+border-bottom:1px solid var(--forest);
+color:var(--forest);font-weight:700;font-size:11px
+}
+.map-caption{
+color:var(--muted);font-size:10.5px;
+line-height:1.8;margin-top:14px
 }
 
-.map-count {
-  padding-top: 4px;
-  color: var(--quiet);
-  white-space: nowrap;
+/* SPECIES */
+.species-introduction{
+color:var(--quiet);font-size:12px;
+line-height:1.85;margin:19px 0 24px
+}
+.species-profile{
+border-top:1px solid var(--rule);padding:23px 0
+}
+.species-header{
+display:flex;justify-content:space-between;
+align-items:start;gap:12px
+}
+.species-profile h3{
+font:400 27px/1.15 var(--serif);margin:0
+}
+.scientific-name{
+font:italic 15px var(--serif);
+color:var(--quiet);margin:5px 0
+}
+.species-status{
+color:var(--forest);font-size:10px;
+text-transform:uppercase;font-weight:700;
+max-width:140px;text-align:right
+}
+.species-description{
+font-size:12px;color:var(--quiet);
+line-height:1.85;margin:14px 0
+}
+.species-facts{
+display:grid;grid-template-columns:1fr 1fr;
+gap:15px 20px;margin:17px 0
+}
+.species-facts div{
+position:relative;padding:10px 0 0 23px;
+border-top:1px solid var(--rule)
+}
+.species-facts div:before{
+content:"🐢";position:absolute;
+left:0;top:9px;font-size:14px
+}
+.species-facts dt{
+font-size:10px;font-weight:700;
+text-transform:uppercase;color:var(--forest)
+}
+.species-facts dd{
+margin:5px 0 0;color:var(--quiet);
+font-size:11.5px;line-height:1.8
 }
 
-#map {
-  width: 100%;
-  height: clamp(390px,37vw,525px);
-  border: 1px solid #cdd6cd;
-  border-radius: 3px;
-  background: #e7ede5;
-  z-index: 0;
+/* ACTIONS */
+.action-step{
+display:grid;grid-template-columns:39px 1fr;
+gap:12px;padding:19px 0;
+border-top:1px solid var(--rule)
+}
+#action-list{margin-top:23px}
+.action-number{
+display:grid;place-items:center;
+width:32px;height:32px;
+border-radius:55% 55% 45% 45%;
+background:var(--light);
+border:1px solid #b0c9b9;
+color:var(--forest);font-size:10px;font-weight:700
+}
+.action-step h3{
+font-size:13px;margin:0 0 7px
+}
+.action-step p{
+font-size:12px;color:var(--quiet);
+line-height:1.85;margin:0
+}
+.action-button{
+background:none;border:0;
+border-bottom:1px solid var(--forest);
+color:var(--forest);font-size:12px;
+font-weight:700;padding:5px 0;margin-top:12px
+}
+.emergency{
+margin:24px 0;padding:21px;
+background:var(--light);
+border-left:3px solid var(--forest)
+}
+.emergency h3{
+font:400 25px var(--serif);margin:0 0 9px
+}
+.emergency p{
+color:var(--quiet);font-size:12px
+}
+.emergency a{font-size:18px;font-weight:700}
+.organizations{
+margin-top:30px;border-top:1px solid var(--rule);
+padding-top:18px
+}
+.organizations h3{
+font:400 27px var(--serif);margin:0 0 12px
+}
+.organization{
+border-bottom:1px solid var(--rule);padding:15px 0
+}
+.organization strong{font-size:13px}
+.organization strong:before{content:"🐢 "}
+.organization p{
+color:var(--quiet);font-size:12px;
+margin:5px 0;line-height:1.8
+}
+.organization a{font-size:12px;font-weight:700}
+
+/* VOLUNTEER */
+.volunteer-filters{
+display:grid;grid-template-columns:1fr 1fr;
+gap:12px;margin:22px 0
+}
+.volunteer-field label{
+display:block;color:var(--quiet);margin-bottom:6px
+}
+.volunteer-field select{
+width:100%;padding:10px;background:white;
+border:1px solid var(--rule);color:var(--ink)
+}
+.volunteer-summary-head{
+display:flex;justify-content:space-between;
+gap:12px;align-items:center;
+border-bottom:1px solid var(--ink)
+}
+.clear-filter{
+background:none;border:0;color:var(--forest);
+font-size:11px;font-weight:700
+}
+.opportunity{
+border-bottom:1px solid var(--rule);padding:17px 0
+}
+.opportunity-top{
+display:flex;justify-content:space-between;gap:12px
+}
+.opportunity h3{font-size:13px;margin:0}
+.opportunity p{
+color:var(--quiet);font-size:12px;
+line-height:1.8;margin:6px 0
+}
+.opportunity-organization{
+color:var(--forest)!important;font-weight:600
+}
+.opportunity-season{
+color:var(--forest);font-weight:700;
+font-size:11px;white-space:nowrap
+}
+.opportunity-bottom{
+display:flex;justify-content:space-between;
+gap:10px;flex-wrap:wrap;margin-top:10px
+}
+.opportunity-location{
+color:var(--muted);font-size:11px
+}
+.opportunity-link{
+font-size:12px;font-weight:700
+}
+.reference-note,.volunteer-advisory,.volunteer-help{
+font-size:11px;color:var(--muted);line-height:1.8
+}
+.volunteer-safety{
+margin-top:20px;border-top:1px solid var(--rule);
+padding-top:15px
+}
+.volunteer-safety summary{
+color:var(--forest);font-weight:700;cursor:pointer
+}
+.volunteer-safety ul{
+list-style:none;padding-left:0;
+color:var(--quiet);font-size:12px
+}
+.volunteer-safety li{
+position:relative;padding:5px 0 5px 24px
+}
+.volunteer-safety li:before{
+content:"🐢";position:absolute;left:0
 }
 
-.map-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 23px;
-  margin-top: 15px;
+/* RESEARCH */
+.project-context{
+margin-top:24px;padding:21px;
+background:var(--light);
+border-top:2px solid var(--forest)
 }
-
-.legend-entry {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #5c6860;
-  font-size: 11px;
+.project-context h3{
+font:400 26px var(--serif);margin:0 0 9px
 }
-
-.legend-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--dot);
+.project-context p{
+font-size:12px;color:var(--quiet);
+line-height:1.85;margin:8px 0
 }
-
-.map-caption {
-  margin: 11px 0 0;
-  color: var(--muted);
-  font-size: 11px;
+.research-flow{
+display:flex;flex-wrap:wrap;gap:9px;
+color:var(--forest);font-size:11px;
+font-weight:700;margin-top:15px
 }
-
-.map-error {
-  margin-top: 12px;
-  padding: 11px 13px;
-  border-left: 2px solid var(--high);
-  color: #8b4e42;
-  background: #f8eeea;
-  font-size: 12px;
+.research-flow span:not(:last-child):after{
+content:" →";margin-left:5px
 }
-
-.leaflet-container { font-family: var(--sans); }
-
-.leaflet-tooltip {
-  border: 1px solid #d7dfd6;
-  box-shadow: none;
-  border-radius: 3px;
-  font: 500 12px var(--sans);
+.reading-cue{
+background:var(--white);
+border:1px solid var(--rule);
+padding:17px;margin:18px 0
 }
-
-/* STATEWIDE FORECAST COVERAGE (uses existing visual language) */
-.map-coverage {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 9px 18px;
-  padding: 13px 0;
-  border-bottom: 1px solid var(--rule);
-  color: var(--quiet);
-  font-size: 11px;
+.reading-cue-title{
+font-size:10px;letter-spacing:.1em;font-weight:700
 }
-.map-coverage label { display: inline-flex; gap: 9px; align-items: center; cursor: pointer; }
-.map-coverage input { width: 14px; height: 14px; margin: 0; accent-color: var(--forest); }
-.map-coverage-detail { margin-left: auto; color: var(--muted); }
-.line-symbol { display: inline-block; width: 32px; height: 0; vertical-align: middle; border-top: 5px solid var(--forest); }
-.line-symbol.direct { border-top-color: var(--forest); outline: 1px solid #233b38; outline-offset: 1px; }
-.line-symbol.estimated { border-top: 5px dashed var(--mid); }
-.line-symbol.unknown { border-top: 3px solid #9aa49c; }
-
-/* SELECTED BEACH */
-
-.analysis {
-  margin-top: 30px;
-  padding-top: 24px;
-  border-top: 1px solid #aebbb0;
-  scroll-margin-top: 20px;
+.reading-cue-levels{
+display:flex;flex-wrap:wrap;
+gap:10px 17px;margin:13px 0
 }
-
-.analysis-empty { min-height: 175px; }
-
-.analysis-empty h3 {
-  margin: 0 0 8px;
-  font: 400 31px/1.1 var(--serif);
+.reading-cue-levels span{
+display:flex;align-items:center;gap:7px;
+font-size:11px;font-weight:700
 }
-
-.analysis-empty p {
-  max-width: 430px;
-  margin: 0;
-  color: var(--quiet);
-  font-size: 13px;
-  line-height: 1.7;
+.cue-circle{
+display:inline-block;width:10px;height:10px;
+border-radius:50%;background:var(--cue)
 }
-
-.analysis-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
+.reading-cue p,.method-limit{
+color:var(--quiet);font-size:11px;line-height:1.85
 }
-
-.analysis-top h3 {
-  margin: 3px 0 0;
-  font: 400 clamp(29px,2.6vw,39px)/1.1 var(--serif);
+.method{
+margin:20px 0;border-top:1px solid var(--rule)
 }
-
-.rank-caption {
-  margin: 4px 0 0;
-  color: var(--forest);
-  white-space: nowrap;
+.method-row{
+display:grid;grid-template-columns:35px 1fr;
+gap:10px;padding:16px 0;
+border-bottom:1px solid var(--rule)
 }
-
-.analysis-metrics {
-  display: grid;
-  grid-template-columns: 1.06fr 1fr 1fr;
-  margin: 25px 0 18px;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+.method-number{
+display:grid;place-items:center;
+width:30px;height:30px;
+background:var(--light);border-radius:50%;
+font-size:11px;font-weight:700;color:var(--forest)
 }
-
-.metric {
-  min-width: 0;
-  padding: 18px 17px 18px 0;
+.method-row h4{
+margin:0 0 6px;font-size:12px
 }
-
-.metric + .metric {
-  padding-left: 19px;
-  border-left: 1px solid var(--rule);
+.method-row p{
+color:var(--quiet);font-size:11px;
+line-height:1.85;margin:0
 }
-
-.metric-label {
-  display: block;
-  min-height: 31px;
-  color: var(--quiet);
-  font-size: 11px;
-  line-height: 1.4;
-}
-
-.metric-value {
-  display: block;
-  margin-top: 8px;
-  font-size: clamp(22px,2.4vw,35px);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -.05em;
-  font-variant-numeric: tabular-nums;
-}
-
-.metric-suffix {
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: 0;
-}
-
-.level {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 12px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.level-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--high);
-}
-
-.meter {
-  height: 3px;
-  margin-top: 15px;
-  background: #dfe5dd;
-}
-
-.meter-fill {
-  width: 0;
-  height: 100%;
-  transition: width .35s ease;
-}
-
-.analysis-insight { margin-top: 20px; }
-
-.analysis-insight h4 {
-  margin: 0 0 7px;
-  font-size: 12px;
-}
-
-.analysis-insight p {
-  margin: 0;
-  color: #53625a;
-  font-size: 13px;
-  line-height: 1.75;
-}
-
-.analysis-note {
-  margin: 16px 0 0;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.7;
+.method-limit{
+padding:17px 0;border-bottom:1px solid var(--rule)
 }
 
 /* FOOTER */
-
-.site-footer {
-  border-top: 1px solid var(--rule);
-  background: var(--white);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 22px 0;
-  color: var(--quiet);
-  font-size: 11px;
+.copyright-footer{
+padding:12px 0;
+border-top:1px solid var(--rule);
+background:var(--white);
+color:var(--muted);
+font-size:10px;
+line-height:1.6
 }
 
 /* RESPONSIVE */
-
-@media(max-width:1050px) {
-  .workspace {
-    grid-template-columns: minmax(300px,.9fr) minmax(0,1.1fr);
-    gap: 32px;
-  }
-
-  .analysis-metrics { grid-template-columns: 1fr 1fr; }
-
-  .metric:last-child {
-    grid-column: span 2;
-    border-left: 0;
-    border-top: 1px solid var(--rule);
-    padding-left: 0;
-  }
+@media(max-width:1050px){
+.workspace{
+grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr);
+gap:23px
 }
-
-@media(max-width:780px) {
-  .masthead {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .workspace {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  #map { height: 420px; }
-
-  .nav-aside { display: none; }
+.analysis-metrics{grid-template-columns:1fr 1fr}
+.metric:last-child{
+grid-column:span 2;border-left:0;
+border-top:1px solid var(--rule);padding-left:0
 }
-
-@media(max-width:540px) {
-  .brandbar-note { font-size: 9px; }
-  .masthead h1 { font-size: 41px; }
-  .navigation { overflow-x: auto; }
-
-  .tabs {
-    flex-wrap: nowrap;
-    gap: 22px;
-    white-space: nowrap;
-  }
-
-  .tab { font-size: 11px; }
-  #map { height: 350px; }
-
-  .rank-button,
-  .rank-table-head {
-    grid-template-columns: 28px minmax(0,1fr) 58px;
-    gap: 9px;
-  }
-
-  .rank-index { font-size: 19px; }
-  .rank-score { font-size: 18px; }
-
-  .analysis-metrics {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .metric:last-child {
-    grid-column: span 2;
-    border-left: 0;
-    border-top: 1px solid var(--rule);
-    padding-left: 0;
-  }
-
-  .metric-value { font-size: 29px; }
-
-  .footer-inner { flex-direction: column; }
 }
-
-@media(max-width:440px) {
-  .species-facts { grid-template-columns: 1fr; }
-  .volunteer-filters { grid-template-columns: 1fr; }
-  .species-header { display: block; }
-  .species-status { display: block; margin-top: 7px; }
+@media(max-width:780px){
+.workspace{grid-template-columns:1fr}
+.map-panel{
+border-left:0;border-top:1px solid var(--rule);
+padding:26px 0 0
 }
-
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-  * { transition-duration: 0s !important; }
+.comparison-heading,.map-heading{min-height:0}
+#map{height:440px}
+}
+@media(max-width:520px){
+.brand-logo{width:65px;height:65px}
+.brand-name{font-size:24px}
+.navigation{
+flex-wrap:nowrap;white-space:nowrap;
+overflow-x:auto;gap:24px
+}
+.masthead h1{font-size:34px}
+#map{height:360px}
+.species-facts,.volunteer-filters{
+grid-template-columns:1fr
+}
+.analysis-top{display:block}
+.rank-caption{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*:before,*:after{transition:none!important}
 }
 </style>
 </head>
@@ -1049,1325 +604,718 @@ a:focus-visible {
 <body>
 
 <header class="site-header">
-  <div class="shell">
+<div class="shell">
+<div class="brandbar">
+<div class="brand">
 
-    <div class="brandbar">
-      <div class="brand">
-        <span class="brand-mark">T/</span>
-        <span>TurtleGuard</span>
-      </div>
-      <div class="brandbar-note mono">
-        Florida coast / 2027 outlook
-      </div>
-    </div>
+<img class="brand-logo" alt="TurtleGuard sea turtle logo"
+src="data:image/webp;base64,UklGRhwGAABXRUJQVlA4IBAGAAAwGgCdASpQAEQAPrVQmkqnJSIhrhoraOAWiUAXKox3tmO3N3pb29vPUM1hyUe4pGvc1gb/s/L3vB+DmTb/QeHTs/JpPUC9m/r//B4xNJNoAfnf/jey3/ceRL6n9gxYL+BF5Pu2P2dL3tKeXCkMS5T6e+lSPYenT4YKAg7UK6xCljyEwjKePneUaHeeS1H8tNZz43OnM13eM8rbPMJNwBBh0xWpn+XLo8KFaI6Yhl54nmd3bRT3xJj1/HoDBDUNqeOZcQkx32s9JWSp1yl0qA9LUnpwcB0x/6GMAAD+/msEcZKmDZutUYSQq+bw9P7p9y00IQLnsycjgVfCjuyoWGov7sal/LfICfqkiTxlpf/kCfHPTLNecOTIVuzgTKRce1s61mvxYtMzFtOXDu8GfhYFvR5+ztrxJV1mtP6PgLs7DlgHmphFfHYjxcAumwQiTUILqXWjKHhbd6UagYPRUyfTrqgrxmaWRHlNQEhtKP9h0l/+m9w+BSp3a+3YjDNCXwbbQySyUFyjgBhtphnTglgsCsPgdBcgXlVan+0F/JtWzQnhhkbEzWWOkDtGeNEiCkFv5qsiX3qq7f5N/xoLYvGp1BrjcatbOqCDmX0jjGtLxcW1HaZEpp2l0E4tOc38UKb/l9qUPjsOhPcxfv9icoHuntBId2QSboMuW0tIceh2Q/ej/3PrGlAVcppQw9MPMKM7KRuKmBRt5NCEqgyVon5WVQN1x/PdxR6nCde8eLAjXWehZFtZmY84pHrMf5mC59l1MP5pIVyZS/5Cm4eLvPkq2V4HjHu459A7xn8C28mHmcV/8Zx2msoMFsfzWTvxFrpab25ygDJkdp7k36xMdZVYJ0SomGPhDtW7UnU+tyGkH+o5G/cI19Ztx9FbsihDrS4cg/VNAmiPJoYHt7kpkkkMWrUgoZbO1++cjMyL83KroJJvtpKAIa1XTBWfT5+OIRL+dUuqZNQBLgNGbG6w9r2GBfOu8HzaW4rAQTz5+xcQ/APmZytjlyFUa3hYn8NnGG6Ip2rDvPs7NdAgUYJyOze5D9XTDMcl4UFeS4MLfaUJFgaqWvA5TQPqa9QPGxu1wgBjI0BizN3LTBmxmzj+t8p+hKve4BzDm/MrJoPPXZ0QdLIvsbv4csOn06uojG/bVWP+TSauSd961owTJvLiILfM0Z73v+Jwp4euoQgDSVyCRL0lJiRJPXSHI47B1C4X13NXRs/UaGPuivnw+U6uqGKr7jSPqq64fzTmI9P4IWQ2nDQ841IMhY7ilNTlYKWzsx7bymauv6Wk+cmxsM1mR0cmwwDa1Iy2rB9BpiHo8orTGNCVMUoUmrV7ipa6xxgDrAS1JtU9y/uPjTuvWH9g50JHCX2l3AdUn43HLFRjB1Hd7zTbyJqNW8nm5Hah2+U71XqiaFlT39yivx3PjEQMv3D5/f1aZrVo5wfRHfATcewlrwR6bw/WwI2KOABhP7jnYDd7/ZIP8znxRXl2uHKJ2rQmbHqIfsnOjumvs+eFZntTyuxg/vvCeqke4dqND0bMUZPNqaegdgSfnlCgLsWNxsRu7Y9eFwQ2iHlzwPbhmr3NkfvfTBoDs1+ztnZ6wtBHj9bKGu1nMBpqM0+z6DyP+ffVyioKHr4QrR4NEGUQM/AGI9KeYaSvr0IcX11y++Ayy9ZH7J1I1qgtIeWMeXEtJsYdkUfSZWP6QkSl5fwa80yUGObImvNpNAEixtnUiECDFljTIuQlNxHqbQ2l/ISJ8z0Eq7sh+RyaqwqXdPgoRT+tUZVwPN576tKr2BYjt5592RFWCwiT+4KCCKzmY7dRzT2TlCnUc2D+tEOFK12I5OmS8cM98OlI9BFOHLrPaxDzDlONyYV+81OSOnzdS9Xj/H7NIJjT0JK/TJ2dwG4hZLEEzIFEtwRtK2iG5asKxQf+AEuwY/V440L1AwihIuqfa+3d/dAUtHlUd0KHMpTh5EYCf+hd5VQNavlIoZoYz/ysyAw9bkQuIG7XiCOiYo5h/n3TAaxfpxem/EgHfV0td8ZCWcn5pPYcCIPKap6Bvfj2ZsyQI7X4gKD1cBbfZ/MjkDgA">
 
-    <div class="masthead">
-      <div>
-        <p class="kicker mono">
-          Sea turtle conservation / Research interface
-        </p>
-        <h1>A clearer view of Florida's nesting coast.</h1>
-      </div>
+<div class="brand-name">TurtleGuard</div>
+</div>
+</div>
 
-      <p class="lede">
-        Explore where sea turtle nesting may concentrate next,
-        with 2027 forecasts for eight monitored coastal areas.
-      </p>
-    </div>
+<div class="masthead">
+<h1>What is TurtleGuard?</h1>
+<p>
+TurtleGuard combines historical sea turtle nesting records,
+interactive coastline maps and AI forecasting to help people
+understand Florida's nesting beaches and make informed conservation
+decisions. Conservation organizations can use these forecasts alongside
+field surveys to prioritize nesting patrols, turtle-friendly lighting
+outreach and habitat protection.
+</p>
+</div>
 
-    <div class="navigation">
-      <nav class="tabs" aria-label="Explore TurtleGuard">
+<nav class="navigation" aria-label="TurtleGuard navigation">
+<button class="tab active" data-tab="concern" aria-pressed="true">Beach priorities</button>
+<button class="tab" data-tab="species" aria-pressed="false">Turtle species</button>
+<button class="tab" data-tab="action" aria-pressed="false">Take action</button>
+<button class="tab" data-tab="volunteer" aria-pressed="false">Volunteer opportunities</button>
+<button class="tab" data-tab="research" aria-pressed="false">Research &amp; methodology</button>
+</nav>
 
-        <button class="tab active" type="button"
-                data-tab="concern" aria-pressed="true">
-          Beach priorities
-        </button>
-
-        <button class="tab" type="button"
-                data-tab="species" aria-pressed="false">
-          Turtle species
-        </button>
-
-        <button class="tab" type="button"
-                data-tab="action" aria-pressed="false">
-          Take action
-        </button>
-
-        <button class="tab" type="button"
-                data-tab="volunteer" aria-pressed="false">
-          Volunteer opportunities
-        </button>
-
-      </nav>
-
-      <span class="nav-aside mono">
-        2027 / Forecast study
-      </span>
-    </div>
-  </div>
+</div>
 </header>
 
 <main class="shell workspace">
-
-  <div class="left-panel">
-
-    <!-- BEACH PRIORITIES -->
-
-    <section id="concern" class="tab-content">
-
-      <p class="section-label mono">
-        01 / Priority index
-      </p>
-
-      <h2 class="section-heading">
-        Coastal priorities
-      </h2>
-
-      <p class="section-description">
-        Explore eight monitored Florida beach areas,
-        ranked by predicted sea turtle nesting concentration.
-      </p>
-
-      <!-- PROJECT CONTEXT -->
-
-      <div class="project-context">
-
-        <h3>What is TurtleGuard?</h3>
-
-        <p>
-          TurtleGuard uses historical sea turtle nesting records
-          and the TimesFM AI forecasting model to estimate
-          nesting activity during the 2027 season.
-        </p>
-
-        <p style="margin-top:10px">
-          We calculate predicted nests per mile to compare
-          eight monitored Florida coastal areas. The resulting
-          priorities can help conservation groups identify
-          where additional monitoring, outreach and nest
-          protection may be valuable.
-        </p>
-
-        <p class="process">
-          Historical data → AI forecast → Nesting density
-          → Conservation priorities
-        </p>
-
-      </div>
-
-      <!-- RANKING -->
-
-      <div class="rank-table-head mono">
-        <span>No.</span>
-        <span>Monitoring area</span>
-        <span>Score</span>
-      </div>
-
-      <ol id="priority-ranking"
-          class="priority-ranking"
-          aria-label="2027 beach priorities">
-        <li class="loading-line">Loading forecasts...</li>
-      </ol>
-
-      <p class="ranking-context">
-        Priority scores compare predicted nesting concentration,
-        not measured pollution or environmental danger.
-      </p>
-
-      <!-- HOW WE BUILT IT -->
-
-      <section class="method">
-
-        <p class="section-label mono">
-          02 / Behind the findings
-        </p>
-
-        <h3>How to read this research</h3>
-
-        <div class="method-row">
-          <span class="method-number mono">01</span>
-          <div>
-            <h4>Historical observations</h4>
-            <p>
-              We compiled nesting counts from monitored Florida
-              beaches and published information about the lengths
-              of their survey areas.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-row">
-          <span class="method-number mono">02</span>
-          <div>
-            <h4>Forecast 2027 nesting</h4>
-            <p>
-              We used TimesFM to predict future nest counts,
-              then calculated nests per mile to compare
-              coastal monitoring areas.
-            </p>
-          </div>
-        </div>
-
-        <div class="method-row">
-          <span class="method-number mono">03</span>
-          <div>
-            <h4>Use the forecasts to plan</h4>
-            <p>
-              Conservation groups can use the results to inform
-              nesting surveys, turtle-friendly lighting,
-              education and protection planning alongside
-              local field observations.
-            </p>
-          </div>
-        </div>
-
-        <p class="method-limit">
-          These predictions are model-based estimates,
-          not confirmed 2027 observations. They should
-          complement professional conservation decisions,
-          not replace field monitoring.
-        </p>
-
-      </section>
-    </section>
-
-    <!-- TURTLE SPECIES -->
-
-    <section id="species" class="tab-content" hidden>
-
-      <p class="section-label mono">
-        Field guide / Species
-      </p>
-
-      <h2 class="section-heading">
-        Meet Florida's sea turtles.
-      </h2>
-
-      <p class="section-description">
-        Florida is a globally important sea turtle nesting region.
-        Five species occur in its waters, and each faces
-        distinct conservation challenges.
-      </p>
-
-      <p class="species-introduction">
-        Loggerhead, green and leatherback turtles nest
-        regularly in Florida, while hawksbill and Kemp's ridley
-        nesting is uncommon. Learn where these species live,
-        when they nest, and what makes their protection important.
-        Seasons and nest sizes are approximate; legal statuses
-        below refer to U.S. Endangered Species Act protection.
-      </p>
-
-      <!-- LOGGERHEAD -->
-
-      <article class="species-profile">
-
-        <div class="species-header">
-          <div>
-            <h3>01 / Loggerhead Turtle</h3>
-            <p class="scientific-name">Caretta caretta</p>
-          </div>
-          <span class="species-status">
-            Federally threatened
-          </span>
-        </div>
-
-        <p class="species-description">
-          Loggerheads are Florida's most common nesting
-          sea turtle. Florida supports one of the largest
-          loggerhead nesting populations in the world.
-          Coastal development, fisheries interactions and
-          artificial lighting remain important threats.
-        </p>
-
-        <dl class="species-facts">
-
-          <div>
-            <dt>Where they are found</dt>
-            <dd>
-              Both Atlantic and Gulf coasts. Major nesting
-              areas include Brevard, Indian River, St. Lucie,
-              Martin and Palm Beach counties.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting season</dt>
-            <dd>
-              Typically April through September,
-              peaking in early summer.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting behavior</dt>
-            <dd>
-              Females generally lay several clutches per season,
-              often containing approximately 100–125 eggs each.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Hatching</dt>
-            <dd>
-              Incubation takes roughly 45–65 days.
-              Hatchlings generally emerge at night.
-            </dd>
-          </div>
-
-        </dl>
-      </article>
-
-      <!-- GREEN SEA TURTLE -->
-
-      <article class="species-profile">
-
-        <div class="species-header">
-          <div>
-            <h3>02 / Green Sea Turtle</h3>
-            <p class="scientific-name">Chelonia mydas</p>
-          </div>
-          <span class="species-status">
-            Federally threatened — North Atlantic
-          </span>
-        </div>
-
-        <p class="species-description">
-          Green sea turtle nesting in Florida has
-          increased substantially following decades of
-          protection. The species still faces marine debris,
-          habitat degradation, vessel strikes and disease.
-          Adults primarily feed on seagrass and algae.
-        </p>
-
-        <dl class="species-facts">
-
-          <div>
-            <dt>Where they are found</dt>
-            <dd>
-              Seagrass beds, coastal bays and reefs,
-              with major nesting concentrations along
-              Florida's Atlantic coast.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting season</dt>
-            <dd>
-              Primarily June through late September.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting behavior</dt>
-            <dd>
-              Females often return every two to three years
-              and lay multiple clutches, averaging around
-              128 eggs per nest.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Hatching</dt>
-            <dd>
-              Incubation generally lasts around 50–60 days.
-              Hatchlings usually emerge at night.
-            </dd>
-          </div>
-
-        </dl>
-      </article>
-
-      <!-- LEATHERBACK -->
-
-      <article class="species-profile">
-
-        <div class="species-header">
-          <div>
-            <h3>03 / Leatherback Turtle</h3>
-            <p class="scientific-name">Dermochelys coriacea</p>
-          </div>
-          <span class="species-status">
-            Federally endangered
-          </span>
-        </div>
-
-        <p class="species-description">
-          The leatherback is the largest living sea turtle.
-          It travels across oceans, dives to remarkable
-          depths and primarily feeds on jellyfish.
-          Fishing gear entanglement and marine debris
-          are major conservation concerns.
-        </p>
-
-        <dl class="species-facts">
-
-          <div>
-            <dt>Where they are found</dt>
-            <dd>
-              Open ocean habitats, nesting primarily
-              along Florida's southeastern Atlantic coast,
-              especially around Palm Beach County.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting season</dt>
-            <dd>
-              Primarily March through July in Florida,
-              with occasional earlier or later nests.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting behavior</dt>
-            <dd>
-              Females return every few years and lay
-              several nests per season, generally with
-              about 70–90 yolked eggs.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Hatching</dt>
-            <dd>
-              Incubation commonly takes about 60–70 days.
-            </dd>
-          </div>
-
-        </dl>
-      </article>
-
-      <!-- KEMP'S RIDLEY -->
-
-      <article class="species-profile">
-
-        <div class="species-header">
-          <div>
-            <h3>04 / Kemp's Ridley Turtle</h3>
-            <p class="scientific-name">Lepidochelys kempii</p>
-          </div>
-          <span class="species-status">
-            Federally endangered
-          </span>
-        </div>
-
-        <p class="species-description">
-          Kemp's ridley is the smallest sea turtle species
-          and one of the most endangered. It is famous
-          for synchronized daytime nesting events called
-          <em>arribadas</em>, which occur primarily in Mexico.
-          Nesting in Florida is comparatively rare.
-        </p>
-
-        <dl class="species-facts">
-
-          <div>
-            <dt>Where they are found</dt>
-            <dd>
-              Shallow Gulf waters, estuaries and
-              coastal waters around Florida.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting season</dt>
-            <dd>
-              Generally April through July.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting behavior</dt>
-            <dd>
-              Most nesting occurs in Mexico,
-              though occasional nests are recorded
-              on Florida beaches.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Hatching</dt>
-            <dd>
-              Eggs generally incubate for 45–55 days.
-            </dd>
-          </div>
-
-        </dl>
-      </article>
-
-      <!-- HAWKSBILL -->
-
-      <article class="species-profile">
-
-        <div class="species-header">
-          <div>
-            <h3>05 / Hawksbill Turtle</h3>
-            <p class="scientific-name">Eretmochelys imbricata</p>
-          </div>
-          <span class="species-status">
-            Federally endangered
-          </span>
-        </div>
-
-        <p class="species-description">
-          Hawksbills are closely associated with coral
-          reef ecosystems. Their distinctive beak-like
-          mouth helps them feed on reef organisms.
-          The illegal shell trade, reef destruction
-          and climate change have severely affected
-          hawksbill populations.
-        </p>
-
-        <dl class="species-facts">
-
-          <div>
-            <dt>Where they are found</dt>
-            <dd>
-              Coral reefs and rocky habitats,
-              especially in the Florida Keys
-              and southeastern Florida.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting season</dt>
-            <dd>
-              Generally late spring through autumn
-              where nesting occurs. Florida nesting is rare.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Nesting behavior</dt>
-            <dd>
-              Florida nests are uncommon.
-              Females may lay multiple clutches
-              during a nesting season.
-            </dd>
-          </div>
-
-          <div>
-            <dt>Hatching</dt>
-            <dd>
-              Incubation generally lasts 50–70 days.
-            </dd>
-          </div>
-
-        </dl>
-      </article>
-
-      <p class="reference-note">
-        Learn more from the
-        <a href="https://myfwc.com/research/wildlife/sea-turtles/florida/species/"
-           target="_blank" rel="noopener noreferrer">
-          Florida Fish and Wildlife Conservation Commission
-        </a>
-        and
-        <a href="https://www.fisheries.noaa.gov/southeast/consultations/threatened-and-endangered-species-list-florida-atlantic-coast"
-           target="_blank" rel="noopener noreferrer">
-          NOAA Fisheries
-        </a>.
-      </p>
-
-    </section>
-
-    <!-- TAKE ACTION -->
-
-    <section id="action" class="tab-content" hidden>
-
-      <p class="section-label mono">
-        Field guide / Conservation
-      </p>
-
-      <h2 class="section-heading">
-        Small actions. Lasting impact.
-      </h2>
-
-      <p class="section-description">
-        Everyone can help protect Florida's sea turtles,
-        whether they live near the coast, enjoy visiting
-        beaches or support conservation from farther away.
-      </p>
-
-      <!-- ACTION 1 -->
-
-      <div class="action-step">
-        <span class="action-number mono">01</span>
-
-        <div>
-          <h3>Keep beachfront lighting turtle-friendly</h3>
-
-          <p>
-            Artificial lights can disorient nesting females
-            and hatchlings, leading them away from the sea.
-            During nesting and hatching season, turn off
-            unnecessary beach-facing lights and close blinds.
-            Essential lighting should be low-mounted, shielded
-            and use turtle-friendly amber or red wavelengths.
-            Avoid flash photography near nesting turtles.
-          </p>
-        </div>
-      </div>
-
-      <!-- ACTION 2 -->
-
-      <div class="action-step">
-        <span class="action-number mono">02</span>
-
-        <div>
-          <h3>Leave no trace on the beach</h3>
-
-          <p>
-            Fill in holes and flatten sandcastles before leaving.
-            These obstacles can trap hatchlings and interfere
-            with nesting females. Bring home umbrellas, beach
-            chairs, toys and other equipment each evening.
-          </p>
-        </div>
-      </div>
-
-      <!-- ACTION 3 -->
-
-      <div class="action-step">
-        <span class="action-number mono">03</span>
-
-        <div>
-          <h3>Reduce plastic waste</h3>
-
-          <p>
-            Sea turtles can mistake floating plastics for prey
-            or become entangled in discarded fishing line.
-            Use reusable bags and bottles, properly dispose
-            of waste, recycle fishing line and never release
-            balloons outdoors.
-          </p>
-        </div>
-      </div>
-
-      <!-- ACTION 4 -->
-
-      <div class="action-step">
-        <span class="action-number mono">04</span>
-
-        <div>
-          <h3>Be responsible around turtles and marine life</h3>
-
-          <p>
-            Stay well away from nesting turtles and their nests.
-            Never touch, chase or interfere with hatchlings.
-            While boating, obey posted speed zones and watch
-            carefully for wildlife, especially in shallow
-            coastal waters and near inlets.
-          </p>
-        </div>
-      </div>
-
-      <!-- ACTION 5 -->
-
-      <div class="action-step">
-        <span class="action-number mono">05</span>
-
-        <div>
-          <h3>Get involved with a conservation organization</h3>
-
-          <p>
-            Join an organized beach cleanup, assist with
-            conservation education, or apply to a trained
-            nesting patrol or sea turtle rehabilitation program.
-            Specialized turtle handling requires appropriate
-            authorization and training.
-          </p>
-
-          <button id="go-volunteer"
-                  class="action-button"
-                  type="button">
-            Explore volunteer opportunities →
-          </button>
-
-        </div>
-      </div>
-
-      <!-- EMERGENCY CONTACT -->
-
-      <div class="emergency">
-
-        <h3>Found an injured or stranded sea turtle?</h3>
-
-        <p>
-          Report sick, injured, entangled, stranded or
-          dead sea turtles to the Florida Fish and Wildlife
-          Conservation Commission's 24-hour Wildlife Alert Hotline.
-        </p>
-
-        <a href="tel:+18884043922">
-          1-888-404-FWCC (3922)
-        </a>
-
-        <p>
-          Provide the animal's exact location and follow
-          the responder's instructions. Do not handle
-          the turtle or return it to the water yourself.
-        </p>
-
-      </div>
-
-      <!-- ORGANIZATIONS -->
-
-      <section class="organizations">
-
-        <p class="section-label mono">
-          Conservation partners
-        </p>
-
-        <h3>Organizations making a difference</h3>
-
-        <p class="section-description">
-          These Florida organizations support sea turtle
-          research, rehabilitation, education and habitat
-          protection. Explore their websites to learn
-          about volunteering, donations and other ways to help.
-        </p>
-
-        <div class="organization">
-          <strong>Sea Turtle Preservation Society</strong>
-
-          <p>
-            Brevard County · Nest monitoring, rescue support,
-            public education and beach cleanups.
-          </p>
-
-          <a href="https://seaturtlespacecoast.org/"
-             target="_blank" rel="noopener noreferrer">
-            Visit organization ↗
-          </a>
-        </div>
-
-        <div class="organization">
-          <strong>Loggerhead Marinelife Center</strong>
-
-          <p>
-            Juno Beach · Sea turtle hospital, scientific
-            research and marine conservation education.
-          </p>
-
-          <a href="https://marinelife.org/"
-             target="_blank" rel="noopener noreferrer">
-            Visit organization ↗
-          </a>
-        </div>
-
-        <div class="organization">
-          <strong>Sea Turtle Conservancy</strong>
-
-          <p>
-            Gainesville · Research, satellite tracking,
-            conservation policy and educational programs.
-          </p>
-
-          <a href="https://conserveturtles.org/"
-             target="_blank" rel="noopener noreferrer">
-            Visit organization ↗
-          </a>
-        </div>
-
-        <div class="organization">
-          <strong>The Florida Aquarium</strong>
-
-          <p>
-            Tampa Bay area · Sea turtle rescue,
-            rehabilitation, marine science and
-            coastal habitat programs.
-          </p>
-
-          <a href="https://www.flaquarium.org/"
-             target="_blank" rel="noopener noreferrer">
-            Visit organization ↗
-          </a>
-        </div>
-
-        <div class="organization">
-          <strong>Clearwater Marine Aquarium</strong>
-
-          <p>
-            Clearwater · Marine animal rescue,
-            rehabilitation, release and coastal conservation.
-          </p>
-
-          <a href="https://www.cmaquarium.org/"
-             target="_blank" rel="noopener noreferrer">
-            Visit organization ↗
-          </a>
-        </div>
-
-      </section>
-
-      <p class="reference-note">
-        For additional guidance, visit the
-        <a href="https://myfwc.com/wildlifehabitats/wildlife/sea-turtle/lighting/"
-           target="_blank" rel="noopener noreferrer">
-          FWC turtle-friendly lighting guide
-        </a>.
-      </p>
-
-    </section>
-
-    <!-- VOLUNTEER OPPORTUNITIES -->
-
-    <section id="volunteer" class="tab-content" hidden>
-
-      <p class="section-label mono">
-        Field guide / Get involved
-      </p>
-
-      <h2 class="section-heading">
-        Find a way to help.
-      </h2>
-
-      <p class="section-description">
-        Explore sea turtle conservation programs across
-        Florida. Filter by county or activity, then visit
-        the organization's website to learn how to participate.
-      </p>
-
-      <div class="volunteer-filters">
-
-        <div class="volunteer-field">
-          <label class="mono" for="volunteer-county">
-            County
-          </label>
-
-          <select id="volunteer-county">
-            <option value="">All counties</option>
-          </select>
-        </div>
-
-        <div class="volunteer-field">
-          <label class="mono" for="volunteer-activity">
-            Type of opportunity
-          </label>
-
-          <select id="volunteer-activity">
-            <option value="">All activities</option>
-            <option value="Nest patrol">Nest patrol</option>
-            <option value="Beach cleanup">Beach cleanup</option>
-            <option value="Education & outreach">Education &amp; outreach</option>
-            <option value="Hatchling support">Hatchling support</option>
-            <option value="Rescue & rehabilitation">Rescue &amp; rehabilitation</option>
-          </select>
-        </div>
-
-      </div>
-
-      <div class="volunteer-summary-head">
-        <p class="mono" id="volunteer-status" role="status">
-          Loading opportunities...
-        </p>
-
-        <button class="clear-filter"
-                id="volunteer-clear"
-                type="button"
-                hidden>
-          Clear filters
-        </button>
-      </div>
-
-      <div id="volunteer-results"
-           aria-label="Volunteer opportunities">
-      </div>
-
-      <p class="volunteer-advisory">
-        Public program information checked October 24, 2026.
-        Listed seasons do not guarantee current openings.
-        Confirm dates, age requirements and training
-        directly with the organization.
-      </p>
-
-      <div class="volunteer-safety">
-
-        <details>
-          <summary>Before you volunteer</summary>
-
-          <ul>
-            <li>
-              Never touch or move sea turtles, nests or
-              hatchlings without authorization.
-            </li>
-            <li>
-              Keep nesting beaches dark and avoid flash photography.
-            </li>
-            <li>
-              Participate in turtle handling or rescue only
-              through permitted organizations.
-            </li>
-          </ul>
-        </details>
-
-        <p class="volunteer-help">
-          Can't find a local group? Contact the FWC
-          Marine Turtle Permit program at
-          <a href="mailto:MTP@myfwc.com">
-            MTP@myfwc.com
-          </a>.
-        </p>
-
-      </div>
-
-    </section>
-
-  </div>
-
-  <!-- INTERACTIVE MAP -->
-
-  <div class="map-panel">
-
-    <div class="map-heading">
-      <div>
-        <p class="section-label mono">
-          03 / Geographic view
-        </p>
-
-        <h2 class="section-heading">
-          The coastline
-        </h2>
-
-        <p class="section-description">
-          Select a colored shoreline or a ranked beach
-          to explore its 2027 forecast.
-        </p>
-      </div>
-
-      <span id="map-count" class="map-count mono">
-        8 areas
-      </span>
-    </div>
-
-    <div id="map"
-         role="region"
-         aria-label="Florida nesting area map">
-    </div>
-
-    <div id="map-status"
-         class="map-error"
-         role="status"
-         hidden>
-    </div>
-
-    <div class="map-coverage">
-      <label for="show-statewide">
-        <input id="show-statewide" type="checkbox" checked>
-        Show county-based estimates
-      </label>
-      <span id="coverage-summary" class="map-coverage-detail">Loading coastline data…</span>
-    </div>
-
-    <div class="map-legend">
-      <span class="legend-entry"><i class="line-symbol direct"></i>Direct TimesFM monitoring area</span>
-      <span class="legend-entry"><i class="line-symbol estimated"></i>County-derived beach estimate</span>
-      <span class="legend-entry"><i class="line-symbol unknown"></i>Insufficient data</span>
-    </div>
-
-    <div class="map-legend">
-
-      <span class="legend-entry">
-        <i class="legend-dot" style="--dot:var(--high)"></i>
-        Higher priority
-      </span>
-
-      <span class="legend-entry">
-        <i class="legend-dot" style="--dot:var(--mid)"></i>
-        Moderate priority
-      </span>
-
-      <span class="legend-entry">
-        <i class="legend-dot" style="--dot:var(--low)"></i>
-        Lower priority
-      </span>
-
-    </div>
-
-    <p class="map-caption">
-      Lines use official FWC coastline geometries. Solid colors show direct monitoring-area forecasts;
-      dashed colors show county TimesFM totals apportioned across beaches using historical density classes
-      and mapped lengths. Region-to-beach assignments remain approximate, and scores are not pollution measurements.
-    </p>
-
-    <!-- BEACH ANALYSIS -->
-
-    <section class="analysis"
-             id="beach-details"
-             aria-live="polite">
-
-      <div id="details-empty" class="analysis-empty">
-
-        <p class="section-label mono">
-          Selected area / No selection
-        </p>
-
-        <h3>Choose a shoreline to explore.</h3>
-
-        <p>
-          Select a ranked monitoring area for its direct TimesFM forecast,
-          or select a dashed FWC beach to inspect a county-derived estimate.
-        </p>
-
-      </div>
-
-      <div id="details-content" hidden>
-
-        <div class="analysis-top">
-
-          <div>
-            <p class="section-label mono">
-              Area analysis / 2027
-            </p>
-
-            <h3 id="beach-name"></h3>
-          </div>
-
-          <span id="beach-rank"
-                class="rank-caption mono">
-          </span>
-
-        </div>
-
-        <div class="analysis-metrics">
-
-          <div class="metric">
-
-            <span class="metric-label">
-              Relative priority score
-            </span>
-
-            <span class="metric-value">
-              <span id="beach-score"></span>
-              <span class="metric-suffix">/ 100</span>
-            </span>
-
-            <div class="level">
-              <i class="level-dot" id="level-dot"></i>
-              <span id="beach-level"></span>
-            </div>
-
-            <div class="meter">
-              <div id="priority-fill" class="meter-fill"></div>
-            </div>
-
-          </div>
-
-          <div class="metric">
-
-            <span id="beach-nests-label" class="metric-label">
-              Predicted nests<br>2027 season
-            </span>
-
-            <span id="beach-nests" class="metric-value"></span>
-
-          </div>
-
-          <div class="metric">
-
-            <span id="beach-density-label" class="metric-label">
-              Predicted nests<br>per mile
-            </span>
-
-            <span id="beach-density" class="metric-value"></span>
-
-          </div>
-
-        </div>
-
-        <div class="analysis-insight">
-
-          <h4>Understanding this result</h4>
-          <p id="beach-insight"></p>
-
-        </div>
-
-        <p class="analysis-note">
-          Direct forecasts predict monitoring-area totals. Dashed-segment numbers are allocations of
-          county forecasts, not independent TimesFM predictions for individual beaches.
-          Scores are experimental and do not measure debris or pollution.
-        </p>
-
-      </div>
-
-    </section>
-
-  </div>
-
+<div class="left-panel">
+
+<section id="concern" class="tab-content">
+<div class="comparison-heading">
+<p class="section-label mono">2027 nesting priorities</p>
+<h2 class="section-heading">Beach priorities</h2>
+<p class="section-description">
+Choose a monitored area from the list to examine its forecast
+directly on the adjacent map.
+</p>
+</div>
+
+<div class="rank-table-head mono">
+<span>No.</span>
+<span>Monitoring area</span>
+<span>Priority</span>
+</div>
+
+<ol id="priority-ranking" class="priority-ranking">
+<li class="loading-line">Loading forecasts...</li>
+</ol>
+
+<p class="ranking-context">
+<span style="color:#d7473e">●</span> Higher priority ·
+<span style="color:#b68b13">●</span> Moderate ·
+<span style="color:#27845d">●</span> Lower
+<br>
+Colors compare predicted nesting concentration,
+not pollution or immediate danger.
+</p>
+</section>
+
+<section id="species" class="tab-content" hidden>
+<p class="section-label mono">Field guide / Species</p>
+<h2 class="section-heading">Meet Florida's sea turtles.</h2>
+<p class="section-description">
+Five species occur in Florida's waters. Loggerhead, green
+and leatherback turtles nest regularly, while hawksbill
+and Kemp's ridley nesting is uncommon.
+</p>
+<p class="species-introduction">
+Explore their habitats, nesting seasons, hatching patterns
+and conservation status. Nesting dates and clutch estimates
+are approximate.
+</p>
+<div id="species-list"></div>
+<p class="reference-note">
+Learn more from the
+<a href="https://myfwc.com/research/wildlife/sea-turtles/florida/species/"
+target="_blank" rel="noopener noreferrer">Florida Fish and Wildlife Conservation Commission</a>
+and
+<a href="https://www.fisheries.noaa.gov/"
+target="_blank" rel="noopener noreferrer">NOAA Fisheries</a>.
+</p>
+</section>
+
+<section id="action" class="tab-content" hidden>
+<p class="section-label mono">Field guide / Conservation</p>
+<h2 class="section-heading">Small actions. Lasting impact.</h2>
+<p class="section-description">
+Everyone can help protect Florida's sea turtles,
+whether living along the coast or visiting its beaches.
+</p>
+
+<div id="action-list"></div>
+
+<div class="emergency">
+<h3>Found an injured or stranded sea turtle?</h3>
+<p>
+Contact the Florida Fish and Wildlife Conservation
+Commission's 24-hour Wildlife Alert Hotline.
+</p>
+<a href="tel:+18884043922">1-888-404-FWCC (3922)</a>
+<p>
+Provide the animal's exact location. Do not handle the turtle
+or return it to the water unless directed by authorized responders.
+</p>
+</div>
+
+<section class="organizations">
+<p class="section-label mono">Conservation partners</p>
+<h3>Organizations making a difference</h3>
+<div id="organization-list"></div>
+</section>
+</section>
+
+<section id="volunteer" class="tab-content" hidden>
+<p class="section-label mono">Field guide / Get involved</p>
+<h2 class="section-heading">Find a way to help.</h2>
+<p class="section-description">
+Explore conservation programs across Florida,
+filter by county and activity, and visit organizations
+to learn how to participate.
+</p>
+
+<div class="volunteer-filters">
+<div class="volunteer-field">
+<label class="mono" for="volunteer-county">County</label>
+<select id="volunteer-county">
+<option value="">All counties</option>
+</select>
+</div>
+
+<div class="volunteer-field">
+<label class="mono" for="volunteer-activity">Activity</label>
+<select id="volunteer-activity">
+<option value="">All activities</option>
+<option>Nest patrol</option>
+<option>Beach cleanup</option>
+<option>Education &amp; outreach</option>
+<option>Hatchling support</option>
+<option>Rescue &amp; rehabilitation</option>
+</select>
+</div>
+</div>
+
+<div class="volunteer-summary-head">
+<p id="volunteer-status" class="mono" role="status"></p>
+<button id="volunteer-clear" class="clear-filter" hidden>
+Clear filters
+</button>
+</div>
+
+<div id="volunteer-results"></div>
+
+<p class="volunteer-advisory">
+Listed programs and seasons may change. Confirm openings,
+dates, age restrictions and training requirements
+with the organization.
+</p>
+
+<div class="volunteer-safety">
+<details>
+<summary>Before you volunteer</summary>
+<ul>
+<li>Never touch or move sea turtles, nests or hatchlings without authorization.</li>
+<li>Keep nesting beaches dark and avoid flash photography.</li>
+<li>Join rescue and handling activities only through permitted organizations.</li>
+</ul>
+</details>
+<p class="volunteer-help">
+For assistance, contact
+<a href="mailto:MTP@myfwc.com">MTP@myfwc.com</a>.
+</p>
+</div>
+</section>
+
+<section id="research" class="tab-content" hidden>
+<p class="section-label mono">Research / Methodology</p>
+<h2 class="section-heading">Behind the forecast</h2>
+<p class="section-description">
+Understand how TurtleGuard interprets historical nesting records,
+generates forecasts, and assigns relative conservation priorities.
+</p>
+
+<div class="project-context">
+<h3>How TurtleGuard works</h3>
+<p>
+Historical sea turtle nesting records inform TimesFM forecasts
+for the 2027 season. Predicted nests per mile allow comparisons
+across eight directly monitored coastal areas, while additional
+county estimates are apportioned across mapped beach sections.
+</p>
+<div class="research-flow">
+<span>Historical data</span>
+<span>AI forecast</span>
+<span>Nesting density</span>
+<span>Priority ranking</span>
+</div>
+</div>
+
+<div class="reading-cue">
+<div class="reading-cue-title">READ THE PRIORITY COLORS</div>
+<div class="reading-cue-levels">
+<span><i class="cue-circle" style="--cue:var(--high)"></i>Higher / red</span>
+<span><i class="cue-circle" style="--cue:var(--mid)"></i>Moderate / yellow</span>
+<span><i class="cue-circle" style="--cue:var(--low)"></i>Lower / green</span>
+</div>
+<p>
+These colors describe relative model-derived nesting priorities,
+not pollution or overall ecological importance.
+</p>
+</div>
+
+<div class="method" id="research-guide"></div>
+
+<p class="method-limit">
+The 2027 numbers are estimates, not observed nest counts.
+Coastline matches are approximate, some 2026 observations
+are provisional, and forecast error is possible.
+Use these findings alongside field monitoring and conservation expertise.
+</p>
+</section>
+
+</div>
+
+<div class="map-panel">
+<div class="map-heading">
+<p class="section-label mono">Explore / Map</p>
+<h2 class="section-heading">Florida's nesting coastline</h2>
+<p class="section-description">
+Select a highlighted coastline or an area from the ranking
+to explore its forecast.
+</p>
+</div>
+
+<div id="map" role="region" aria-label="Florida nesting coastline map"></div>
+<div id="map-status" class="map-error" role="status" hidden></div>
+
+<section class="analysis" id="beach-details" aria-live="polite">
+<div id="details-empty" class="analysis-empty">
+<p class="section-label mono">Selected area / No selection</p>
+<h3>Your coastal field notes begin here.</h3>
+<p>
+Select a coastline on the map or choose a monitored area
+from the ranking. Solid lines indicate direct forecasts;
+dashed lines show county-based allocations.
+</p>
+</div>
+
+<div id="details-content" hidden>
+<div class="analysis-top">
+<div>
+<p class="section-label mono">Area analysis / 2027</p>
+<h3 id="beach-name"></h3>
+</div>
+<span id="beach-rank" class="rank-caption mono"></span>
+</div>
+
+<div class="analysis-metrics">
+<div class="metric">
+<span class="metric-label">Relative priority score</span>
+<span class="metric-value">
+<span id="beach-score"></span>
+<span class="metric-suffix">/ 100</span>
+</span>
+<div class="level">
+<i id="level-dot" class="level-dot"></i>
+<span id="beach-level"></span>
+</div>
+<div class="meter">
+<div id="priority-fill" class="meter-fill"></div>
+</div>
+</div>
+
+<div class="metric">
+<span id="beach-nests-label" class="metric-label">
+Predicted nests<br>2027 season
+</span>
+<span id="beach-nests" class="metric-value"></span>
+</div>
+
+<div class="metric">
+<span id="beach-density-label" class="metric-label">
+Predicted nests<br>per mile
+</span>
+<span id="beach-density" class="metric-value"></span>
+</div>
+</div>
+
+<div class="analysis-insight">
+<h4>What this result means</h4>
+<p id="beach-insight"></p>
+</div>
+
+<p class="analysis-note">
+Direct forecasts predict monitoring-area totals.
+Dashed county allocations are not independent TimesFM
+predictions for individual beaches.
+</p>
+</div>
+</section>
+
+<div class="map-controls">
+<div class="map-coverage">
+<label for="show-statewide">
+<input id="show-statewide" type="checkbox" checked>
+Show county-based estimates
+</label>
+<span id="coverage-summary" class="map-coverage-detail">
+Loading coastline data…
+</span>
+</div>
+
+<div id="map-key">
+<div class="map-legend">
+<span class="legend-entry">
+<i class="line-symbol"></i>Direct monitoring forecast
+</span>
+<span class="legend-entry">
+<i class="line-symbol estimated"></i>County-based estimate
+</span>
+<span class="legend-entry">
+<i class="line-symbol unknown"></i>Insufficient data
+</span>
+</div>
+
+<div class="map-legend">
+<span class="legend-entry">
+<i class="legend-dot" style="--dot:var(--high)"></i>
+Higher priority
+</span>
+<span class="legend-entry">
+<i class="legend-dot" style="--dot:var(--mid)"></i>
+Moderate priority
+</span>
+<span class="legend-entry">
+<i class="legend-dot" style="--dot:var(--low)"></i>
+Lower priority
+</span>
+</div>
+</div>
+
+<button id="show-map-key" class="show-key" type="button" hidden>
+Show map key
+</button>
+</div>
+
+<p class="map-caption">
+Solid lines represent direct monitoring-area forecasts.
+Dashed lines display county-derived estimates apportioned
+among FWC surveyed beach sections. Gray means insufficient
+forecast evidence; it does not mean an absence of turtles.
+</p>
+</div>
 </main>
 
-<footer class="site-footer">
-  <div class="shell footer-inner">
-    <span>TurtleGuard · Florida sea turtle nesting outlook</span>
-    <span>2027 forecasts / Research prototype</span>
-  </div>
+<footer class="copyright-footer">
+<div class="shell">
+© 2026 Michael White, Grayson Pitts, Adam Eifling. Licensed under the MIT License.
+</div>
 </footer>
 
 <script>
 "use strict";
 
-/* TAB NAVIGATION */
+const $ = id => document.getElementById(id);
 
-function switchTab(tabId) {
+/* NAVIGATION */
 
+function switchTab(id) {
   document.querySelectorAll(".tab").forEach(button => {
-
-    const active = button.dataset.tab === tabId;
-
+    const active = button.dataset.tab === id;
     button.classList.toggle("active", active);
     button.setAttribute("aria-pressed", String(active));
-
   });
 
   document.querySelectorAll(".tab-content").forEach(panel => {
-
-    panel.hidden = panel.id !== tabId;
-
+    panel.hidden = panel.id !== id;
   });
 }
 
 document.querySelectorAll(".tab").forEach(button => {
-
-  button.addEventListener("click", () => {
-    switchTab(button.dataset.tab);
-  });
-
+  button.addEventListener("click", () => switchTab(button.dataset.tab));
 });
 
-/* TAKE ACTION → VOLUNTEER TAB */
+/* SPECIES DATA */
 
-document.getElementById("go-volunteer")
-  .addEventListener("click", () => {
-
-    switchTab("volunteer");
-
-    document.getElementById("volunteer").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-
-  });
-
-
-/* VOLUNTEER PROGRAMS */
-
-const VOLUNTEER_PROJECTS = [
-
-  {
-    title: "Sea Turtle Washback Program",
-    organization: "St. Johns County",
-    county: "St. Johns",
-    place: "St. Augustine area",
-    activity: "Rescue & rehabilitation",
-    season: "Aug–Nov",
-    description:
-      "Survey beach washback areas and support recovery efforts and cleanups.",
-    url: "https://www.sjcfl.us/departments/habitat-conservation/"
-  },
-
-  {
-    title: "Morning nesting patrol",
-    organization: "Mickler’s Landing Turtle Patrol",
-    county: "St. Johns",
-    place: "Ponte Vedra Beach",
-    activity: "Nest patrol",
-    season: "Apr–Oct",
-    description:
-      "Morning nesting surveys involving recurring sunrise shifts. Contact the patrol for enrollment details.",
-    url: "https://www.micklerslandingturtlepatrol.org/apply-to-volunteer-with-mltp"
-  },
-
-  {
-    title: "Sea turtle patrol team",
-    organization: "Flagler Turtle Patrol",
-    county: "Flagler",
-    place: "Flagler Beach",
-    activity: "Nest patrol",
-    season: "May–Oct",
-    description:
-      "Beach monitoring and conservation volunteering. Ask about training and shifts.",
-    url: "https://www.flaglerturtlepatrol.com/volunteering"
-  },
-
-  {
-    title: "Beach walker / nest monitoring",
-    organization: "Sea Turtle Trackers",
-    county: "Pinellas",
-    place: "St. Pete Beach",
-    activity: "Nest patrol",
-    season: "Apr–Oct",
-    description:
-      "Track spotting, nest documentation and public education.",
-    url: "https://seaturtletrackers.org/volunteer/"
-  },
-
-  {
-    title: "Nighttime hatchling support",
-    organization: "Sea Turtle Oversight Protection",
-    county: "Broward",
-    place: "Fort Lauderdale area",
-    activity: "Hatchling support",
-    season: "Jun–Oct",
-    description:
-      "Training-intensive nighttime patrols and permitted hatchling rescue.",
-    url: "https://www.seaturtleop.org/volunteer"
-  },
-
-  {
-    title: "Community outreach & coastal lighting",
-    organization: "Sea Turtle Oversight Protection",
-    county: "Broward",
-    place: "Fort Lauderdale area",
-    activity: "Education & outreach",
-    season: "Year-round",
-    description:
-      "Conservation education and turtle-friendly lighting outreach.",
-    url: "https://www.seaturtleop.org/volunteer"
-  },
-
-  {
-    title: "Sea turtle beach walking",
-    organization: "Save-A-Turtle",
-    county: "Monroe",
-    place: "Florida Keys",
-    activity: "Nest patrol",
-    season: "Apr–Sep",
-    description:
-      "Morning turtle patrols in the Florida Keys. Local residence and training may be required.",
-    url: "https://www.save-a-turtle.org/volunteer.html"
-  },
-
-  {
-    title: "Florida Keys beach cleanups",
-    organization: "Save-A-Turtle",
-    county: "Monroe",
-    place: "Florida Keys",
-    activity: "Beach cleanup",
-    season: "Periodic",
-    description:
-      "Organized coastal cleanup activities offered periodically.",
-    url: "https://www.save-a-turtle.org/volunteer.html"
-  },
-
-  {
-    title: "Sea turtle rehabilitation support",
-    organization: "Gulfarium C.A.R.E. Center",
-    county: "Okaloosa",
-    place: "Fort Walton Beach",
-    activity: "Rescue & rehabilitation",
-    season: "Ask for dates",
-    description:
-      "Support sea turtle rehabilitation staff. Confirm age and training requirements.",
-    url: "https://gulfarium.com/volunteer/"
-  },
-
-  {
-    title: "Stranding response team",
-    organization: "Gulfarium C.A.R.E. Center",
-    county: "Okaloosa",
-    place: "Okaloosa Island",
-    activity: "Rescue & rehabilitation",
-    season: "Mar–Oct",
-    description:
-      "Trained response to stranded sea turtles through an authorized organization.",
-    url: "https://gulfarium.com/volunteer/"
-  },
-
-  {
-    title: "Barrier Island Center volunteers",
-    organization: "Brevard County EEL Program",
-    county: "Brevard",
-    place: "Melbourne Beach",
-    activity: "Education & outreach",
-    season: "Ask for dates",
-    description:
-      "Visitor education, turtle walk support and nature center activities.",
-    url: "https://www.brevardfl.gov/EELProgram/Sanctuaries/DocEhrhartSanctuary"
-  },
-
-  {
-    title: "Highland Beach monitoring team",
-    organization: "Highland Beach Sea Turtle Team",
-    county: "Palm Beach",
-    place: "Highland Beach",
-    activity: "Nest patrol",
-    season: "Mar–Oct",
-    description:
-      "Nesting surveys and conservation education during the nesting season.",
-    url: "https://hbseaturtles.org/"
-  }
-
+const SPECIES = [
+  [
+    "Loggerhead Turtle",
+    "Caretta caretta",
+    "Federally threatened",
+    "Loggerheads are Florida's most common nesting sea turtle. Florida supports one of the world's largest loggerhead nesting populations. Coastal development, fisheries interactions and artificial lighting remain threats.",
+    [
+      ["Where they are found", "Both Atlantic and Gulf coasts. Major nesting areas include Brevard, Indian River, St. Lucie, Martin and Palm Beach counties."],
+      ["Nesting season", "Usually April through September, peaking in early summer."],
+      ["Nesting behavior", "Females generally lay several clutches per season, often with approximately 100–125 eggs each."],
+      ["Hatching", "Incubation generally lasts 45–65 days. Hatchlings normally emerge at night."]
+    ]
+  ],
+  [
+    "Green Sea Turtle",
+    "Chelonia mydas",
+    "Federally threatened — North Atlantic",
+    "Green turtle nesting in Florida has increased following decades of protection. Adults primarily consume seagrass and algae. Marine debris, vessel strikes, habitat degradation and disease remain concerns.",
+    [
+      ["Where they are found", "Seagrass beds, coastal bays and reefs, with major nesting concentrations along the Atlantic coast."],
+      ["Nesting season", "Primarily June through late September."],
+      ["Nesting behavior", "Females commonly return every two or three years and lay multiple clutches, averaging roughly 128 eggs per nest."],
+      ["Hatching", "Incubation typically lasts around 50–60 days."]
+    ]
+  ],
+  [
+    "Leatherback Turtle",
+    "Dermochelys coriacea",
+    "Federally endangered",
+    "The leatherback is the largest living sea turtle. It crosses oceans, dives to remarkable depths and primarily feeds on jellyfish. Fishing gear and marine debris are major threats.",
+    [
+      ["Where they are found", "Open ocean habitats, nesting primarily along Florida's southeastern Atlantic coast, especially Palm Beach County."],
+      ["Nesting season", "Primarily March through July, with occasional earlier or later nests."],
+      ["Nesting behavior", "Females lay multiple nests, generally containing approximately 70–90 yolked eggs each."],
+      ["Hatching", "Incubation commonly takes 60–70 days."]
+    ]
+  ],
+  [
+    "Kemp's Ridley Turtle",
+    "Lepidochelys kempii",
+    "Federally endangered",
+    "Kemp's ridley is the smallest sea turtle species and one of the most endangered. It is known for synchronized daytime nesting events called arribadas, primarily in Mexico.",
+    [
+      ["Where they are found", "Shallow Gulf waters, estuaries and coastal waters around Florida."],
+      ["Nesting season", "Generally April through July."],
+      ["Nesting behavior", "Most nesting occurs in Mexico. Florida nesting is comparatively rare."],
+      ["Hatching", "Incubation generally lasts 45–55 days."]
+    ]
+  ],
+  [
+    "Hawksbill Turtle",
+    "Eretmochelys imbricata",
+    "Federally endangered",
+    "Hawksbills live near coral reefs, using their beak-like mouths to feed on reef organisms. The illegal shell trade, reef loss and climate change threaten them.",
+    [
+      ["Where they are found", "Coral reefs and rocky habitats, especially the Florida Keys and southeastern Florida."],
+      ["Nesting season", "Late spring through autumn where nesting occurs; Florida nesting is rare."],
+      ["Nesting behavior", "Females may lay multiple clutches."],
+      ["Hatching", "Incubation generally lasts 50–70 days."]
+    ]
+  ]
 ];
 
+SPECIES.forEach((species, index) => {
+  const article = document.createElement("article");
+  article.className = "species-profile";
 
-/* VOLUNTEER FILTERS */
+  const head = document.createElement("div");
+  head.className = "species-header";
 
-const volunteerCounty =
-  document.getElementById("volunteer-county");
+  const left = document.createElement("div");
+  const heading = document.createElement("h3");
+  heading.textContent =
+    String(index + 1).padStart(2, "0") + " / " + species[0];
 
-const volunteerActivity =
-  document.getElementById("volunteer-activity");
+  const scientific = document.createElement("p");
+  scientific.className = "scientific-name";
+  scientific.textContent = species[1];
+  left.append(heading, scientific);
 
-const volunteerResults =
-  document.getElementById("volunteer-results");
+  const status = document.createElement("span");
+  status.className = "species-status";
+  status.textContent = species[2];
+  head.append(left, status);
 
-const volunteerStatus =
-  document.getElementById("volunteer-status");
+  const description = document.createElement("p");
+  description.className = "species-description";
+  description.textContent = species[3];
 
-const volunteerClear =
-  document.getElementById("volunteer-clear");
+  const facts = document.createElement("dl");
+  facts.className = "species-facts";
 
-
-[...new Set(VOLUNTEER_PROJECTS.map(p => p.county))]
-  .sort((a, b) => a.localeCompare(b))
-  .forEach(county => {
-
-    volunteerCounty.add(new Option(county, county));
-
+  species[4].forEach(([key, value]) => {
+    const cell = document.createElement("div");
+    const dt = document.createElement("dt");
+    const dd = document.createElement("dd");
+    dt.textContent = key;
+    dd.textContent = value;
+    cell.append(dt, dd);
+    facts.append(cell);
   });
 
+  article.append(head, description, facts);
+  $("species-list").append(article);
+});
 
-function renderVolunteerFinder() {
+/* TAKE ACTION */
 
+const ACTIONS = [
+  [
+    "Keep beachfront lighting turtle-friendly",
+    "Artificial lights can disorient nesting females and hatchlings. Turn off unnecessary beach-facing lights during nesting season, close blinds, use low-mounted shielded turtle-friendly lighting and avoid flash photography."
+  ],
+  [
+    "Leave no trace on the beach",
+    "Fill in holes and flatten sandcastles before leaving. Take home chairs, umbrellas and other beach equipment so they cannot obstruct nesting females or hatchlings."
+  ],
+  [
+    "Reduce plastic waste",
+    "Sea turtles can mistake floating plastics for food or become entangled in fishing line. Use reusable bottles, dispose of waste properly and never release balloons outdoors."
+  ],
+  [
+    "Respect nesting turtles and marine life",
+    "Keep your distance from turtles and nests. Never touch, chase or interfere with hatchlings. While boating, obey speed zones and watch for wildlife."
+  ],
+  [
+    "Volunteer for conservation",
+    "Join organized beach cleanups, education programs, trained nesting patrols and authorized rehabilitation activities."
+  ]
+];
+
+ACTIONS.forEach(([name, description], index) => {
+  const row = document.createElement("div");
+  row.className = "action-step";
+
+  const number = document.createElement("span");
+  number.className = "action-number";
+  number.textContent = String(index + 1).padStart(2, "0");
+
+  const content = document.createElement("div");
+  const heading = document.createElement("h3");
+  heading.textContent = name;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = description;
+  content.append(heading, paragraph);
+
+  if (index === 4) {
+    const button = document.createElement("button");
+    button.className = "action-button";
+    button.textContent = "Explore volunteer opportunities →";
+    button.addEventListener("click", () => {
+      switchTab("volunteer");
+      $("volunteer").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+    content.append(button);
+  }
+
+  row.append(number, content);
+  $("action-list").append(row);
+});
+
+/* CONSERVATION ORGANIZATIONS */
+
+const ORGANIZATIONS = [
+  ["Sea Turtle Preservation Society", "Brevard County · Nest monitoring, rescue support, public education and cleanups.", "https://seaturtlespacecoast.org/"],
+  ["Loggerhead Marinelife Center", "Juno Beach · Sea turtle hospital, research and conservation education.", "https://marinelife.org/"],
+  ["Sea Turtle Conservancy", "Gainesville · Research, tracking, conservation policy and education.", "https://conserveturtles.org/"],
+  ["The Florida Aquarium", "Tampa Bay area · Sea turtle rescue, rehabilitation and marine science.", "https://www.flaquarium.org/"],
+  ["Clearwater Marine Aquarium", "Clearwater · Marine animal rescue, rehabilitation and coastal conservation.", "https://www.cmaquarium.org/"]
+];
+
+ORGANIZATIONS.forEach(([name, description, url]) => {
+  const row = document.createElement("div");
+  row.className = "organization";
+
+  const strong = document.createElement("strong");
+  strong.textContent = name;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = description;
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "Visit organization ↗";
+
+  row.append(strong, paragraph, link);
+  $("organization-list").append(row);
+});
+
+/* VOLUNTEER DATA */
+
+const VOLUNTEERS = [
+  [
+    "Sea Turtle Washback Program",
+    "St. Johns County", "St. Johns", "St. Augustine area",
+    "Rescue & rehabilitation", "Aug–Nov",
+    "Survey beach washback areas and support recovery efforts.",
+    "https://www.sjcfl.us/departments/habitat-conservation/"
+  ],
+  [
+    "Morning nesting patrol",
+    "Mickler's Landing Turtle Patrol", "St. Johns", "Ponte Vedra Beach",
+    "Nest patrol", "Apr–Oct",
+    "Morning nesting surveys with recurring sunrise shifts.",
+    "https://www.micklerslandingturtlepatrol.org/apply-to-volunteer-with-mltp"
+  ],
+  [
+    "Sea turtle patrol team",
+    "Flagler Turtle Patrol", "Flagler", "Flagler Beach",
+    "Nest patrol", "May–Oct",
+    "Beach monitoring and conservation volunteering.",
+    "https://www.flaglerturtlepatrol.com/volunteering"
+  ],
+  [
+    "Beach walker / nest monitoring",
+    "Sea Turtle Trackers", "Pinellas", "St. Pete Beach",
+    "Nest patrol", "Apr–Oct",
+    "Track spotting, nest documentation and public education.",
+    "https://seaturtletrackers.org/volunteer/"
+  ],
+  [
+    "Nighttime hatchling support",
+    "Sea Turtle Oversight Protection", "Broward", "Fort Lauderdale",
+    "Hatchling support", "Jun–Oct",
+    "Training-intensive nighttime patrols and permitted hatchling rescue.",
+    "https://www.seaturtleop.org/volunteer"
+  ],
+  [
+    "Coastal lighting outreach",
+    "Sea Turtle Oversight Protection", "Broward", "Fort Lauderdale",
+    "Education & outreach", "Year-round",
+    "Conservation education and turtle-friendly lighting.",
+    "https://www.seaturtleop.org/volunteer"
+  ],
+  [
+    "Sea turtle beach walking",
+    "Save-A-Turtle", "Monroe", "Florida Keys",
+    "Nest patrol", "Apr–Sep",
+    "Morning patrols; training and local residence may be required.",
+    "https://www.save-a-turtle.org/volunteer.html"
+  ],
+  [
+    "Florida Keys beach cleanups",
+    "Save-A-Turtle", "Monroe", "Florida Keys",
+    "Beach cleanup", "Periodic",
+    "Organized coastal cleanups.",
+    "https://www.save-a-turtle.org/volunteer.html"
+  ],
+  [
+    "Sea turtle rehabilitation support",
+    "Gulfarium C.A.R.E. Center", "Okaloosa", "Fort Walton Beach",
+    "Rescue & rehabilitation", "Ask for dates",
+    "Support sea turtle rehabilitation staff.",
+    "https://gulfarium.com/volunteer/"
+  ],
+  [
+    "Stranding response team",
+    "Gulfarium C.A.R.E. Center", "Okaloosa", "Okaloosa Island",
+    "Rescue & rehabilitation", "Mar–Oct",
+    "Trained response to stranded sea turtles.",
+    "https://gulfarium.com/volunteer/"
+  ],
+  [
+    "Barrier Island Center volunteers",
+    "Brevard County EEL Program", "Brevard", "Melbourne Beach",
+    "Education & outreach", "Ask for dates",
+    "Visitor education and nature center activities.",
+    "https://www.brevardfl.gov/EELProgram/Sanctuaries/DocEhrhartSanctuary"
+  ],
+  [
+    "Highland Beach monitoring team",
+    "Highland Beach Sea Turtle Team", "Palm Beach", "Highland Beach",
+    "Nest patrol", "Mar–Oct",
+    "Nesting surveys and conservation education.",
+    "https://hbseaturtles.org/"
+  ]
+];
+
+const volunteerCounty = $("volunteer-county");
+const volunteerActivity = $("volunteer-activity");
+
+[...new Set(VOLUNTEERS.map(v => v[2]))]
+  .sort()
+  .forEach(county => {
+    volunteerCounty.add(new Option(county, county));
+  });
+
+function renderVolunteers() {
   const county = volunteerCounty.value;
   const activity = volunteerActivity.value;
 
-  const matching = VOLUNTEER_PROJECTS.filter(project => {
+  const rows = VOLUNTEERS.filter(v =>
+    (!county || v[2] === county) &&
+    (!activity || v[4] === activity)
+  );
 
-    return (
-      (!county || project.county === county) &&
-      (!activity || project.activity === activity)
-    );
+  $("volunteer-results").replaceChildren();
 
-  });
+  $("volunteer-status").textContent =
+    rows.length + " " +
+    (rows.length === 1 ? "opportunity" : "opportunities");
 
-  volunteerResults.replaceChildren();
+  $("volunteer-clear").hidden = !county && !activity;
 
-  volunteerStatus.textContent =
-    `${matching.length} ${
-      matching.length === 1 ? "opportunity" : "opportunities"
-    }`;
-
-  volunteerClear.hidden = !county && !activity;
-
-
-  if (!matching.length) {
-
-    const empty = document.createElement("p");
-
-    empty.className = "volunteer-empty";
-    empty.textContent =
-      "No programs match these filters. Try another county or activity.";
-
-    volunteerResults.appendChild(empty);
-    return;
+  if (!rows.length) {
+    const paragraph = document.createElement("p");
+    paragraph.className = "reference-note";
+    paragraph.textContent =
+      "No programs match these filters. Try another selection.";
+    $("volunteer-results").append(paragraph);
   }
 
-
-  matching.forEach(project => {
-
+  rows.forEach(v => {
     const article = document.createElement("article");
     article.className = "opportunity";
 
@@ -2375,82 +1323,115 @@ function renderVolunteerFinder() {
     top.className = "opportunity-top";
 
     const left = document.createElement("div");
+    const heading = document.createElement("h3");
+    heading.textContent = v[0];
 
-    const title = document.createElement("h3");
-    title.textContent = project.title;
-
-    const org = document.createElement("p");
-    org.className = "opportunity-organization";
-    org.textContent = project.organization;
-
-    left.append(title, org);
+    const organization = document.createElement("p");
+    organization.className = "opportunity-organization";
+    organization.textContent = v[1];
+    left.append(heading, organization);
 
     const season = document.createElement("span");
     season.className = "opportunity-season";
-    season.textContent = project.season;
-
+    season.textContent = v[5];
     top.append(left, season);
 
     const description = document.createElement("p");
-    description.textContent = project.description;
+    description.textContent = v[6];
 
     const bottom = document.createElement("div");
     bottom.className = "opportunity-bottom";
 
     const location = document.createElement("span");
     location.className = "opportunity-location";
-    location.textContent =
-      `${project.place} · ${project.activity}`;
+    location.textContent = v[3] + " · " + v[4];
 
     const link = document.createElement("a");
-
     link.className = "opportunity-link";
-    link.href = project.url;
+    link.href = v[7];
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.textContent = "View program ↗";
 
     bottom.append(location, link);
-
     article.append(top, description, bottom);
-
-    volunteerResults.appendChild(article);
-
+    $("volunteer-results").append(article);
   });
-
 }
 
+volunteerCounty.addEventListener("change", renderVolunteers);
+volunteerActivity.addEventListener("change", renderVolunteers);
 
-volunteerCounty.addEventListener(
-  "change", renderVolunteerFinder
-);
-
-volunteerActivity.addEventListener(
-  "change", renderVolunteerFinder
-);
-
-volunteerClear.addEventListener("click", () => {
-
+$("volunteer-clear").addEventListener("click", () => {
   volunteerCounty.value = "";
   volunteerActivity.value = "";
-
-  renderVolunteerFinder();
-
+  renderVolunteers();
 });
 
-renderVolunteerFinder();
+renderVolunteers();
 
+/* RESEARCH METHODS */
 
-/* MAPTILER MAP */
+const METHODS = [
+  [
+    "Historical observations",
+    "Published nesting records and monitoring-area survey lengths are used to establish historical patterns."
+  ],
+  [
+    "Forecasting 2027",
+    "TimesFM estimates future nests from historical counts. These are model forecasts, not confirmed 2027 observations."
+  ],
+  [
+    "Direct monitoring areas",
+    "Eight monitored areas are ranked using predicted nests per mile. Mapped segments of a direct region do not each receive their own independent TimesFM forecast."
+  ],
+  [
+    "County-based allocations",
+    "County forecasts are apportioned to FWC mapped beach lines using coastline length and historic nesting-density categories. These are not independent beach-level predictions."
+  ],
+  [
+    "Priority score bands",
+    "TurtleGuard assigns red to scores 70–100, yellow to 40–69.9 and green below 40; gray means no supported estimate. These are experimental bands, not official FWC rankings."
+  ],
+  [
+    "How to use results",
+    "Combine model estimates with local field surveys to inform nesting patrols, turtle-friendly lighting, public education and habitat protection."
+  ]
+];
+
+METHODS.forEach(([title, description], index) => {
+  const row = document.createElement("div");
+  row.className = "method-row";
+
+  const number = document.createElement("span");
+  number.className = "method-number";
+  number.textContent = String(index + 1).padStart(2, "0");
+
+  const content = document.createElement("div");
+  const heading = document.createElement("h4");
+  heading.textContent = title;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = description;
+  content.append(heading, paragraph);
+
+  row.append(number, content);
+  $("research-guide").append(row);
+});
+
+/* MAPTILER MAP — TRACKPAD ZOOM ENABLED */
 
 const MAPTILER_API_KEY = "jNBO5WG6MnhsvAdzBgYc";
 
 const map = L.map("map", {
-  scrollWheelZoom: false
-}).setView([28.2, -82.0], 7);
+  scrollWheelZoom: true,
+  wheelPxPerZoomLevel: 140,
+  wheelDebounceTime: 40
+}).setView([28.2, -82], 7);
 
 const tiles = L.tileLayer(
-  `https://api.maptiler.com/maps/streets-v4/256/{z}/{x}/{y}.png?key=${encodeURIComponent(MAPTILER_API_KEY)}`,
+  "https://api.maptiler.com/maps/streets-v4/256/{z}/{x}/{y}.png?key=" +
+  encodeURIComponent(MAPTILER_API_KEY),
   {
     maxZoom: 19,
     attribution:
@@ -2459,152 +1440,124 @@ const tiles = L.tileLayer(
   }
 ).addTo(map);
 
-const status = document.getElementById("map-status");
-
 function showError(message) {
-
-  status.textContent = message;
-  status.hidden = false;
-
+  $("map-status").hidden = false;
+  $("map-status").textContent = message;
 }
 
 tiles.on("tileerror", () => {
-
   showError(
-    "Map background unavailable. Check your connection and MapTiler key."
+    "Map tiles unavailable. Check your connection and MapTiler key."
   );
-
 });
 
+/* MAP STATE */
 
-/* BEACH STATE — direct monitoring forecasts stay separate from county allocations */
-
-const beachLayers = new Map(); // region ID -> direct monitoring area (one or more GIS segments)
+const byRegion = new Map();
+const directEntries = new Map();
 const rankByName = new Map();
-const allRenderedPaths = [];
-let activeEntry = null;
-let mapBounds = null;
+const renderedPaths = [];
 
-const grayOfficialLayer = L.featureGroup().addTo(map);
-const estimatedLayer = L.featureGroup().addTo(map);
-const directOfficialLayer = L.featureGroup().addTo(map);
+let activeEntry = null;
+
+const grayLayer = L.featureGroup().addTo(map);
+const estimateLayer = L.featureGroup().addTo(map);
+const directLayer = L.featureGroup().addTo(map);
 const fallbackLayer = L.featureGroup().addTo(map);
 
-/* NUMBER HELPERS */
+/* DATA HELPERS */
 
-function toNumber(value) {
+function number(value) {
+  if (
+    value === null ||
+    value === undefined ||
+    value === ""
+  ) return null;
 
-  if (value === null || value === undefined || value === "") {
-    return null;
-  }
-
-  const number = Number(value);
-  return Number.isFinite(number) ? number : null;
-
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
 }
 
-function formatWhole(value) {
-
-  const number = toNumber(value);
-
-  return number === null
-    ? "—"
-    : Math.round(number).toLocaleString();
-
+function whole(value) {
+  const n = number(value);
+  return n === null ? "—" : Math.round(n).toLocaleString();
 }
 
-function formatDecimal(value) {
-
-  const number = toNumber(value);
-
-  return number === null
-    ? "—"
-    : number.toFixed(1);
-
+function decimal(value) {
+  const n = number(value);
+  return n === null ? "—" : n.toFixed(1);
 }
 
-function getScore(region) {
+function scoreOf(region) {
+  const n = number(region?.priority_score);
 
-  const number = region
-    ? toNumber(region.priority_score)
+  return n !== null && n >= 0 && n <= 100
+    ? n
     : null;
-
-  return number !== null && number >= 0 && number <= 100
-    ? number
-    : null;
-
 }
 
-
-/* PRIORITY INFORMATION */
+/* PRIORITY CATEGORIES */
 
 function priorityInfo(score) {
-
   if (score >= 70) {
-
     return {
       label: "Higher priority",
-      color: "#b75b4e",
+      color: "#d7473e",
       insight:
-        "This area has one of the highest predicted concentrations " +
-        "of sea turtle nests in the comparison. Nesting-focused " +
-        "monitoring and protection may be especially valuable " +
-        "here, subject to local conditions and conservation guidance."
+        "This area has a higher predicted nesting concentration " +
+        "within the comparison. Nesting surveys, protection and " +
+        "conservation education may be especially valuable."
     };
-
   }
 
   if (score >= 40) {
-
     return {
       label: "Moderate priority",
-      color: "#ab792e",
+      color: "#f0c14b",
       insight:
-        "This area has a middle-range predicted nesting " +
-        "concentration among the eight monitored areas. " +
-        "Continued nesting surveys, turtle-friendly lighting " +
-        "and other protective practices remain valuable here."
+        "This area has a moderate predicted nesting concentration. " +
+        "Continued monitoring, turtle-friendly lighting and habitat " +
+        "protection remain valuable."
     };
-
   }
 
   return {
     label: "Lower priority",
-    color: "#3b7a60",
+    color: "#27845d",
     insight:
       "This area has a lower predicted nesting concentration " +
-      "within this comparison. That does not mean it is " +
-      "unimportant: monitoring and appropriate protection " +
-      "remain essential to sea turtle conservation."
+      "relative to the comparison. It remains important to sea " +
+      "turtle conservation."
   };
-
 }
 
+function priorityColor(score) {
+  const n = number(score);
 
-/* BUILD BEACH RANKINGS */
+  return n === null || n < 0 || n > 100
+    ? "#98a29d"
+    : priorityInfo(n).color;
+}
+
+/* BEACH RANKINGS */
 
 function renderRanking(regions) {
-
-  const sorted = regions
-    .filter(region => getScore(region) !== null)
-    .sort((a, b) =>
-      getScore(b) - getScore(a) ||
-      a.name.localeCompare(b.name)
-    );
-
-  const list = document.getElementById("priority-ranking");
-
+  const list = $("priority-ranking");
   list.replaceChildren();
   rankByName.clear();
 
-  sorted.forEach((region, index) => {
+  const sorted = regions
+    .filter(region => scoreOf(region) !== null)
+    .sort((a, b) =>
+      scoreOf(b) - scoreOf(a) ||
+      a.name.localeCompare(b.name)
+    );
 
+  sorted.forEach((region, index) => {
+    const score = scoreOf(region);
     rankByName.set(region.name, index + 1);
 
-    const score = getScore(region);
-
     const li = document.createElement("li");
-
     const button = document.createElement("button");
 
     button.type = "button";
@@ -2614,322 +1567,632 @@ function renderRanking(regions) {
 
     button.setAttribute(
       "aria-label",
-      `Rank ${index + 1}: ${region.name}, priority score ${formatDecimal(score)} out of 100`
+      `Rank ${index + 1}: ${region.name}, priority score ${decimal(score)} out of 100`
     );
-
 
     const rank = document.createElement("span");
     rank.className = "rank-index";
-    rank.textContent =
-      String(index + 1).padStart(2, "0");
-
+    rank.textContent = String(index + 1).padStart(2, "0");
 
     const main = document.createElement("span");
-    main.className = "rank-main";
-
     const name = document.createElement("span");
+    const detail = document.createElement("span");
+
     name.className = "rank-name";
     name.textContent = region.name;
 
-    const density = document.createElement("span");
-    density.className = "rank-detail";
-    density.textContent =
-      `${formatDecimal(region.projected_nests_per_mile)} predicted nests / mile`;
+    detail.className = "rank-detail";
+    detail.textContent =
+      decimal(region.projected_nests_per_mile) +
+      " predicted nests / mile · " +
+      priorityInfo(score).label;
 
-    main.append(name, density);
+    main.append(name, detail);
 
-
-    const scoreSpan = document.createElement("span");
-    scoreSpan.className = "rank-score";
-
-    scoreSpan.style.setProperty(
+    const value = document.createElement("span");
+    value.className = "rank-score";
+    value.textContent = decimal(score);
+    value.style.setProperty(
       "--score-color",
-      priorityInfo(score).color
+      priorityColor(score)
     );
 
-    scoreSpan.textContent = formatDecimal(score);
-
-
-    button.append(rank, main, scoreSpan);
+    button.append(rank, main, value);
 
     button.addEventListener("click", () => {
-      selectBeach(region.name);
+      activate(directEntries.get(region.name));
     });
 
-    li.appendChild(button);
-    list.appendChild(li);
-
+    li.append(button);
+    list.append(li);
   });
 
-
   if (!sorted.length) {
-
     const li = document.createElement("li");
     li.className = "loading-line";
     li.textContent = "No ranked forecasts available.";
-
-    list.appendChild(li);
-
+    list.append(li);
   }
-
 }
 
+/* MAP PATHS */
 
-/* MAP GEOMETRY / VISIBILITY */
+function addPath(feature, group, color, kind) {
+  const dashed = kind === "estimate";
+  const gray = kind === "gray";
 
-const byRegion = new Map();
-const estimateToggle = document.getElementById("show-statewide");
-const coverageSummary = document.getElementById("coverage-summary");
+  const outlineStyle = {
+    color: "#244139",
+    weight: kind === "direct" ? 12 : 9,
+    opacity: .97,
+    lineCap: dashed ? "butt" : "round",
+    ...(dashed ? { dashArray: "13 11" } : {})
+  };
 
-function priorityColor(score) {
-  // Use the team palette while preserving a continuous low -> medium -> high scale.
-  const low = [59,122,96], middle = [171,121,46], high = [183,91,78];
-  const t = Math.min(1, Math.max(0, score / 100));
-  const a = t < .5 ? low : middle;
-  const b = t < .5 ? middle : high;
-  const frac = t < .5 ? t*2 : (t-.5)*2;
-  return `rgb(${a.map((x,i)=>Math.round(x+(b[i]-x)*frac)).join(',')})`;
+  const lineStyle = {
+    color,
+    weight: kind === "direct" ? 7 : gray ? 3 : 6,
+    opacity: gray ? .57 : 1,
+    lineCap: dashed ? "butt" : "round",
+    ...(dashed ? { dashArray: "13 11" } : {})
+  };
+
+  const outline = gray
+    ? null
+    : L.geoJSON(feature, { style: outlineStyle }).addTo(group);
+
+  const line = L.geoJSON(feature, {
+    style: lineStyle
+  }).addTo(group);
+
+  renderedPaths.push(line);
+
+  return {
+    outline,
+    line,
+    outlineStyle,
+    lineStyle
+  };
 }
 
-function addPath(feature, destination, options) {
-  const {color, direct=false, gray=false} = options;
-  // BOTH strokes have the same dash settings: gaps reveal the map beneath.
-  // Direct paths have NO dash setting, and remain solid.
-  const dashed = !direct && !gray;
-  const casingStyle = { color: '#213c37', weight: direct ? 12 : 9,
-    opacity: .97, lineCap: dashed ? 'butt' : 'round', lineJoin: 'round',
-    ...(dashed ? {dashArray:'13 11'} : {}) };
-  const lineStyle = {color, weight: direct ? 7 : gray ? 3 : 6,
-    opacity: gray ? .57 : 1, lineCap: dashed ? 'butt' : 'round', lineJoin:'round',
-    ...(dashed ? {dashArray:'13 11'} : {})};
-  const outline = gray ? null : L.geoJSON(feature,{style:casingStyle}).addTo(destination);
-  const line = L.geoJSON(feature,{style:lineStyle}).addTo(destination);
-  const entry = {outline,line,baseOutline:casingStyle,baseLine:lineStyle};
-  allRenderedPaths.push(line);
-  return entry;
-}
-
-function resetHighlighted() {
+function resetHighlight() {
   if (!activeEntry) return;
+
   for (const path of activeEntry.paths) {
-    if (path.outline) path.outline.setStyle(path.baseOutline);
-    path.line.setStyle(path.baseLine);
+    if (path.outline) {
+      path.outline.setStyle(path.outlineStyle);
+    }
+
+    path.line.setStyle(path.lineStyle);
   }
 }
 
-function activate(entry, scrollMobile=true) {
-  if (!entry) return;
-  resetHighlighted();
+/* MAP KEY */
+
+function revealKey() {
+  $("map-key").hidden = false;
+  $("show-map-key").hidden = true;
+}
+
+function hideKey() {
+  $("map-key").hidden = true;
+  $("show-map-key").hidden = false;
+}
+
+$("show-map-key").addEventListener("click", () => {
+  const key = $("map-key");
+
+  key.hidden = !key.hidden;
+
+  $("show-map-key").textContent = key.hidden
+    ? "Show map key"
+    : "Hide map key";
+});
+
+/* SELECTED BEACH DETAILS */
+
+function activate(entry) {
+  if (!entry || !entry.paths.length) return;
+
+  resetHighlight();
   activeEntry = entry;
+  hideKey();
+
   for (const path of entry.paths) {
-    if (path.outline) path.outline.setStyle({weight:path.baseOutline.weight+3});
-    path.line.setStyle({weight:path.baseLine.weight+2});
+    if (path.outline) {
+      path.outline.setStyle({
+        weight: path.outlineStyle.weight + 3
+      });
+    }
+
+    path.line.setStyle({
+      weight: path.lineStyle.weight + 2
+    });
   }
 
-  const isDirect = entry.kind === 'direct';
-  const isEstimate = entry.kind === 'estimate';
+  const direct = entry.kind === "direct";
+  const estimate = entry.kind === "estimate";
+
   const region = entry.region;
   const props = entry.props || {};
-  const score = isDirect ? getScore(region) : isEstimate ? toNumber(props.turtleguard_priority_score) : null;
-  const scoreOk = score !== null && score >= 0 && score <= 100;
-  const nests = isDirect ? region.projected_total_nests : isEstimate ? props.turtleguard_estimated_nests : null;
-  const density = isDirect ? region.projected_nests_per_mile : isEstimate ? props.turtleguard_nests_per_mile : null;
 
-  document.getElementById('details-empty').hidden = true;
-  document.getElementById('details-content').hidden = false;
-  document.getElementById('beach-name').textContent = isDirect ? region.name : (props.Beach || 'FWC surveyed beach');
-  document.getElementById('beach-rank').textContent = isDirect
-    ? `DIRECT FORECAST · ${rankByName.has(region.name) ? 'Rank '+String(rankByName.get(region.name)).padStart(2,'0')+' / '+rankByName.size : 'Unranked'}`
-    : `FWC #${props.turtleguard_fwc_objectid || props.OBJECTID || '?'} · ${isEstimate ? 'COUNTY ESTIMATE' : 'NO FORECAST'}`;
-  document.getElementById('beach-nests-label').innerHTML = isDirect ? 'Predicted nests<br>2027 season' : 'Allocated nests<br>2027 season';
-  document.getElementById('beach-density-label').innerHTML = isDirect ? 'Predicted nests<br>per mile' : 'Allocated nests<br>per mile';
-  document.getElementById('beach-score').textContent = scoreOk ? formatDecimal(score) : '—';
-  document.getElementById('beach-nests').textContent = formatWhole(nests);
-  document.getElementById('beach-density').textContent = formatDecimal(density);
+  const score = direct
+    ? scoreOf(region)
+    : estimate
+      ? number(props.turtleguard_priority_score)
+      : null;
 
-  const level = document.getElementById('beach-level');
-  const dot = document.getElementById('level-dot');
-  const meter = document.getElementById('priority-fill');
-  const insight = document.getElementById('beach-insight');
-  if (scoreOk) {
+  const valid =
+    score !== null &&
+    score >= 0 &&
+    score <= 100;
+
+  const nests = direct
+    ? region.projected_total_nests
+    : estimate
+      ? props.turtleguard_estimated_nests
+      : null;
+
+  const density = direct
+    ? region.projected_nests_per_mile
+    : estimate
+      ? props.turtleguard_nests_per_mile
+      : null;
+
+  $("details-empty").hidden = true;
+  $("details-content").hidden = false;
+
+  $("beach-name").textContent = direct
+    ? region.name
+    : (props.Beach || "FWC surveyed beach");
+
+  $("beach-rank").textContent = direct
+    ? "DIRECT FORECAST · Rank " +
+      (rankByName.get(region.name) || "—") +
+      " / " + rankByName.size
+    : "FWC #" +
+      (props.turtleguard_fwc_objectid || props.OBJECTID || "?") +
+      " · " +
+      (estimate ? "COUNTY ESTIMATE" : "NO FORECAST");
+
+  $("beach-nests-label").innerHTML =
+    (direct ? "Predicted" : "Allocated") +
+    " nests<br>2027 season";
+
+  $("beach-density-label").innerHTML =
+    (direct ? "Predicted" : "Allocated") +
+    " nests<br>per mile";
+
+  $("beach-score").textContent =
+    valid ? decimal(score) : "—";
+
+  $("beach-nests").textContent = whole(nests);
+  $("beach-density").textContent = decimal(density);
+
+  const level = $("beach-level");
+  const dot = $("level-dot");
+  const fill = $("priority-fill");
+  const insight = $("beach-insight");
+
+  if (valid) {
     const info = priorityInfo(score);
+
     level.textContent = info.label;
     dot.style.background = info.color;
-    meter.style.background = info.color;
-    meter.style.width = `${score}%`;
-    if (isDirect) {
-      const provisional = region.uses_provisional_2026 ? ' Its 2026 nesting observations are provisional.' : '';
-      const coverage = entry.featureNames && entry.featureNames.length
-        ? ` These official FWC lines are approximate geographic matches (${entry.featureNames.join(', ')}); they do not each receive separate model predictions.` :
-          ' Its fallback coastline is an approximate visual trace rather than a verified survey boundary.';
-      insight.textContent = `${info.insight} TimesFM predicts ${formatWhole(nests)} nests across the entire ${region.name} monitoring area in 2027.${provisional}${coverage}`;
-    } else if (isEstimate) {
-      insight.textContent = `County-derived estimate for ${props.Beach || 'this surveyed beach'} (${props.County || 'Florida'}). TimesFM forecasts the county's 2027 totals using annual FWC observations for 2021–2025. TurtleGuard allocates those county totals across FWC lines using coastline length and ordinal nesting-density weights (low 0.5, medium 1, high 2). This is not an independent beach-level TimesFM forecast, and its priority score is experimental.`;
+    fill.style.background = info.color;
+    fill.style.width = score + "%";
+
+    if (direct) {
+      const provisional = region.uses_provisional_2026
+        ? " Some 2026 observations are provisional."
+        : "";
+
+      const geography = entry.featureNames.length
+        ? " The associated FWC segments are approximate geographic matches, not independent forecasts."
+        : " The coastline trace is approximate.";
+
+      insight.textContent =
+        info.insight +
+        " TimesFM estimates " +
+        whole(nests) +
+        " nests across the entire " +
+        region.name +
+        " monitoring area in 2027." +
+        provisional +
+        geography;
+
+    } else {
+      insight.textContent =
+        info.insight +
+        " This is a county-derived allocation for " +
+        (props.Beach || "this beach") +
+        " (" +
+        (props.County || "Florida") +
+        "). County forecasts are apportioned using coastline " +
+        "length and historical density weights; this is not " +
+        "an independent beach-level TimesFM forecast.";
     }
+
   } else {
-    level.textContent = 'No supported estimate';
-    dot.style.background = '#9aa49c';
-    meter.style.background = '#9aa49c';
-    meter.style.width = '0%';
-    insight.textContent = 'FWC has mapped this coastline, but compatible 2027 forecast evidence is insufficient. Gray does not mean no nesting or no conservation need.';
+    level.textContent = "No supported estimate";
+    dot.style.background = "#98a29d";
+    fill.style.width = "0%";
+
+    insight.textContent =
+      "Insufficient compatible forecast evidence. " +
+      "Gray does not imply an absence of nesting or conservation need.";
   }
 
-  document.querySelectorAll('.rank-button').forEach(button => {
-    const selected = isDirect && button.dataset.region === region.name;
-    button.classList.toggle('selected', Boolean(selected));
-    button.setAttribute('aria-pressed',String(Boolean(selected)));
+  document.querySelectorAll(".rank-button").forEach(button => {
+    const selected =
+      direct &&
+      button.dataset.region === region.name;
+
+    button.classList.toggle("selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
   });
-  const layers=entry.paths.map(path=>path.line);
-  const bounds=L.featureGroup(layers).getBounds();
-  if (bounds.isValid()) map.flyToBounds(bounds.pad(.35),{maxZoom:11,duration:.6});
-  if (scrollMobile && window.innerWidth <= 780) {
-    document.getElementById('beach-details').scrollIntoView({behavior:'smooth',block:'start'});
+
+  const bounds = L.featureGroup(
+    entry.paths.map(path => path.line)
+  ).getBounds();
+
+  if (bounds.isValid()) {
+    map.flyToBounds(bounds.pad(.35), {
+      maxZoom: 11,
+      duration: .6
+    });
+  }
+
+  if (window.innerWidth <= 780) {
+    $("beach-details").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   }
 }
 
-function selectBeach(regionId) {
-  activate(beachLayers.get(regionId));
+function bindPath(path, entry, label) {
+  path.line.bindTooltip(label, { sticky: true });
+  path.line.on("click", () => activate(entry));
+
+  if (path.outline) {
+    path.outline.on("click", () => activate(entry));
+  }
 }
+
+/* LOAD JSON */
 
 async function loadJson(path) {
-  const response = await fetch(path,{cache:'no-store'});
-  if (!response.ok) throw new Error(`${path} returned HTTP ${response.status}`);
+  const response = await fetch(path, {
+    cache: "no-store"
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      path + " returned HTTP " + response.status
+    );
+  }
+
   return response.json();
 }
 
+/* INITIALIZE MAP AND FORECASTS */
+
 async function initialize() {
-  const forecasts=await loadJson('./priorities.json');
-  if (forecasts.forecast_year !== 2027 || !Array.isArray(forecasts.regions) || !forecasts.regions.length) {
-    throw new Error('Missing or stale 2027 monitoring-area forecast data');
+  const forecasts = await loadJson("./priorities.json");
+
+  if (
+    forecasts.forecast_year !== 2027 ||
+    !Array.isArray(forecasts.regions) ||
+    !forecasts.regions.length
+  ) {
+    throw new Error(
+      "Missing 2027 monitoring-area forecast data"
+    );
   }
-  renderRanking(forecasts.regions); // Team's original ranking: EIGHT direct monitored areas only.
+
+  renderRanking(forecasts.regions);
+
   for (const region of forecasts.regions) {
-    byRegion.set(region.name,region);
-    beachLayers.set(region.name,{kind:'direct',region,paths:[],featureNames:[]});
+    byRegion.set(region.name, region);
+
+    directEntries.set(region.name, {
+      kind: "direct",
+      region,
+      paths: [],
+      featureNames: []
+    });
   }
 
-  let officialCount={direct:0,estimated:0,gray:0};
-  let officialLoaded=false;
-  let loadProblem=null;
+  let loaded = false;
+  let problem = null;
+
+  let count = {
+    direct: 0,
+    estimate: 0,
+    gray: 0
+  };
+
+  /* OFFICIAL FWC COASTLINES */
+
   try {
-    const geo=await loadJson('./statewide_estimates.geojson');
-    if (!Array.isArray(geo.features) || geo.features.length < 150 || geo.metadata?.year !== 2027)
-      throw new Error('FWC statewide output is missing, incomplete, or not for 2027');
-    const seenIds=new Set();
+    const geo = await loadJson(
+      "./statewide_estimates.geojson"
+    );
+
+    if (
+      !Array.isArray(geo.features) ||
+      geo.features.length < 150 ||
+      geo.metadata?.year !== 2027
+    ) {
+      throw new Error(
+        "Statewide FWC output is missing or incomplete"
+      );
+    }
+
+    const seen = new Set();
+
     for (const feature of geo.features) {
-      const p=feature.properties || {};
-      const key=p.turtleguard_fwc_objectid ?? p.OBJECTID;
-      if (key==null || seenIds.has(String(key))) throw new Error('Invalid or duplicated FWC OBJECTID');
-      seenIds.add(String(key));
+      const props = feature.properties || {};
+
+      const id =
+        props.turtleguard_fwc_objectid ??
+        props.OBJECTID;
+
+      if (id == null || seen.has(String(id))) {
+        throw new Error(
+          "Invalid or duplicated FWC identifier"
+        );
+      }
+
+      seen.add(String(id));
     }
 
     for (const feature of geo.features) {
-      const p=feature.properties || {};
-      const region=byRegion.get(p.turtleguard_direct_region);
-      const isDirect=Boolean(region && getScore(region)!==null);
-      const score=toNumber(p.turtleguard_priority_score);
-      const isEstimate=!isDirect && p.turtleguard_type==='timesfm_county_disaggregation'
-        && score!==null && score>=0 && score<=100;
+      const props = feature.properties || {};
+
+      const region = byRegion.get(
+        props.turtleguard_direct_region
+      );
+
+      const direct =
+        !!region &&
+        scoreOf(region) !== null;
+
+      const score = number(
+        props.turtleguard_priority_score
+      );
+
+      const estimate =
+        !direct &&
+        props.turtleguard_type === "timesfm_county_disaggregation" &&
+        score !== null &&
+        score >= 0 &&
+        score <= 100;
+
       let entry;
-      if (isDirect) {
-        const path=addPath(feature,directOfficialLayer,{color:priorityColor(getScore(region)),direct:true});
-        entry=beachLayers.get(region.name);
+      let path;
+
+      if (direct) {
+        entry = directEntries.get(region.name);
+
+        path = addPath(
+          feature,
+          directLayer,
+          priorityColor(scoreOf(region)),
+          "direct"
+        );
+
         entry.paths.push(path);
-        entry.featureNames.push(p.Beach || `FWC ${p.turtleguard_fwc_objectid}`);
-        officialCount.direct++;
-      } else if (isEstimate) {
-        const path=addPath(feature,estimatedLayer,{color:priorityColor(score)});
-        entry={kind:'estimate',props:p,paths:[path]};
-        officialCount.estimated++;
+        entry.featureNames.push(
+          props.Beach || "FWC beach"
+        );
+        count.direct++;
+
+      } else if (estimate) {
+        path = addPath(
+          feature,
+          estimateLayer,
+          priorityColor(score),
+          "estimate"
+        );
+
+        entry = {
+          kind: "estimate",
+          props,
+          paths: [path]
+        };
+
+        count.estimate++;
+
       } else {
-        const path=addPath(feature,grayOfficialLayer,{color:'#9aa49c',gray:true});
-        entry={kind:'gray',props:p,paths:[path]};
-        officialCount.gray++;
+        path = addPath(
+          feature,
+          grayLayer,
+          "#98a29d",
+          "gray"
+        );
+
+        entry = {
+          kind: "gray",
+          props,
+          paths: [path]
+        };
+
+        count.gray++;
       }
-      const typeLabel = isDirect ? 'Direct TimesFM monitoring area' : isEstimate ? 'County-derived estimate' : 'Insufficient data';
-      const tooltip = `${p.Beach || 'FWC surveyed beach'} · ${typeLabel} · FWC ${p.turtleguard_fwc_objectid || p.OBJECTID}`;
-      for (const path of entry.paths.slice(isDirect?-1:0)) {
-        path.line.bindTooltip(tooltip,{sticky:true});
-        path.line.on('click',()=>activate(entry));
-        if (path.outline) path.outline.on('click',()=>activate(entry));
-      }
+
+      bindPath(
+        path,
+        entry,
+        (props.Beach || "FWC surveyed beach") +
+        " · " +
+        (
+          direct
+            ? "Direct forecast"
+            : estimate
+              ? "County estimate"
+              : "Insufficient data"
+        )
+      );
     }
-    officialLoaded=true;
+
+    loaded = true;
+
   } catch (error) {
-    loadProblem=error.message;
-    // No half-rendered statewide map if the server returns a partial/corrupted file.
-    grayOfficialLayer.clearLayers();
-    estimatedLayer.clearLayers();
-    directOfficialLayer.clearLayers();
-    allRenderedPaths.length=0;
-    for(const entry of beachLayers.values()){entry.paths=[];entry.featureNames=[];}
+    problem = error.message;
+
+    grayLayer.clearLayers();
+    estimateLayer.clearLayers();
+    directLayer.clearLayers();
+
+    renderedPaths.length = 0;
+
+    count = {
+      direct: 0,
+      estimate: 0,
+      gray: 0
+    };
+
+    for (const entry of directEntries.values()) {
+      entry.paths = [];
+      entry.featureNames = [];
+    }
   }
 
-  // Use the old approximate GeoJSON ONLY when an official FWC line is unavailable.
+  /* FALLBACK COASTLINE DATA */
+
   try {
-    const fallback=await loadJson('./beach_areas.geojson');
-    if (!Array.isArray(fallback.features)) throw new Error('Invalid fallback coastlines');
-    for (const feature of fallback.features) {
-      const region=byRegion.get(feature.properties?.region_id);
-      if (!region) continue;
-      const entry=beachLayers.get(region.name);
-      if (entry.paths.length) continue;
-      const path=addPath(feature,fallbackLayer,{color:priorityColor(getScore(region)),direct:true});
-      entry.paths.push(path);
-      const tooltip=`${region.name} · Direct forecast · approximate shoreline`;
-      path.line.bindTooltip(tooltip,{sticky:true});
-      path.line.on('click',()=>activate(entry));
-      if (path.outline) path.outline.on('click',()=>activate(entry));
+    const fallback = await loadJson(
+      "./beach_areas.geojson"
+    );
+
+    if (!Array.isArray(fallback.features)) {
+      throw new Error("Invalid fallback GeoJSON");
     }
+
+    for (const feature of fallback.features) {
+      const region = byRegion.get(
+        feature.properties?.region_id
+      );
+
+      if (!region) continue;
+
+      const entry = directEntries.get(region.name);
+
+      if (entry.paths.length) continue;
+
+      const path = addPath(
+        feature,
+        fallbackLayer,
+        priorityColor(scoreOf(region)),
+        "direct"
+      );
+
+      entry.paths.push(path);
+
+      bindPath(
+        path,
+        entry,
+        region.name + " · Approximate shoreline"
+      );
+    }
+
   } catch (error) {
-    if (!officialLoaded) loadProblem = `${loadProblem || ''}; fallback geometry: ${error.message}`;
+    if (!loaded) {
+      problem =
+        (problem || "") +
+        "; " +
+        error.message;
+    }
   }
 
-  const hasStatewide=officialLoaded;
-  estimateToggle.disabled=!hasStatewide;
-  estimateToggle.checked=hasStatewide;
-  estimateToggle.addEventListener('change',()=>{
-    if (estimateToggle.checked) {
-      grayOfficialLayer.addTo(map);
-      estimatedLayer.addTo(map);
+  /* MAP LAYER TOGGLE */
+
+  const toggle = $("show-statewide");
+  toggle.disabled = !loaded;
+  toggle.checked = loaded;
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      grayLayer.addTo(map);
+      estimateLayer.addTo(map);
+
     } else {
-      map.removeLayer(grayOfficialLayer);
-      map.removeLayer(estimatedLayer);
-      if (activeEntry && activeEntry.kind!=='direct') {
-        resetHighlighted(); activeEntry=null;
-        document.getElementById('details-content').hidden=true;
-        document.getElementById('details-empty').hidden=false;
+      map.removeLayer(grayLayer);
+      map.removeLayer(estimateLayer);
+
+      if (
+        activeEntry &&
+        activeEntry.kind !== "direct"
+      ) {
+        resetHighlight();
+        activeEntry = null;
+
+        $("details-empty").hidden = false;
+        $("details-content").hidden = true;
+
+        revealKey();
       }
     }
-    // Keep the FWC direct forecasts and fallback areas in front of estimates.
-    directOfficialLayer.removeFrom(map);directOfficialLayer.addTo(map);
-    fallbackLayer.removeFrom(map);fallbackLayer.addTo(map);
+
+    directLayer.removeFrom(map);
+    directLayer.addTo(map);
+
+    fallbackLayer.removeFrom(map);
+    fallbackLayer.addTo(map);
   });
 
-  const directMapped=[...beachLayers.values()].filter(e=>e.paths.length).length;
-  document.getElementById('map-count').textContent=hasStatewide
-    ? `${forecasts.regions.length} areas / ${geoCount(officialCount)} FWC sections`
-    : `${directMapped} direct areas`;
-  coverageSummary.textContent=hasStatewide
-    ? `${officialCount.direct} solid · ${officialCount.estimated} dashed · ${officialCount.gray} gray`
-    : 'Statewide layer unavailable';
-  if(loadProblem) showError(`Statewide map unavailable (${loadProblem}). Showing direct TimesFM forecasts where a shoreline is available.`);
-  if (!directMapped) showError('No direct monitoring-area coastlines could be loaded. Check beach_areas.geojson.');
-  if (allRenderedPaths.length) {
-    const bounds=L.featureGroup(allRenderedPaths).getBounds();
-    if(bounds.isValid()) map.fitBounds(bounds.pad(.035),{maxZoom:7});
+  $("coverage-summary").textContent = loaded
+    ? count.direct + " solid · " +
+      count.estimate + " dashed · " +
+      count.gray + " gray"
+    : "Statewide layer unavailable";
+
+  if (problem) {
+    showError(
+      "Statewide map unavailable (" +
+      problem +
+      "). Showing direct forecasts where available."
+    );
+  }
+
+  if (
+    ![...directEntries.values()].some(
+      entry => entry.paths.length
+    )
+  ) {
+    showError(
+      "No direct coastlines loaded. Check beach_areas.geojson."
+    );
+  }
+
+  if (renderedPaths.length) {
+    const bounds = L.featureGroup(
+      renderedPaths
+    ).getBounds();
+
+    if (bounds.isValid()) {
+      map.fitBounds(bounds.pad(.035), {
+        maxZoom: 7
+      });
+    }
   }
 }
 
-function geoCount(counts) { return counts.direct+counts.estimated+counts.gray; }
-
 /* START APPLICATION */
-initialize().catch(error=>{
-  showError(`Could not load data: ${error.message}. Check priorities.json and site map files.`);
-  document.getElementById('priority-ranking').innerHTML='<li class="loading-line">Rankings unavailable.</li>';
+
+initialize().catch(error => {
+  showError(
+    "Could not load map data: " +
+    error.message +
+    ". Check that JSON and GeoJSON files are beside index.html."
+  );
+
+  $("priority-ranking").innerHTML =
+    '<li class="loading-line">Rankings unavailable.</li>';
 });
 
 </script>
-
 </body>
 </html>
